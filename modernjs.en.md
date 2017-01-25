@@ -306,10 +306,10 @@ Supplementally, [Flow Language Support](https://marketplace.visualstudio.com/ite
 Supplement the indications received from experts after this entry release.
 
 * [Dart](https://www.dartlang.org/)
-  * It is a language that makes strong type inference than [TypeScript]
-  * [Dart2js](https://webdev.dartlang.org/tools/dart2js) can convert it to JavaScript
-  * [Angular] Within 2 Google's [large case already exists](http://news.dartlang.org/2016/03/the-new-adwords-ui-uses-dart-we-asked. Html)
-  * Large-scale case is due to [Angular 2 Dart](https://github.com/dart-lang/angular2)
+  * It is a language that makes strong type inference than [TypeScript]
+  * [Dart2js](https://webdev.dartlang.org/tools/dart2js) can convert it to JavaScript
+  * [Angular] Within 2 Google's [large case already exists](http://news.dartlang.org/2016/03/the-new-adwords-ui-uses-dart-we-asked. Html)
+  * Large-scale case is due to [Angular 2 Dart](https://github.com/dart-lang/angular2)
  
 ## Let's share best practices with static analysis
 JavaScript has many traps. The trap here is the language specification that many programmers tend to misunderstand, and the behavior of certain libraries.
@@ -357,7 +357,7 @@ In my project I use a testing framework called [AVA]. [AVA] will be explained la
 So, using this plugin makes it possible to warn you [AVA] obviously when using incorrect usage.
 
 #### [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import)
-`Eslint-plugin-import` finds errors on` import` statements.
+`eslint-plugin-import` finds errors on` import` statements.
 
 Specifically, if you try to `import` a module that does not exist in the project you will get a warning. Everyone can be typoing the module name.
 
@@ -366,12 +366,12 @@ In addition to this, if you pass a string other than literals to `require`, you 
 #### [eslint-import-resolver-node](https://github.com/benmosher/eslint-plugin-import/tree/master/resolvers/node)
 Only this one has a different role from other modules.
 
-`Eslint-import-resolver-node` can work with` eslint-plugin-import` to customize how to find `import` modules.
+`eslint-import-resolver-node` can work with` eslint-plugin-import` to customize how to find `import` modules.
 
-As for what I mean, in my project I have stored application code and test code in separate directories `src` and` test` respectively.
+As for what I mean, in my project I have stored application code and test code in separate directories `src` and `test` respectively.
 
-On this test code side, when you do `import` application code, it is very painful to write` import world from '../../ src / hello / world ";`
-In order to avoid it, by setting `NODE_PATH = src` when executing the test code, we do not need to write that` ../../ src / `part.
+On this test code side, when you do `import` application code, it is very painful to write` import world from '../../src/hello/world";`
+In order to avoid it, by setting `NODE_PATH=src` when executing the test code, we do not need to write that `../../src/`part.
 
 It uses `eslint-import-resolver-node` to inform` eslint-plugin-import` about this.
 
@@ -379,16 +379,16 @@ It uses `eslint-import-resolver-node` to inform` eslint-plugin-import` about thi
 The JavaScript `Promise` is a type of library you need to get used to. Moreover, it is hard to understand the correct usage.
 By the way, [JavaScript Promise's book](http://azu.github.io/promises-book/) is a very wonderful document so I can read it many times.
 
-It is highly likely that you are using the wrong `Promise` until you get used to` Promise`.
+It is highly likely that you are using the wrong `Promise` until you get used to `Promise`.
 If there are JavaScript experts in the vicinity and can receive code reviews, it is very wonderful, although I am writing a bit of JavaScript as a hobby, I can not call such an expert.
 
 So by using this plug-in, you will get an error in the obviously bad `Promise` code.
 You can understand how to use `Promise` by simply reading the rule details of this plugin, so please set the rules carefully.
 
-By the way, if `async / await` enters ES, will not you use` Promise` directly?
+By the way, if `async/await` enters ES, will not you use `Promise` directly?
 
-I think that `async / await` and` Promise` coexist normally with the experience of using C # 'async / await`, but how about it actually?
-At least, using [async / await] in [AVA] has the impression that the test code is easy to understand.
+I think that `async/await` and `Promise` coexist normally with the experience of using C # `async/await`, but how about it actually?
+At least, using `async/await` in [AVA] has the impression that the test code is easy to understand.
 
 #### [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security)
 Do you care about security while writing code?
@@ -407,7 +407,7 @@ In other words, you need to reimplement it for [Flow], indentation, sticking a s
 
 [Flow] itself has its own traps, and if you declare a consistent type declaration, it would be better to keep it a bit Lint.
 
-Although we did the same story even at `Promise`, it is good to use` eslint-plugin-flowtype` as a training Gibbs until [Flow] is also a new technology.
+Although we did the same story even at `Promise`, it is good to use `eslint-plugin-flowtype` as a training Gibbs until [Flow] is also a new technology.
 If you get used to it properly, the error will not come out completely.
 
 #### [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
@@ -432,7 +432,7 @@ However [WAI-ARIA 1.1](https://www.w3.org/TR/2016/CR-wai-aria-1.1-20161027/) and
 
 [HTML5 Accessibility](http://www.html5accessibility.com/) I would like to provide maximum value with minimal effort to one easy handy reference hand.
 
-That's why, let's first make sure that the JSX in the project uses the `eslint-plugin-jsx-a11y` recommended rule to deal with the` Accessibility` correspondence.
+That's why, let's first make sure that the JSX in the project uses the `eslint-plugin-jsx-a11y` recommended rule to deal with the `Accessibility` correspondence.
 
 # Test talk
 Even if it says a test in a bite there are various. Here we talk about developer testing.
@@ -543,7 +543,7 @@ This is only a talk that the API of [AVA] can be perfect as it is simple.
 
 Since `it` is not rewritten badly, the`=>`operator moves comfortably.
 
-Since the return value of the test method is determined as the responsibility of [AVA], whether it is `Promise`, but if you return it as [observable](https://github.com/tc39/proposal-observable) AVA] will do it for you.
+Since the return value of the test method is determined as the responsibility of [AVA], whether it is `Promise`, but if you return it as [observable](https://github.com/tc39/proposal-observable) [AVA] will do it for you.
 
 Function calls aligned with test code files are not nested.
 
@@ -661,7 +661,7 @@ Age: ${user.age}
 
 Updating the model means changing the contents of `name` and` age` which are members of the variable `user`.
 In the primitive way, the programmer must write code to find the corresponding DOM element, depending on which member variable you changed.
-Indeed, in this simple example, you can find the corresponding element by writing `$ (". Name ")` in jQuery.
+Indeed, in this simple example, you can find the corresponding element by writing `$(".name")` in jQuery.
 
 Think about it, if there are 1,000 pieces of changeable elements in the screen?
 What if some elements change, and there is an element that needs to be transiently changed depending on it?
@@ -776,7 +776,7 @@ Even web designers accustomed to existing naming conventions should learn [CSS M
 Even if you use [CSS Modules], CSS designed to make UI consistent for the entire application will be defined to the global space as before, so existing CSS It does not mean that you do not need design knowledge on the design.
 
 ### [React] in [CSS Modules]
-To introduce [CSS Modules] to [React], use [css - loader] of [webpack] to process CSS and then write a dedicated description to the [React] component side. [Webpack] will be explained later.
+To introduce [CSS Modules] to [React], use [css-loader] of [webpack] to process CSS and then write a dedicated description to the [React] component side. [Webpack] will be explained later.
 
 #### Introduction of [CSS Modules]
 The easiest way to use [CSS Modules] is this code.
@@ -797,7 +797,7 @@ export default class Table extends React.Component {
 }
 ```
 
-When this is rendered, it will be roughly like this HTML. Because css class name which does not automatically duplicate by [css - loader] is named, weird name is set in class attribute.
+When this is rendered, it will be roughly like this HTML. Because css class name which does not automatically duplicate by [css-loader] is named, weird name is set in class attribute.
 
 ```
 <div class="table__table___32osj">
@@ -849,7 +849,7 @@ Although code easiness was improved, the difficulty of the code has not improved
 Especially, as you can see from the last line, the problem of handling imported CSS as a JavaScript object has not been solved.
 
 #### Improvement with [babel-plugin-react-css-modules]
-There is [babel - plugin - react - css - modules] as a plugin of [Babel] to solve the problem of [react - css - modules].
+There is [babel-plugin-react-css-modules] as a plugin of [Babel] to solve the problem of [react-css-modules].
 
 By the way, the developers of [react-css-modules] and [babel-plugin-react-css-modules] are the same.
 
@@ -906,7 +906,7 @@ Again, for simplicity, [redux-saga] implements additional layers using Generator
 
 Both [redux-saga] and [redux-observable] have a way to cancel the task.
 
-When writing code to handle errors, the difference between [redux-saga] and [reducex-observable] becomes clear.
+When writing code to handle errors, the difference between [redux-saga] and [redux-observable] becomes clear.
 For details, see the respective documents, but the point is whether to use `try/catch` or use the event definition handler of library definition.
 
 * Redux-saga's [Error handling](https://redux-saga.github.io/redux-saga/docs/basics/ErrorHandling.html)
@@ -971,15 +971,15 @@ That's why I chose [reducex-observable] in my project.
 I should learn, but please write a little, hoping that someone will supplement the tasks that have not been done yet.
 
 * Talk about usability in JavaScript GUI application
-  * Talk of methodology to respond to keyboard-centered operations, operations using pointing devices other than mouse, operation by touch display, etc.
-  * Talk of evaluation criteria of operability in web application
+  * Talk of methodology to respond to keyboard-centered operations, operations using pointing devices other than mouse, operation by touch display, etc.
+  * Talk of evaluation criteria of operability in web application
 * [PostCSS]
-  * In my project, I use it as [babel - plugin - react - css - modules] asks for it
-  * In something like [Babel] in the CSS area, you can plug in and uninstall features by plugin ... only understand to the extent
+  * In my project, I use it as [babel-plugin-react-css-modules] asks for it
+  * In something like [Babel] in the CSS area, you can plug in and uninstall features by plugin ... only understand to the extent
 * [CSS Flexible Box Layout Module Level 1](https://www.w3.org/TR/css-flexbox-1/)
-  * As far as we can see, the Flexible Box is the layout engine of the GUI application itself
-  * The material of [CSS Flexible Box Layout](https://developer.mozilla.org/en/docs/Web/CSS/CSS_Flexible_Box_Layout) in MDN is straightforward
-  * Since it is under development of specifications, it works only with the latest browser
+  * As far as we can see, the Flexible Box is the layout engine of the GUI application itself
+  * The material of [CSS Flexible Box Layout](https://developer.mozilla.org/en/docs/Web/CSS/CSS_Flexible_Box_Layout) in MDN is straightforward
+  * Since it is under development of specifications, it works only with the latest browser
 
 # Build story
 I talked about basic language talking, testing method, how to make UI, next is build talk.
