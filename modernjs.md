@@ -985,6 +985,9 @@ CSSのimportがコード上でコンポーネントに影響を与えていな�
   * ざっと見る限り、Flexible BoxはGUIアプリケーションのレイアウトエンジンそのものだ
   * MDNにある[CSS Flexible Box Layout](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Flexible_Box_Layout)の資料は分かり易い
   * 仕様策定中なので最新のブラウザでしか動かない
+* [CSS Grid Layout Module Level 1](https://www.w3.org/TR/css-grid-1/)
+  * ざっと見る限り、Grid LayoutはJavaのGridBagLayoutとよく似ている。
+  * 仕様策定中なので[安定版としてリリースされているブラウザでは動かない](http://caniuse.com/#feat=css-grid)
 
 # ビルドの話
 基本的な言語の話と、テストのやり方、UIの作り方について整理したので、次はビルドの話だ。

@@ -980,6 +980,9 @@ I should learn, but please write a little, hoping that someone will supplement t
   * As far as we can see, the Flexible Box is the layout engine of the GUI application itself
   * The material of [CSS Flexible Box Layout](https://developer.mozilla.org/en/docs/Web/CSS/CSS_Flexible_Box_Layout) in MDN is straightforward
   * Since it is under development of specifications, it works only with the latest browser
+* [CSS Grid Layout Module Level 1](https://www.w3.org/TR/css-grid-1/)
+  * As far as we can see, Grid Layout closely resembles Java's GridBagLayout.
+  * Since the specification is under development [It does not work on browsers released as stable version](http://caniuse.com/#feat=css-grid)
 
 # Build story
 I talked about basic language talking, testing method, how to make UI, next is build talk.
