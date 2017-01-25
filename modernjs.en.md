@@ -1,3 +1,5 @@
+# Modern JavaScript overview, and to Electron
+
 I made a repository that organized the learning outcomes for this month, so I will summarize the results.
 
 If you want to easily create only the sample project you just created, please clone this repository.
@@ -41,7 +43,7 @@ This is the list of "I wanted to do things and things I got able to do" written 
 
 ## About target audience
 
-The target audience of this document is supposed to be a programmer who has a first language that is fully usable. The language is preferably a language of compiling process like Java or C #.
+The target audience of this document is supposed to be a programmer who has a first language that is fully usable. The language is preferably a language of compiling process like Java or C#.
 
 In addition, although I'm interested in recent JavaScript, those who want document to be a guide for efficient learning.
 
@@ -108,7 +110,7 @@ Designing a programming language is somewhat lonely work. Until now, we have rel
 
 However, at least with respect to JavaScript, it is known by ECMAScript 4's failure that it will not work in such a way.
 
-So you can casually implement experimental language features in the form of plugins [Babel]. Discuss the function of [New language function](https://github.com/tc39/proposals) while using Gashagashi and decide the function to import into the next version of JavaScript.
+So you can casually implement experimental language features in the form of plugins [Babel]. Discuss the function of [New language Proposals](https://github.com/tc39/proposals) while using Gashagashi and decide the function to import into the next version of JavaScript.
 
 Users can just try writing a cool new feature by just writing `.babelrc`. It is not enough that the function thought or it is only a matter of stopping using it if the motion is unstable.
 
@@ -120,7 +122,7 @@ There are many modules related to [Babel], but there are surprisingly few good o
 The first two are modules for setting up the environment and the other two are modules for working with other tools.
 
 #### [babel-preset-env](https://github.com/babel/babel-preset-env)
-`Babel-preset-env` is a handy module that automatically selects the [Babel] plugin to use, in conjunction with the environment where JavaScript converted by [Babel] operates.
+`babel-preset-env` is a handy module that automatically selects the [Babel] plugin to use, in conjunction with the environment where JavaScript converted by [Babel] operates.
 
 As JavaScript improves the execution environment of browsers and [Node.js] and so on, the plug-in of [Babel] required at compile time changes accordingly.
 Compilation time is only slightly increased where unnecessary plugins are activated, so it is not very harmful.
@@ -130,7 +132,7 @@ However, it is not very healthy not to keep up with the latest state unless you 
 Using `babel-preset-env` will be freed from such bold work. Just updating the module on a regular basis will bring you the latest environment. Great.
 
 #### [babel-register](https://github.com/babel/babel/tree/master/packages/babel-register)
-`Babel-register` is a hacking module that hooks Node's` require` and inserts [Babel]'s processing.
+`babel-register` is a hacking module that hooks Node's `require` and inserts [Babel]'s processing.
 
 It is not used for loading modules with production code, but mainly for running test code.
 
@@ -143,7 +145,7 @@ If you want to fully automate the process of compiling only files that changed a
 Please note that the test code does not refer directly to the code under test, such as a test like E2E test, it does not work very well.
 
 #### [babel-eslint](https://github.com/babel/babel-eslint)
-`Babel-eslint` is a parser for handling JavaScript code extended with [Babel] with [ESLint].
+`babel-eslint` is a parser for handling JavaScript code extended with [Babel] with [ESLint].
 
 [ESLint] has evolved properly with [ESLint], so if you normally write code on ES and JSX you do not need `babel-eslint`.
 
@@ -152,7 +154,7 @@ Why is this necessary because you use a tool to declare and validate the type in
 As for [Flow] and [ESLint], I will explain properly later, so I want you to feel secure.
 
 #### [babel-plugin-transform-flow-strip-types](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-flow-strip-types)
-`Babel-plugin-transform-flow-strip-types` is a module that automatically removes information about types declared for [Flow] as its name suggests.
+`babel-plugin-transform-flow-strip-types` is a module that automatically removes information about types declared for [Flow] as its name suggests.
 
 After deleting the information on the type, it converts the written code to JavaScript executable at the target runtime.
 
@@ -176,22 +178,22 @@ On the other hand, if you write the type as a little memo, you can automatically
 Let's check out how to declare types in JavaScript around here a little.
 
 #### [Google Closure Compiler]
-The first time I worked on a type declaration while using JavaScript is [Google Closure Compiler's Type System](https://github.com/google/closure-compiler/wiki/Types-in-the-Closure-Type -System).
+The first time I worked on a type declaration while using JavaScript is [Google Closure Compiler's Type System](https://github.com/google/closure-compiler/wiki/Types-in-the-Closure-Type-System).
 
 When he writes a type declaration briefly in the document comment, he is a companion checking it.
 
 ```
-/ **
- * Some class, initialized with an optional value.
- * @ Param {! Object =} opt_value Some value (optional).
- * @constructor
- * /
-Function MyClass (opt_value) {
-  / **
-   * Some value.
-   * @ Priate {! Object | undefined}
-   * /
-  This.myValue_ = opt_value;
+/**
+ * Some class, initialized with an optional value.
+ * @param {!Object=} opt_value Some value (optional).
+ * @constructor
+ */
+function MyClass(opt_value) {
+  /**
+   * Some value.
+   * @private {!Object|undefined}
+   */
+  this.myValue_ = opt_value;
 }
 ```
 
@@ -209,18 +211,18 @@ For me, I think that [TypeScript] is a kind of grace from God, with the recognit
 Let's look at the code of [TypeScript] a bit.
 
 ```
-Interface Person {
-    FirstName: string;
-    LastName: string;
+interface Person {
+    firstName: string;
+    lastName: string;
 }
 
-Function greeter (person: Person) {
-    Return "Hello," + person.firstName + "" + person.lastName;
+function greeter(person: Person) {
+    return "Hello, " + person.firstName + " " + person.lastName;
 }
 
-Var user = {firstName: "Jane", lastName: "User"};
+var user = { firstName: "Jane", lastName: "User" };
 
-Document.body.innerHTML = greeter (user);
+document.body.innerHTML = greeter(user);
 ```
 It is [TypeScript] that is similar to the original Java in oleore Java in my brain.
 
@@ -228,9 +230,9 @@ The type declaration of [TypeScript] is provided with a way to mix type annotati
 For example, if you create a special file, declare it like this.
 
 ```
-Declare namespace myLib {
-    Function makeGreeting (s: string): string;
-    Let numberOfGreetings: number;
+declare namespace myLib {
+    function makeGreeting(s: string): string;
+    let numberOfGreetings: number;
 }
 ```
 
@@ -243,7 +245,7 @@ The [DefinitelyTyped] project that was working to collect type declaration files
 Now we are managing it in an organization called [types](https://github.com/types) in a straightforward way to allocate one repository for one module.
 Nonetheless, [DefinitelyTyped] is not referenced.
 
-By the way, in order to retrieve the type declaration file from the npm repository, you can do `npm install - D @ types / lodash` etc .. It is not a dedicated tool, it's great to get it in npm.
+By the way, in order to retrieve the type declaration file from the npm repository, you can do `npm install -D @types/lodash` etc .. It is not a dedicated tool, it's great to get it in npm.
 
 #### [Flow]
 And [Flow]. This is a static analysis tool made with OCaml, and it checks the type declaration mixed in JavaScript and it performs an arecore check.
@@ -251,16 +253,16 @@ And [Flow]. This is a static analysis tool made with OCaml, and it checks the ty
 Let's see a bit of JavaScript code typed in [Flow].
 
 ```
-// @ flow
-Function total (numbers: Array <number>) {
-  Var result = 0;
-  For (var i = 0; i <numbers.length; i ++) {
-    Result + = numbers [i];
-  }
-  Return result;
+// @flow
+function total(numbers: Array<number>) {
+  var result = 0;
+  for (var i = 0; i < numbers.length; i++) {
+    result += numbers[i];
+  }
+  return result;
 }
 
-Total ([1, 2, 3, 4]);
+total([1, 2, 3, 4]);
 ```
 
 It looks like it is similar to typeScript's type annotation. But [Flow] has a distinctly different point from [TypeScript].
@@ -453,16 +455,16 @@ That is, it is [AVA].
 The test code written in [AVA] is like this.
 
 ```
-Import test from 'ava';
+import test from 'ava';
 
-Test ('foo', t => {
-    T.pass ();
+test('foo', t => {
+    t.pass();
 });
 
-Test ('bar', async t => {
-    Const bar = Promise.resolve ('bar');
+test('bar', async t => {
+    const bar = Promise.resolve('bar');
 
-    T.is (await bar, 'bar');
+    t.is(await bar, 'bar');
 });
 ```
 
@@ -478,17 +480,17 @@ After importing with `import test from 'ava';` you can do whatever you want by c
 
 And even if this `test` is a default function, there are only 11 functions. Let's enumerate
 
-* ** test ([title], implementation) **
-* Test.serial ([title], implementation)
-* Test.cb ([title], implementation)
-* Test.only ([title], implementation)
-* Test.skip ([title], implementation)
-* ** test.todo (title) **
-* Test.failing ([title], implementation)
-* Test.before ([title], implementation)
-* Test.after ([title], implementation)
-* ** test.beforeEach ([title], implementation) **
-* ** test.afterEach ([title], implementation) **
+* **test([title], implementation)**
+* test.serial([title], implementation)
+* test.cb([title], implementation)
+* test.only([title], implementation)
+* test.skip([title], implementation)
+* **test.todo(title)**
+* test.failing([title], implementation)
+* test.before([title], implementation)
+* test.after([title], implementation)
+* **test.beforeEach([title], implementation)**
+* **test.afterEach([title], implementation)**
 
 The only thing to keep in mind is the four highlighted APIs. Other than that, you can refer to the manual when it becomes necessary.
 
@@ -499,24 +501,24 @@ When writing tests, use [power-assert] which will give you the richest assertion
 
 This test is ...
 ```
-Test (t => {
-    Const a = / foo /;
-    Const b = 'bar';
-    Const c = 'baz';
-    T.true (a.test (b) || b === c);
+test(t => {
+    const a = /foo/;
+    const b = 'bar';
+    const c = 'baz';
+    t.true(a.test(b) || b === c);
 });
 ```
 
 This is an error.
 ```
-T.true (a.test (b) || b === c)
-       | | | |
-       | "Bar" "bar" "baz"
-       False
+t.true(a.test(b) || b === c)
+       |      |     |     |
+       |      "bar" "bar" "baz"
+       false
 ```
 Awesome!
 
-[Power-assert] rewrites the code to issue this assertion error, but the setup for that is a little troublesome. It is easy to do and manuals are available, but well, it is troublesome to have trouble.
+[power-assert] rewrites the code to issue this assertion error, but the setup for that is a little troublesome. It is easy to do and manuals are available, but well, it is troublesome to have trouble.
 
 But, if you use [AVA], it does not even have to be a little troublesome.
 
@@ -539,7 +541,7 @@ Variable scope of test code is accumulated many times, it is good when writing, 
 ### Perfect support
 This is only a talk that the API of [AVA] can be perfect as it is simple.
 
-Since `it` is not rewritten badly, the` => `operator moves comfortably.
+Since `it` is not rewritten badly, the`=>`operator moves comfortably.
 
 Since the return value of the test method is determined as the responsibility of [AVA], whether it is `Promise`, but if you return it as [observable](https://github.com/tc39/proposal-observable) AVA] will do it for you.
 
@@ -548,12 +550,12 @@ Function calls aligned with test code files are not nested.
 By the way, to reference the variable created by `test.beforeEach` with` test`, do this.
 
 ```
-Test.beforeEach (t => {
-    T.context = 'unicorn';
+test.beforeEach(t => {
+    t.context = 'unicorn';
 });
 
-Test (t => {
-    T.is (t.context, 'unicorn');
+test(t => {
+    t.is(t.context, 'unicorn');
 });
 ```
 `context` is not shared among multiple` test`, so you can touch it altogether.
@@ -566,7 +568,7 @@ Also, do not do it because it is bad either to share some information between te
 I should learn, but please write a little, hoping that someone will supplement the tasks that have not been done yet.
 
 * E2E test or system test
-  * It seems that [React application can be tested] at [Protractor](http://www.protractortest.org/) (http://www.joelotter.com/2015/04/18/protractor-reactjs.html)
+  * It seems that [React application can be tested](http://www.joelotter.com/2015/04/18/protractor-reactjs.html) at [Protractor](http://www.protractortest.org/) 
 * Mutation test
   * [Stryker](http://stryker-mutator.github.io/) is okay but there is no [AVA] support
 * stress test
@@ -585,7 +587,7 @@ To run an application with a rich user interface in the browser, we had to use F
 
 Activities such as Gmail and GoogleMaps that implement GUI applications that work with realistic performance using JavaScript only on the browser have been active since that time, but until the last few years their efforts are very well I did not say that.
 
-Certainly [YUI Library](http://yuilibrary.com/), [Ext.js](https://www.sencha.com/products/extjs/), [Closure Library](https://developers.google.com/closure/library/] Although libraries such as  came up one after another,
+Certainly [YUI Library](http://yuilibrary.com/), [Ext.js](https://www.sencha.com/products/extjs/), [Closure Library](https://developers.google.com/closure/library/) Although libraries such as  came up one after another,
 It was incredibly difficult to make a UI like it was made with VB and Delphi.
 
 For example, it was not realistic to display grid control such that each cell performs a complicated operation as it is after displaying about 1000 data.
@@ -642,19 +644,19 @@ Consider putting the variable `user` in the first half into the HTML-like templa
 
 ```
 // Example model
-Var user = {
-  "Name": "John Doe",
-  "Age": 22
+var user = {
+  "name": "John Doe",
+  "age" : 22
 }
 // View example
-<Html> <body>
-<Div class = "name">
-Name: $ {user.name}
-</ Div>
-<Div class = "age">
-Age: $ {user.age}
-</ Div>
-</ Body> </ html>
+<html><body>
+<div class="name">
+Name: ${user.name}
+</div>
+<div class="age">
+Age: ${user.age}
+</div>
+</body></html>
 ```
 
 Updating the model means changing the contents of `name` and` age` which are members of the variable `user`.
@@ -763,7 +765,7 @@ If so, it is desirable that the design of the [React] component and the design o
 
 The concepts and efforts devised to realize this are [CSS Modules].
 
-[CSS Modules] is a concept derived from the community of [React], but similar functions are also found in [Vue.js](https://vue-loader.vuejs.org/en/features/css-modules.html ),
+[CSS Modules] is a concept derived from the community of [React], but similar functions are also found in [Vue.js](https://vue-loader.vuejs.org/en/features/css-modules.html),
 [There is a similar function in Angular 2](http://joaogarin.github.io/css-modules-angular2/) Looks like.
 
 Detailed information on the CSS problem resolved by [CSS Modules] is [There is a blog entry by members of the CSS Modules team](http://glenmaddern.com/articles/css-modules), so please refer to that .
@@ -776,7 +778,7 @@ Even if you use [CSS Modules], CSS designed to make UI consistent for the entire
 ### [React] in [CSS Modules]
 To introduce [CSS Modules] to [React], use [css - loader] of [webpack] to process CSS and then write a dedicated description to the [React] component side. [Webpack] will be explained later.
 
-Introduction of #### [CSS Modules]
+#### Introduction of [CSS Modules]
 The easiest way to use [CSS Modules] is this code.
 
 ```
@@ -784,26 +786,26 @@ import React from 'react';
 import styles from './table.css';
 
 export default class Table extends React.Component {
-    render () {
-        return <div className = {styles.table}>
-            <div className = {styles.row}>
-                <div className = {styles.cell}> A0 </div>
-                <div className = {styles.cell}> B 0 </div>
-            </div>
-        </div>;
-    }
+    render () {
+        return <div className={styles.table}>
+            <div className={styles.row}>
+                <div className={styles.cell}>A0</div>
+                <div className={styles.cell}>B0</div>
+            </div>
+        </div>;
+    }
 }
 ```
 
 When this is rendered, it will be roughly like this HTML. Because css class name which does not automatically duplicate by [css - loader] is named, weird name is set in class attribute.
 
 ```
-<div class = "table__table ___ 32osj">
-    <div class = "table__row ___ 2w27N">
-        <div class = "table__cell ___ 1oVw5"> A0 </div>
-        <div class = "table__cell ___ 1oVw5"> B0 </div>
-    </eiv>
-</eiv>
+<div class="table__table___32osj">
+    <div class="table__row___2w27N">
+        <div class="table__cell___1oVw5">A0</div>
+        <div class="table__cell___1oVw5">B0</div>
+    </div>
+</div>
 ```
 
 The problem is that importing CSS as if it is a JavaScript object is handled this way.
@@ -825,17 +827,17 @@ import CSSModules from 'react-css-modules';
 import styles from './table.css';
 
 class Table extends React.Component {
-    render () {
-        return <div styleName = 'table'>
-            <div styleName = 'row'>
-                <div styleName = 'cell'> A 0 </div>
-                <div styleName = 'cell'> B 0 </div>
-            </div>
-        </div>;
-    }
+    render () {
+        return <div styleName='table'>
+            <div styleName='row'>
+                <div styleName='cell'>A0</div>
+                <div styleName='cell'>B0</div>
+            </div>
+        </div>;
+    }
 }
 
-export default CSSModules (Table, styles);
+export default CSSModules(Table, styles);
 ```
 
 Instead of the braces disappearing, we now import [react-css-modules].
@@ -858,20 +860,20 @@ import React from 'react';
 import './table.css';
 
 export default class Table extends React.Component {
-  render () {
-    return <div styleName = 'table'>
-      <div styleName = 'row'>
-        <div styleName = 'cell'> A 0 </div>
-        <div styleName = 'cell'> B 0 </div>
-      </div>
-    </div>;
-  }
+  render () {
+    return <div styleName='table'>
+      <div styleName='row'>
+        <div styleName='cell'>A0</div>
+        <div styleName='cell'>B0</div>
+      </div>
+    </div>;
+  }
 }
 ```
 
 You can now avoid handling CSS as a JavaScript object. We use import statements only to show the relationship between CSS and components.
 
-[Babel-plugin-react-css-modules] performs processing necessary as [CSS Modules] at compile time.
+[babel-plugin-react-css-modules] performs processing necessary as [CSS Modules] at compile time.
 Thanks to that, component code does not increase only for [CSS Modules].
 
 It is nice to have the code refreshed in this way.
@@ -910,7 +912,7 @@ For details, see the respective documents, but the point is whether to use `try/
 * Redux-saga's [Error handling](https://redux-saga.github.io/redux-saga/docs/basics/ErrorHandling.html)
 * RxJS [Error Handling](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/gettingstarted/errors.md)
 
-How I tried to say, I dislike the `try/catch` syntax which is only a legal` goto`. Although I write it without any help, I do not want to write positively.
+How I tried to say, I dislike the `try/catch` syntax which is only a legal `goto`. Although I write it without any help, I do not want to write positively.
 
 Here is a summary of the discussion so far.
 
@@ -974,7 +976,6 @@ I should learn, but please write a little, hoping that someone will supplement t
 * [PostCSS]
   * In my project, I use it as [babel - plugin - react - css - modules] asks for it
   * In something like [Babel] in the CSS area, you can plug in and uninstall features by plugin ... only understand to the extent
-  * [The logo that became the power-assert's logo](https://togetter.com/li/823597) and the logo of [PostCSS] are same in design direction
 * [CSS Flexible Box Layout Module Level 1](https://www.w3.org/TR/css-flexbox-1/)
   * As far as we can see, the Flexible Box is the layout engine of the GUI application itself
   * The material of [CSS Flexible Box Layout](https://developer.mozilla.org/en/docs/Web/CSS/CSS_Flexible_Box_Layout) in MDN is straightforward
@@ -1030,7 +1031,7 @@ Indeed, there are task runners like [Grunt](http://gruntjs.com/) and [broccoli](
 The reason why these can not be taken into consideration is simple because it does not provide convenience that greatly exceeds npm script.
 Since there are many objects to be learned at all, I do not want to pay learning costs to the task runner as much as possible.
 
-Still, the reason why [gulp] can be considered is performance. [Gulp] is a task runner that places Node 's Stream API at the center of task construction and operates at high speed.
+Still, the reason why [gulp] can be considered is performance. [gulp] is a task runner that places Node 's Stream API at the center of task construction and operates at high speed.
 
 In the code base of hundreds of thousands of rows level, it is expected that the execution time of the build can be shortened as much as possible, as well as the test execution time should be shorter.
 
@@ -1088,12 +1089,12 @@ If you use [CSS Modules], you also need to compile CSS and JavaScript with consi
 By integrating these compiled resources into the bootstrap entry HTML, the JavaScript application will be a working module bundle.
 
 ### How to choose a module bundle
-The candidate module bundle is [Browserify](http://browserify.org/), [webpack], [Rollup](http://rollupjs.org/), [Backpack](https://github.com/ Palmerhq / backpack)
+The candidate module bundle is [Browserify](http://browserify.org/), [webpack], [Rollup](http://rollupjs.org/), [Backpack](https://github.com/Palmerhq/backpack)
 There are several. However, there are no options other than [webpack].
 
 Because I use [CSS Modules] in my project.
 
-In addition, it is strongly dependent on [webpack-dev-server](https://github.com/webpack/webpack-dev-server) [React Hot Loader](https://github.com/ Gaearon / react-hot-loader).
+In addition, it is strongly dependent on [webpack-dev-server](https://github.com/webpack/webpack-dev-server) [React Hot Loader](https://github.com/gaearon/react-hot-loader).
 
 [Webpack 2.2 has been officially released](https://medium.com/webpack/webpack-2-2-the-final-release-76c3d43bf144#.suepi 2729)
 I have not used β yet because I can not get β of [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin/releases).
