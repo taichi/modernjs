@@ -63,7 +63,7 @@ After installing Node, please install [Yarn](https://yarnpkg.com/) as well. Even
 As an editor, I built the environment on the premise that I use [VS Code].
 However, since we do not use extensions like [VS Code], it is not difficult to reproduce the same environment with other editors.
 
-The `.vscode / extensions.json` directly under the project has the ID of the VS Code extension listed in the file.
+The `.vscode/extensions.json` directly under the project has the ID of the VS Code extension listed in the file.
 Open the directory where you `git clone` the repository with VS Code and approve the confirmation dialog, all required extensions are installed automatically.
 
 I use Chrome as a browser to check the operation of the application.
@@ -238,7 +238,7 @@ If you have a file called `d.ts` for type declaration, you can write the code as
 
 It is a very important function for utilizing existing assets to be able to type in post-installation as needed for existing libraries without type declarations.
 
-The [Definitely Typed] project that was working to collect type declaration files for OSS modules into a single repository was overwhelmed by too many type declaration files.
+The [DefinitelyTyped] project that was working to collect type declaration files for OSS modules into a single repository was overwhelmed by too many type declaration files.
 
 Now we are managing it in an organization called [types](https://github.com/types) in a straightforward way to allocate one repository for one module.
 Nonetheless, [DefinitelyTyped] is not referenced.
@@ -471,7 +471,7 @@ Let me briefly list why I like [AVA].
 * API is small
 * [Power-assert] is built as standard
 * Faster execution speed
-* Perfect support for the `=>` operator, `Promise`,` async / await`, [observable](https://github.com/tc39/proposal-observable)
+* Perfect support for the `=>` operator, `Promise`,`async/await`, [observable](https://github.com/tc39/proposal-observable)
 
 ### [AVA] API is small
 After importing with `import test from 'ava';` you can do whatever you want by calling the function defined in the `test` variable.
@@ -585,7 +585,7 @@ To run an application with a rich user interface in the browser, we had to use F
 
 Activities such as Gmail and GoogleMaps that implement GUI applications that work with realistic performance using JavaScript only on the browser have been active since that time, but until the last few years their efforts are very well I did not say that.
 
-Certainly [YUI Library](http://yuilibrary.com/), [Ext.js](https://www.sencha.com/products/extjs/), [Closure Library](https: // developers. Although libraries such as google.com/closure/library/ came up one after another,
+Certainly [YUI Library](http://yuilibrary.com/), [Ext.js](https://www.sencha.com/products/extjs/), [Closure Library](https://developers.google.com/closure/library/] Although libraries such as  came up one after another,
 It was incredibly difficult to make a UI like it was made with VB and Delphi.
 
 For example, it was not realistic to display grid control such that each cell performs a complicated operation as it is after displaying about 1000 data.
@@ -737,7 +737,7 @@ It may be suitable for use with a small team composed only of engineers with suf
 It is really difficult to properly determine the specifications of those that are missing and properly implement it, assuming that they are missing while making the application.
 Especially when the cost pressure during project progression is strong, can it do well? At least, I will not be able to do it.
 
-About using # ## [React]
+### About [React]
 Since the body of [React] has a role only for the part of the view, there are various shortcomings in making the application.
 
 I chose [react-router](https://github.com/ReactTraining/react-router) without much trouble about Router. It can be said that I myself do not have standards for selecting Routers.
@@ -745,7 +745,7 @@ I chose [react-router](https://github.com/ReactTraining/react-router) without mu
 As a utility for testing, you can not remove [enzyme](https://github.com/airbnb/enzyme).
 It is the greatest merit of using a de facto standard library that you can use high quality modules created by users who have incorporated frameworks.
 
-About ### [CSS Modules]
+### About [CSS Modules]
 In other words, CSS is like a programming language with only global variables, a programmer who lives in a world where the default scope is local variable is an unavoidable environment.
 In an environment where the complexity rises in proportion to the amount of code, I think that it is impossible to make perfectly consistent work.
 
@@ -878,7 +878,7 @@ It is nice to have the code refreshed in this way.
 
 Since import of CSS does not affect components on code, removing such a part with a module like [ignore-styles](https://github.com/bkonkle/ignore-styles) has no adverse effect .
 
-So in my project I decided to use a combination of [css - loader] and [babel - plugin - react - css - modules] to implement [CSS Modules].
+So in my project I decided to use a combination of [css-loader] and [babel-plugin-react-css-modules] to implement [CSS Modules].
 
 ### About [Flux] implementation
 It is good to adopt [Flux] as the architecture that defines the structure of the application.
@@ -889,7 +889,7 @@ In terms of using [Redux], how much roles and responsibilities are given to Acti
 Using [reducex-thunk](https://github.com/gaearon/redux-thunk) or [redux-promise](https://github.com/acdlite/redux-promise) makes it very Although easy to understand, the ActionCreator code tends to become large.
 As the code related to asynchronous processing appears in Action, measures must be taken to set some criteria and separate codes from Action in the process of increasing the code base.
 
-In a very simplistic way, `redux - thunk` implements Action in the callback model. `Redux-promise` implements Action in the` Promise` model.
+In a very simplistic way, `redux-thunk` implements Action in the callback model. `Redux-promise` implements Action in the` Promise` model.
 
 The problem with this simple approach is that you can not cancel the task.
 It is common in GUI applications that there is some inconsistency between the server and the client, and users who are irritated by the response delay want to interrupt processing.
@@ -904,28 +904,28 @@ Again, for simplicity, [redux-saga] implements additional layers using Generator
 
 Both [redux-saga] and [redux-observable] have a way to cancel the task.
 
-When writing code to handle errors, the difference between [redux - saga] and [reducex - observable] becomes clear.
-For details, see the respective documents, but the point is whether to use `try / catch` or use the event definition handler of library definition.
+When writing code to handle errors, the difference between [redux-saga] and [reducex-observable] becomes clear.
+For details, see the respective documents, but the point is whether to use `try/catch` or use the event definition handler of library definition.
 
 * Redux-saga's [Error handling](https://redux-saga.github.io/redux-saga/docs/basics/ErrorHandling.html)
 * RxJS [Error Handling](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/gettingstarted/errors.md)
 
-How I tried to say, I dislike the `try / catch` syntax which is only a legal` goto`. Although I write it without any help, I do not want to write positively.
+How I tried to say, I dislike the `try/catch` syntax which is only a legal` goto`. Although I write it without any help, I do not want to write positively.
 
 Here is a summary of the discussion so far.
 
-<Table> <thead>
-<Tr>
-<Th align = "left"> Name </ th>
-<Th align = "left"> Implementation Technique </ th>
-<Th align = "center"> difficulty </ th>
-<Th align = "center"> Action </ th>
-<Th align = "center"> Additional layer </ th>
-<Th align = "center"> Cancel </ th>
-<Th align = "left"> Error Handling </ th>
-</ Tr>
-</ Thead> <tbody>
-<Tr>
+<table> <thead>
+<tr>
+<th align = "left"> Name </th>
+<th align = "left"> Implementation Technique </th>
+<th align = "center"> difficulty </th>
+<th align = "center"> Action </th>
+<th align = "center"> Additional layer </th>
+<th align = "center"> Cancel </th>
+<th align = "left"> Error Handling </th>
+</tr>
+</thead> <tbody>
+<tr>
 <td align = "left"> redux - thunk </td>
 <td align = "left"> callback </td>
 <td align = "center"> low </td>
@@ -933,8 +933,8 @@ Here is a summary of the discussion so far.
 <td align = "center"> unnecessary </td>
 <td align = "center"> x </td>
 <td align = "left"> try / catch </td>
-</ Tr>
-<Tr>
+</tr>
+<tr>
 <td align = "left"> reducex-promise </td>
 <td align = "left"> Promise </td>
 <td align = "center"> low </td>
@@ -942,8 +942,8 @@ Here is a summary of the discussion so far.
 <td align = "center"> unnecessary </td>
 <td align = "center"> x </td>
 <td align = "left"> event handler </td>
-</ Tr>
-<Tr>
+</tr>
+<tr>
 <td align = "left"> reducex - saga </td>
 <td align = "left"> Generator </td>
 <td align = "center"> Medium </td>
@@ -951,8 +951,8 @@ Here is a summary of the discussion so far.
 <td align = "center"> required </td>
 <td align = "center"> ○ </td>
 <td align = "left"> try / catch </td>
-</ Tr>
-<Tr>
+</tr>
+<tr>
 <td align = "left"> redux - observable </td>
 <td align = "left"> Rx </td>
 <td align = "center"> high </td>
@@ -1106,7 +1106,7 @@ In the first place, [webpack] needs to learn carefully with a fairly large appli
 #### [webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html)
 This is a server for running the build products of [webpack] in a simplified manner.
 
-Since it operates based on the configuration file for [webpack], you can move applications more easily than [Simple server] like [Express](http://expressjs.com/).
+Since it operates based on the configuration file for [webpack], you can move applications more easily than simple server like [Express](http://expressjs.com/).
 
 Since it has abundant functions such as being able to move as a proxy, it is convenient to read all the documents one by one.
 
@@ -1123,7 +1123,7 @@ It is a module that can check whether the configuration file of [webpack] is wri
 
 In webpack 2, equivalent functions are implemented, so these modules are not needed.
 
-The story of # [Electron]
+# The story of [Electron]
 [Electron] is a framework for creating GUI applications that run on multiple operating systems. Internally [Node.js] and [Chromium] move.
 
 [Electron] operates on a rich model derived from Chrome. To talk about it, if you do not have threads and want to do that, start the process of [Node.js]. Processes are started as tabs or windows.
@@ -1153,7 +1153,7 @@ Recently OS native UI and web application UI are gradually approaching, so [Elec
 
 The last reason to tackle [Electron] is that the build process for creating execution binaries that run on each OS is easy.
 
-[Electron-builder](https://github.com/electron-userland/electron-builder) If you write a little bit in the package.json and build it with a little bit on the CI server, the executable binary with installer will pop up Come out.
+[electron-builder](https://github.com/electron-userland/electron-builder) If you write a little bit in the package.json and build it with a little bit on the CI server, the executable binary with installer will pop up Come out.
 
 # Summary
 At last, I'm going to develop the application I wanted to make.
