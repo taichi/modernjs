@@ -31,10 +31,10 @@ From now on, I will explain the knowledge about JavaScript I recently learned, b
 
 This is the list of "I wanted to do things and things I got able to do" written earlier.
 
-* Topics on language
-  * Introduction of type system
-  * Development of static analysis
-* Topics on testing
+* Topics on Language
+  * Introduction to type system
+  * Topics on static analysis
+* Topics on Testing
 * Topics on Advanced UI
 * Topics on Build
   * Management of dependent modules
@@ -94,7 +94,7 @@ In other words, I tend to think about how to apply new technology on the premise
 
 Please understand that this entry has such bias.
 
-# Topics on language
+# Topics on Language
 There are various execution environments of JavaScript, but ES5 works with most browsers.
 If you do your best on ES5 in the first place, you can talk about how confusing trans-pyraes are, that is, [Babel].
 
@@ -434,7 +434,7 @@ However [WAI-ARIA 1.1](https://www.w3.org/TR/2016/CR-wai-aria-1.1-20161027/) and
 
 That's why, let's first make sure that the JSX in the project uses the `eslint-plugin-jsx-a11y` recommended rule to deal with the `Accessibility` correspondence.
 
-# Topics on testing
+# Topics on Testing
 Even if it says a test in a bite there are various. Here we talk about developer testing.
 
 I think the technology that the programmer should master the most in application creation is test.
