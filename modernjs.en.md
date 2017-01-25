@@ -94,7 +94,7 @@ In other words, I tend to think about how to apply new technology on the premise
 
 Please understand that this entry has such bias.
 
-# Topics on Language
+# Topics on language
 There are various execution environments of JavaScript, but ES5 works with most browsers.
 If you do your best on ES5 in the first place, you can talk about how confusing trans-pyraes are, that is, [Babel].
 
@@ -434,7 +434,7 @@ However [WAI-ARIA 1.1](https://www.w3.org/TR/2016/CR-wai-aria-1.1-20161027/) and
 
 That's why, let's first make sure that the JSX in the project uses the `eslint-plugin-jsx-a11y` recommended rule to deal with the `Accessibility` correspondence.
 
-# Test talk
+# Topics on testing
 Even if it says a test in a bite there are various. Here we talk about developer testing.
 
 I think the technology that the programmer should master the most in application creation is test.
@@ -984,7 +984,7 @@ I should learn, but please write a little, hoping that someone will supplement t
   * As far as we can see, Grid Layout closely resembles Java's GridBagLayout.
   * Since the specification is under development [It does not work on browsers released as stable version](http://caniuse.com/#feat=css-grid)
 
-# Build story
+# Topics on Build
 I talked about basic language talking, testing method, how to make UI, next is build talk.
 
 Continuous integration (CI) is essential in contemporary development process.
@@ -1127,7 +1127,7 @@ It is a module that can check whether the configuration file of [webpack] is wri
 
 In webpack 2, equivalent functions are implemented, so these modules are not needed.
 
-# The story of [Electron]
+# Topics on [Electron]
 [Electron] is a framework for creating GUI applications that run on multiple operating systems. Internally [Node.js] and [Chromium] move.
 
 [Electron] operates on a rich model derived from Chrome. To talk about it, if you do not have threads and want to do that, start the process of [Node.js]. Processes are started as tabs or windows.
@@ -1138,7 +1138,7 @@ There are various toolkits of this kind from the past. [JavaFX](http://www.oracl
 
 On the other hand, the advantage of [Electron] is that you can create GUI applications with a knowledge set to write web applications.
 
-## Why to tackle Electron
+## Why to use Electron
 For me it's great that [VS Code] is implemented with [Electron].
 
 My latest work by [Erich Gamma](https://github.com/egamma) who designed the eclipse plug-in framework that dedicated my 20's is [VS Code].
