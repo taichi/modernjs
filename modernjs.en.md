@@ -1131,7 +1131,7 @@ In webpack 2, equivalent functions are implemented, so these modules are not nee
 
 In models that start more and more processes, there is only interprocess communication to share the state. In other words, complicated bugs like thread contention do not occur. Instead, it consumes a lot of memory.
 
-There are various toolkits of this kind from the past. [JavaFX](http://www.oracle.com/technetwork/jp/java/javafx/overview/index.html), [Qt](https: // www. Qt.io/) something like that.
+There are various toolkits of this kind from the past. [JavaFX](http://www.oracle.com/technetwork/jp/java/javafx/overview/index.html), [Qt](https://www.qt.io/) something like that.
 
 On the other hand, the advantage of [Electron] is that you can create GUI applications with a knowledge set to write web applications.
 
