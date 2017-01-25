@@ -49,10 +49,10 @@ In addition, although I'm interested in recent JavaScript, those who want docume
 
 It is not a sentence with consideration for those who can not write much code or those who are not interested in JavaScript.
 
-Those who are mastering advanced JavaScript are not subject readers, but it is nice if you point out something strange or something misunderstood easily through Twitter or Twitter if appropriate.
+Those who are mastering advanced JavaScript are not subject readers, but it is nice if you point out something strange or something misunderstood easily through [Twitter](https://twitter.com/ryushi) if appropriate.
 
 ## Development environment
-I use Windows 10 as an OS.
+I use Windows 10.
 
 Since there are few platform dependencies in this story, no matter what OS you use, it does not matter, just in case.
 
@@ -65,13 +65,13 @@ After installing Node, please install [Yarn](https://yarnpkg.com/) as well. Even
 As an editor, I built the environment on the premise that I use [VS Code].
 However, since we do not use extensions like [VS Code], it is not difficult to reproduce the same environment with other editors.
 
-The `.vscode/extensions.json` directly under the project has the ID of the VS Code extension listed in the file.
-Open the directory where you `git clone` the repository with VS Code and approve the confirmation dialog, all required extensions are installed automatically.
+The `.vscode/extensions.json` directly under the project has the ID of the [VS Code] extension listed in the file.
+Open the directory where you `git clone` the repository with [VS Code] and approve the confirmation dialog, all required extensions are installed automatically.
 
 I use Chrome as a browser to check the operation of the application.
 
 ### Hardware
-The specifications of the machine I use are as follows.
+My laptop as follows.
 
 * Thinkpad X1 Carbon 2016 model
 * CPU i 7 6600 U @ 2.6 GHz
@@ -81,10 +81,10 @@ The specifications of the machine I use are as follows.
 It may be a little expensive, but it's normal for developers.
 
 ## About my background
-My career started from a place where I spent about 10 years as a soldier who makes goliologie in Java with a contracted system with SIer.
+My career started from a place where I spent about 10 years as a soldier who makes enterprise systems in Java with a contracted system with SIer.
 So, there are a lot of knowledge about Java, the most useful thing is server side technology related to Java.
 
-Now I can program with various languages ​​as it is, but in the end I am converting the mysterious oleo language that closely resembles Java to the brain into Ruby and Python and output it.
+Now I can program with various languages as it is, but in the end I am converting the mysterious oleo language that closely resembles Java to the brain into Ruby and Python and output it.
 
 That's why when learning environments other than Java, there is a tendency to want to work in an environment that is easy to convert to that oleore Java.
 
