@@ -70,7 +70,7 @@ Open the directory where you `git clone` the repository with VS Code and approve
 
 I use Chrome as a browser to check the operation of the application.
 
-### Hardware specification
+### Hardware
 The specifications of the machine I use are as follows.
 
 * Thinkpad X1 Carbon 2016 model
@@ -116,7 +116,7 @@ Users can just try writing a cool new feature by just writing `.babelrc`. It is 
 
 It is fairly fun to add and subtract language features according to your needs.
 
-### [Babel] Related understanding modules
+### [Babel] related modules
 There are many modules related to [Babel], but there are surprisingly few good ones that you should understand as chitin.
 
 The first two are modules for setting up the environment and the other two are modules for working with other tools.
@@ -302,7 +302,7 @@ Especially [VS Code] clearly improves the precision of input completion if the t
 
 Supplementally, [Flow Language Support](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode) also has a function to enhance input completion.
 
-## Unhandled task on the type system
+## Unresolved issues in the type system
 Supplement the indications received from experts after this entry release.
 
 * [Dart](https://www.dartlang.org/)
@@ -342,7 +342,7 @@ Airbnb's published [eslint-config-airbnb](https://github.com/airbnb/javascript/t
 
 Airbnb contains a lot of things that do not fit my idea, so I did not adopt it.
 
-### [ESlint] Related understanding modules
+### [ESlint] related modules
 Speaking of [ESLint] related modules, it's about plug-ins.
 
 I think there are many other things, but list those that I found particularly useful among those I found and used.
@@ -564,7 +564,7 @@ In the first place `test.serial` should not be used unless there are any special
 
 Also, do not do it because it is bad either to share some information between test methods or to write in such a way that the test execution order has meaning.
 
-## Unhandled task related to the test
+## Unresolved issues in testing
 I should learn, but please write a little, hoping that someone will supplement the tasks that have not been done yet.
 
 * E2E test or system test
@@ -577,7 +577,7 @@ I should learn, but please write a little, hoping that someone will supplement t
 # How to make a UI
 From here, I will explain how to construct a user interface with JavaScript.
 
-# About choosing tools
+# History of UI libraries
 
 When I used Gmail and Google Maps for the first time about 10 years ago, I was really surprised as to whether such high-performance and rich screen expression can be done with JavaScript alone.
 
@@ -967,7 +967,7 @@ Here is a summary of the discussion so far.
 
 That's why I chose [reducex-observable] in my project.
 
-## Undamaged issues relating to UI
+## Unresolved issues in UI
 I should learn, but please write a little, hoping that someone will supplement the tasks that have not been done yet.
 
 * Talk about usability in JavaScript GUI application
@@ -1104,7 +1104,7 @@ I have not used β yet because I can not get β of [extract-text-webpack-plugin]
 
 There is a pretty polite [migration document](https://webpack.js.org/guides/migrating/), so you can move on if you like that.
 
-### [webpack] Related understanding modules
+### [webpack] related modules
 In the first place, [webpack] needs to learn carefully with a fairly large application. So, I do not think adding too much.
 
 #### [webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html)
@@ -1149,7 +1149,7 @@ The code is copying the poor quality from that side, and there is no decent unit
 
 I think it was wonderful of the GitHub era that such things came to be casual.
 
-Returning the story, other applications that are being used everyday [Electron] include [GitKraken](https://www.gitkraken.com/) and [Curse](https: // www .curse.com /), [Insomnia](https://insomnia.rest/), [Marp](https://yhatt.github.io/marp/).
+Returning the story, other applications that are being used everyday [Electron] include [GitKraken](https://www.gitkraken.com/) and [Curse](https://www.curse.com/), [Insomnia](https://insomnia.rest/), [Marp](https://yhatt.github.io/marp/).
 Slack's Windows client is also [Electron], but I do not use it because it is not particularly user-friendly. Although it is a serpent, Kindle's Windows client is Qt.
 
 Applications that UIs are far from the OS native ones used to be hated.
