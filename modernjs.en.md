@@ -1,8 +1,8 @@
 # Modern JavaScript overview, and to Electron
 
-I made a repository that organized the learning outcomes for this month, so I will summarize the results.
+I made a repository that organized the learning outcomes for this month so that I will summarize the results.
 
-If you want to easily create only the sample project you just created, please clone this repository.
+If you want to quickly create only the sample project you just created, please clone this repository.
 
 * [taichi/js-boilerplate](https://github.com/taichi/js-boilerplate)
   * The master branch contains a minimal JavaScript development environment with sample code
@@ -12,7 +12,7 @@ If you want to easily create only the sample project you just created, please cl
 # Introduction
 
 ## About Modern JavaScript
-I'm not writing JavaScript as a job, but in the last six months I have made some small tools. Both of them are usefull, so please use it by all means.
+I'm not writing JavaScript as a job, but in the last six months, I have made some small tools. Both of them are useful, so please use it by all means.
 
 * [ci-yarn-upgrade](https://github.com/taichi/ci-yarn-upgrade)
   * A tool that automatically creates PullRequest if there is a dependency library update in a project using [Yarn]
@@ -43,9 +43,9 @@ This is the list of "I wanted to do things and things I got able to do" written 
 
 ## About target audience
 
-The target audience of this document is supposed to be a programmer who has a first language that is fully usable. The language is preferably a language of compiling process like Java or C#.
+The intended audience of this document is supposed to be a programmer who has a first language that is fully usable. The language is preferably a language of compiling process like Java or C#.
 
-In addition, although I'm interested in recent JavaScript, those who want document to be a guide for efficient learning.
+Also, although I'm interested in new JavaScript, those who want a document to be a guide for effective learning.
 
 It is not a sentence with consideration for those who can not write much code or those who are not interested in JavaScript.
 
@@ -66,7 +66,7 @@ As an editor, I built the environment on the premise that I use [VS Code].
 However, since we do not use extensions like [VS Code], it is not difficult to reproduce the same environment with other editors.
 
 The `.vscode/extensions.json` directly under the project has the ID of the [VS Code] extension listed in the file.
-Open the directory where you `git clone` the repository with [VS Code] and approve the confirmation dialog, all required extensions are installed automatically.
+Open the directory where you `git clone` the repository with [VS Code] and approve the confirmation dialog, and all required extensions will be installed automatically.
 
 I use Chrome as a browser to check the operation of the application.
 
@@ -78,17 +78,17 @@ My laptop as follows.
 * Memory 16 GB
 * Storage SAMSUNG NVMe SSD 950 PRO 512 GB
 
-It may be a little expensive, but it's normal for developers.
+It may be a little expensive, but it's usual for developers.
 
 ## About my background
-My career started from a place where I spent about 10 years as a soldier who makes enterprise systems in Java with a contracted system with SIer.
-So, there are a lot of knowledge about Java, the most useful thing is server side technology related to Java.
+My career started from a place where I spent about ten years as a soldier who makes enterprise systems in Java with a contracted system with SIer.
+So, there are a lot of knowledge about Java, and the most useful thing is server side technology related to Java.
 
-Now I can program with various languages as it is, but in the end I am converting the mysterious oleo language that closely resembles Java to the brain into Ruby and Python and output it.
+Now I can program with various languages as it is, but in the end, I am converting the strange, unique language that closely resembles Java to the brain into Ruby and Python and output it.
 
-That's why when learning environments other than Java, there is a tendency to want to work in an environment that is easy to convert to that oleore Java.
+That's why when learning environments other than Java, there is a tendency to want to work in an environment that is easy to convert to that unique Java.
 
-In addition, since I am carrying on a carrier with SIer and still working at SIer, I am keenly interested in how to use this technology in contract development system development and package development.
+Also, since I am carrying on a carrier with SIer and still working at SIer, I am keenly interested in how to use this technology in contract development system development and package development.
 
 In other words, I tend to think about how to apply new technology on the premise that technology and its improvement are not tied to revenue.
 
@@ -96,30 +96,30 @@ Please understand that this entry has such bias.
 
 # Topics on Language
 There are various execution environments of JavaScript, but ES5 works with most browsers.
-If you do your best on ES5 in the first place, you can talk about how confusing trans-pyraes are, that is, [Babel].
+If you do your best on ES5 in the first place, you can talk about how confusing compile are, that is, [Babel].
 
-As JavaScript has many knowledge to learn, first think about options not to associate with [Babel].
+As JavaScript has much knowledge to learn, first think about options not to associate with [Babel].
 
-It was impossible for me to choose options not to go with [Babel]. The reason is simple, I do not want to write a lot of `function`. How about everyone?
+It was impossible for me to choose options not to go with [Babel]. The reason is simple; I do not want to write a lot of `function`. How about everyone?
 
-In addition, if I came from Java it is true that compiling does not have a sense of evil against work.
+Also, if I came from Java it is true that compiling does not have a sense of evil against work.
 
 ## [Babel] is everyone's sandbox
 
 Designing a programming language is somewhat lonely work. Until now, we have released a few language designers carefully until they are shaped to some extent.
 
-However, at least with respect to JavaScript, it is known by ECMAScript 4's failure that it will not work in such a way.
+However, at least about JavaScript, it is known by ECMAScript 4's failure that it will not work in such a way.
 
 So you can casually implement experimental language features in the form of plugins [Babel]. Discuss the function of [New language Proposals](https://github.com/tc39/proposals) while using Gashagashi and decide the function to import into the next version of JavaScript.
 
 Users can just try writing a cool new feature by just writing `.babelrc`. It is not enough that the function thought or it is only a matter of stopping using it if the motion is unstable.
 
-It is fairly fun to add and subtract language features according to your needs.
+It is somewhat fun to add and subtract language features according to your needs.
 
 ### [Babel] related modules
 There are many modules related to [Babel], but there are surprisingly few good ones that you should understand as chitin.
 
-The first two are modules for setting up the environment and the other two are modules for working with other tools.
+The first two are modules for setting up the environment, and the other two are modules for working with other tools.
 
 #### [babel-preset-env](https://github.com/babel/babel-preset-env)
 `babel-preset-env` is a handy module that automatically selects the [Babel] plugin to use, in conjunction with the environment where JavaScript converted by [Babel] operates.
@@ -136,18 +136,18 @@ Using `babel-preset-env` will be freed from such bold work. Just updating the mo
 
 It is not used for loading modules with production code, but mainly for running test code.
 
-When executing unit test code in JavaScript, it is common to execute a test from detection of change of file.
+When executing unit test code in JavaScript, it is common to run a test from detection of a change of file.
 
 At this time just modifying the test code slightly, if you compile all the project code, it will not work at all.
 
 If you want to fully automate the process of compiling only files that changed and files related to them, you can hook `require` or` import`.
 
-Please note that the test code does not refer directly to the code under test, such as a test like E2E test, it does not work very well.
+Please note that the test code does not refer directly to the code under test, such as a test like an E2E test, it does not work very well.
 
 #### [babel-eslint](https://github.com/babel/babel-eslint)
 `babel-eslint` is a parser for handling JavaScript code extended with [Babel] with [ESLint].
 
-[ESLint] has evolved properly with [ESLint], so if you normally write code on ES and JSX you do not need `babel-eslint`.
+[ESLint] has evolved properly with [ESLint], so if you typically write code on ES and JSX, you do not need `babel-eslint`.
 
 Why is this necessary because you use a tool to declare and validate the type in JavaScript called [Flow].
 
@@ -166,13 +166,13 @@ Even if it is a type, nothing is going to talk about such a difficult story. It 
 
 Since JavaScript has almost no type declaration in the first place, as a simple story it is absolutely unknown if you just look at the code of the called side to see what comes up in the function's argument.
 
-If you write both the caller and the called party in your own time in a short period of time, you know exactly what to pass as an argument.
+If you write both the caller and the called party in your own time in a short period, you know exactly what to pass as an argument.
 Then, there is a story that it does not bother to declare it.
 
-But I want you to think calmly. Are you yourself a week ago? I can say that it is different. Even though I know roughly what last week's I thought about writing the code, it is an honest point that I do not know in detail.
+But I want you to think calmly. Are you yourself a week ago? I can say that it is different. Even though I know roughly what last week's I thought about writing the code, it is an honest point that I am not sure in detail.
 
-It is not a bad idea to provide information to others including yourself in the future by writing comments in the code, but comments do not work and you can not validate automatically.
-On the other hand, if you write the type as a little memo, you can automatically verify and be happy.
+It is not a bad idea to provide information to others including yourself in the future by writing comments in the code, but comments do not work, and you can not validate automatically.
+On the other hand, if you write the type like a little memo, you can automatically verify and be happy.
 
 ### Faction of type declaration in JavaScript
 Let's check out how to declare types in JavaScript around here a little.
@@ -201,7 +201,7 @@ What makes this approach wonderful is that the type declaration is in the commen
 
 On the other hand, there is a problem that the declaration in the comment is easy to be ignored. There is also a problem that expression power is extremely low instead of being easy to understand.
 
-'ADVANCED_OPTIMIZATIONS' of [Google Closure Compiler] has a risk that the code will not move at all, but I was really surprised because it's seriously smaller.
+'ADVANCED_OPTIMIZATIONS' of [Google Closure Compiler] has a risk that the code will not move at all, but I was surprised because it's seriously smaller.
 
 #### [TypeScript]
 [TypeScript] appeared as one of a lot of efforts to develop a new language as an advanced JavaScript.
@@ -236,19 +236,19 @@ declare namespace myLib {
 }
 ```
 
-If you have a file called `d.ts` for type declaration, you can write the code as if there is a type in a library with no existing type declaration.
+If you have a file called `d.ts` for type declaration, you can write the code as if there is a type in a library with no actual type declaration.
 
-It is a very important function for utilizing existing assets to be able to type in post-installation as needed for existing libraries without type declarations.
+It is a crucial feature for utilizing existing assets to be able to type in post-installation as needed for existing libraries without type declarations.
 
 The [DefinitelyTyped] project that was working to collect type declaration files for OSS modules into a single repository was overwhelmed by too many type declaration files.
 
 Now we are managing it in an organization called [types](https://github.com/types) in a straightforward way to allocate one repository for one module.
 Nonetheless, [DefinitelyTyped] is not referenced.
 
-By the way, in order to retrieve the type declaration file from the npm repository, you can do `npm install -D @types/lodash` etc .. It is not a dedicated tool, it's great to get it in npm.
+By the way, to retrieve the type declaration file from the npm repository, you can do `npm install -D @types/lodash` etc ... It is not a dedicated tool, it's great to get it in npm.
 
 #### [Flow]
-And [Flow]. This is a static analysis tool made with OCaml, and it checks the type declaration mixed in JavaScript and it performs an arecore check.
+[Flow] is a static analysis tool made with OCaml, and it checks the type declaration mixed in JavaScript, and it performs a various check.
 
 Let's see a bit of JavaScript code typed in [Flow].
 
@@ -270,7 +270,7 @@ It looks like it is similar to typeScript's type annotation. But [Flow] has a di
 
 It is a closer approach to [Google Closure Compiler]. However, unlike the time when [Google Closure Compiler] was created, there is now [Babel], so once you have extended the syntax of the language primarily and you finish using it, you can safely remove only the description specifically for [Flow] Implementation became possible.
 
-Type declarations done in comments, expression power will definitely be limited. [Flow] got over it. Nevertheless, compared with Haskell and OCaml, it does not have much rich expressiveness, even compared to Java.
+Type declarations done in comments, expression power will be limited. [Flow] got over it. Nevertheless, compared with Haskell and OCaml, it does not have much rich expressiveness, even compared to Java.
 
 It is not so difficult to understand the extent to which [Flow] infer the type. Or [Flow] does only very simple type inference.
 
@@ -285,20 +285,20 @@ For those without a type declaration, we make a type declaration file that all t
 Why will not you make it possible to take type declaration files with the npm command? It is not a good idea to separate the commands that make a miscellaneous type declaration file separately.
 
 ### Which type system to use
-There is no [Google Closure Compiler] at this time in shimashi.
+There is no [Google Closure Compiler] at this time.
 
 Since [TypeScript] and [Flow] are different objectives, they are not something that can simply be evaluated in the star table. If you compare it in the Star table, [TypeScript] is a victory.
 
 Well then, which one should you use?
 
-It would be nice to look at the correspondence situation of the library and framework you want to use.
+It 'd be good to look at the correspondence situation of the library and framework you want to use.
 
-If you use at least [Angular] it will be [TypeScript] or [React] if you use [Flow] you are certain.
+If you use at least [Angular], it will be [TypeScript] or [React] if you use [Flow] you are confident.
 
 [There is an official type definition file for TypeScript in Vue.js](https://vuejs.org/v2/guide/typescript.html). However, this does not recommend using [TypeScript], it seems that the contribution by some users was merged.
 
-If you use elementary JavaScript, it is good to use [Flow], and [TypeScript] is a pretty good choice if you have the type definition files of the library you'd like to use.
-Especially [VS Code] clearly improves the precision of input completion if the type definition file is complete.
+If you normally use JavaScript, it is good to use [Flow], and [TypeScript] is a pretty good choice if you have the type definition files of the library you'd like to use.
+Especially [VS Code] apparently improves the precision of input completion if the type definition file is complete.
 
 Supplementally, [Flow Language Support](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode) also has a function to enhance input completion.
 
@@ -315,19 +315,19 @@ Supplement the indications received from experts after this entry release.
 JavaScript has many traps. The trap here is the language specification that many programmers tend to misunderstand, and the behavior of certain libraries.
 Because JavaScript is a truly flexible language, most of the new language specifications can be converted directly into the old language. That is why there are many traps.
 
-Code written as a result of mistake by programmer or code not written unless misunderstanding about specifications. A code that can be considered a bug in most situations.
+Code written as a result of a mistake by programmer or code not written unless misunderstanding about specifications. A code that can be considered a bug in most situations.
 Although it conforms to the language specification, Lint is a tool for automatically finding the code which can not obtain the expected results even if it is operated as an application.
 
 If you use Lint a bit more aggressively, you can inspect anything that has nothing to do with the behavior of the code, such as how to indent and how to name variables, but also on code readability.
 
 ### History of Lint in JavaScript
-Javascript looks a bit and there are lots of Lint. The one oldest that I have used is [JSLint](http://www.jslint.com/).
-This guy is really hard at the Lint made by Professor [Douglas Crockford](https://github.com/douglascrockford) of the legend. It's a strong strong style that does not allow any indulgence.
-It is painful for hetare because it is a tool that feels a strong will that code that can do strange behavior should be a strange look that is never misled by strange behavior of JavaScript.
+Javascript looks a bit, and there are lots of Lint. The one oldest that I have used is [JSLint](http://www.jslint.com/).
+This guy is hard at the Lint made by Professor [Douglas Crockford](https://github.com/douglascrockford) of the legend. It's an intense style that does not allow any indulgence.
+It is painful for unskilled guys because it is a tool that feels a strong will that code that can do strange behavior should be a strange look that is never misled by a strange behavior of JavaScript.
 
 By the way, [reading the code of JSLint](https://github.com/douglascrockford/JSLint) is a great learning experience. It's compact and easy to read.
 
-Lint that became evangelical for a hetare like me is [JSHint](http://jshint.com/). This is not too strict. It is extremely easy to use because it can cut out the setting file.
+Lint that became evangelical for unskilled guys like me is [JSHint](http://jshint.com/). This is not too strict. It is incredibly easy to use because it can cut out the setting file.
 However, JSHint is easy to enable and disable the built-in functions, but adding a new rule is a little troublesome.
 
 Also, in order to incorporate someone's recommended rules into your project, you have to copy and paste the settings.
@@ -336,7 +336,7 @@ If that recommended set is maintained, you want to use only that final result wi
 
 That's why it's easy to extend and easy to create configuration files [ESLint] is now recommended.
 
-[ESLint] is a good plug-in system, so there are plenty of plug-ins and you can publish the recommended rule set as npm module.
+[ESLint] is an excellent plug-in system, so there are plenty of plug-ins, and you can publish the suggested rule set as an npm module.
 
 Airbnb's published [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) is one such kind of recommended rule set.
 
@@ -345,21 +345,21 @@ Airbnb contains a lot of things that do not fit my idea, so I did not adopt it.
 ### [ESlint] related modules
 Speaking of [ESLint] related modules, it's about plug-ins.
 
-I think there are many other things, but list those that I found particularly useful among those I found and used.
+I think there are many other things, but list those that I found especially helpful among those I found and used.
 
-If you are an [ESLint] mania and I know a useful plugin I do not know, please let me know.
+If you are an [ESLint] mania and I know a useful plugin I am not sure, please let me know.
 
 #### [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava)
 In my project I use a testing framework called [AVA]. [AVA] will be explained later.
 
-[AVA] is fairly simple and easy to use, but it is too simple to understand until you get used to how to write the test code.
+[AVA] is relatively straightforward and easy to use, but it is too simple to understand until you get used to how to write the test code.
 
 So, using this plugin makes it possible to warn you [AVA] obviously when using incorrect usage.
 
 #### [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import)
 `eslint-plugin-import` finds errors on` import` statements.
 
-Specifically, if you try to `import` a module that does not exist in the project you will get a warning. Everyone can be typoing the module name.
+Specifically, if you try to `import` a module that does not exist in the project, you will get a warning. Everyone can be typo the module name.
 
 In addition to this, if you pass a string other than literals to `require`, you get an error.
 
@@ -368,10 +368,10 @@ Only this one has a different role from other modules.
 
 `eslint-import-resolver-node` can work with` eslint-plugin-import` to customize how to find `import` modules.
 
-As for what I mean, in my project I have stored application code and test code in separate directories `src` and `test` respectively.
+As for what I mean, in my project, I have stored application code and test code in separate directories `src` and `test` respectively.
 
 On this test code side, when you do `import` application code, it is very painful to write` import world from '../../src/hello/world";`
-In order to avoid it, by setting `NODE_PATH=src` when executing the test code, we do not need to write that `../../src/`part.
+To avoid it, by setting `NODE_PATH=src` when executing the test code, we do not need to write that `../../src/`part.
 
 It uses `eslint-import-resolver-node` to inform` eslint-plugin-import` about this.
 
@@ -382,18 +382,18 @@ By the way, [JavaScript Promise's book](http://azu.github.io/promises-book/) is 
 It is highly likely that you are using the wrong `Promise` until you get used to `Promise`.
 If there are JavaScript experts in the vicinity and can receive code reviews, it is very wonderful, although I am writing a bit of JavaScript as a hobby, I can not call such an expert.
 
-So by using this plug-in, you will get an error in the obviously bad `Promise` code.
+So by using this plug-in, you will get an error in the obviously wrong `Promise` code.
 You can understand how to use `Promise` by simply reading the rule details of this plugin, so please set the rules carefully.
 
 By the way, if `async/await` enters ES, will not you use `Promise` directly?
 
-I think that `async/await` and `Promise` coexist normally with the experience of using C # `async/await`, but how about it actually?
+I think that `async/await` and `Promise` typically coexist with the experience of using C # `async/await`, but how about it?
 At least, using `async/await` in [AVA] has the impression that the test code is easy to understand.
 
 #### [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security)
 Do you care about security while writing code?
 I am doing security reviews using static analysis tools as a job, so I am going to care about it as it is.
-However, whenever it is said that there is consideration on security in the head, it is not such a thing.
+However, whenever it is said that there is a consideration on security in the head, it is not such a thing.
 
 The vulnerability that can be checked with this plug-in is not much, but it finds a vulnerability that will make it easy to make a hit.
 
@@ -403,9 +403,9 @@ As long as I write the code normally, I do not see any errors due to this plugin
 Although it is good to type declaration using [Flow], there are things that make a huge mistake.
 
 Also, since the type declaration by [Flow] is not ordinary JavaScript, the standard rule in [ESLint] is not applied at all.
-In other words, you need to reimplement it for [Flow], indentation, sticking a semicolon at the end of the line, or killing Quetz kama.
+In other words, you need to reimplement it for [Flow], indentation, sticking a semicolon at the end of the line, or killing trailing comma.
 
-[Flow] itself has its own traps, and if you declare a consistent type declaration, it would be better to keep it a bit Lint.
+[Flow] itself has its traps, and if you declare a consistent type declaration, it would be better to keep it a bit Lint.
 
 Although we did the same story even at `Promise`, it is good to use `eslint-plugin-flowtype` as a training Gibbs until [Flow] is also a new technology.
 If you get used to it properly, the error will not come out completely.
@@ -417,7 +417,7 @@ Since [React] is very commonly used, along with many best practices, undesirable
 
 Everything defined as a rule is not always desirable for our project, but it is much easier to argue about what is being ruleized than to create that knowledge.
 
-In fact, in order to get knowledge about the rules as defined in this plug-in by yourself, it will not be enough to simply use it with a small project.
+In fact, to get knowledge about the rules as defined in this plug-in by yourself, it will not be enough to simply use it with a small project.
 
 The merit of using a de facto standard framework lies in this place.
 
@@ -430,19 +430,19 @@ Because it is to provide a rich UI for a better user experience, it may be good 
 
 However [WAI-ARIA 1.1](https://www.w3.org/TR/2016/CR-wai-aria-1.1-20161027/) and [MDN's ARIA page](https: / /developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) from end to end and it's impossible to say you're going to do it.
 
-[HTML5 Accessibility](http://www.html5accessibility.com/) I would like to provide maximum value with minimal effort to one easy handy reference hand.
+[HTML5 Accessibility](http://www.html5accessibility.com/) I would like to provide maximum value with minimal effort to one easy, handy reference hand.
 
-That's why, let's first make sure that the JSX in the project uses the `eslint-plugin-jsx-a11y` recommended rule to deal with the `Accessibility` correspondence.
+That's why let's first make sure that the JSX in the project uses the `eslint-plugin-jsx-a11y` recommended rule to deal with the `Accessibility` correspondence.
 
 # Topics on Testing
 Even if it says a test in a bite there are various. Here we talk about developer testing.
 
-I think the technology that the programmer should master the most in application creation is test.
+I think the technology that the programmer should master the most in application creation tests.
 It is because we believe that by expressing what it is supposed to be in the form of tests, better ones can be made by implementing the target software.
 In other words, I do not want to talk that I should be able to do something that a real test engineer is doing.
 
-For quality assurance there is enormous systematized knowledge, knowledge to make applications, both wonderful, but the time is finite.
-There are families or games that I want to do. I want to sleep ten hours a day to live long, I want to eat delicious meals slowly.
+For quality assurance, there is enormous systematized knowledge, knowledge to make applications, both excellent, but the time is finite.
+There are families or games that I want to do. I want to sleep ten hours a day to live long; I want to eat delicious meals slowly.
 
 You should spare time learning what to test and what to test, so do not take time to learn how to use the testing framework coolly.
 
@@ -499,7 +499,7 @@ It is also important that [AVA] does not work on global space or functions place
 ### [power-assert] is included as standard
 When writing tests, use [power-assert] which will give you the richest assertion error if you use it without thinking anything.
 
-This test is ...
+This test is
 ```
 test(t => {
     const a = /foo/;
@@ -518,7 +518,7 @@ t.true(a.test(b) || b === c)
 ```
 Awesome!
 
-[power-assert] rewrites the code to issue this assertion error, but the setup for that is a little troublesome. It is easy to do and manuals are available, but well, it is troublesome to have trouble.
+[power-assert] rewrites the code to issue this assertion error, but the setup for that is a little troublesome. It is easy to do, and manuals are available, but well, it is troublesome to have trouble.
 
 But, if you use [AVA], it does not even have to be a little troublesome.
 
@@ -533,10 +533,10 @@ Just run the test code that seems to be directly related to the part you changed
 
 Since the test is always mocked regularly, it is better to shorten the cycle of change → test → debug → change ......
 
-[AVA] is designed not to dare to write a test code of a very complicated structure in order to secure the test execution speed.
+[AVA] is designed not to dare to write a test code of a very complicated structure to secure the test execution speed.
 From a person who wrote a complicated structure test with a testing framework like [Mocha](https://mochajs.org/), it may seem strange, but it is familiar.
 
-Variable scope of test code is accumulated many times, it is good when writing, but after all it will be a hard time.
+A variable scope of test code is accumulated many times, it is good when writing, but after all, it will be a hard time.
 
 ### Perfect support
 This is only a talk that the API of [AVA] can be perfect as it is simple.
@@ -559,7 +559,7 @@ test(t => {
 });
 ```
 `context` is not shared among multiple` test`, so you can touch it altogether.
-However, multiple `test` can not guarantee ordering unless` test.serial` is used, so do not modify `context` in` test`.
+However, multiple `test` can not guarantee to order unless` test.serial` is used, so do not modify `context` in` test`.
 In the first place `test.serial` should not be used unless there are any special reasons.
 
 Also, do not do it because it is bad either to share some information between test methods or to write in such a way that the test execution order has meaning.
@@ -579,13 +579,13 @@ From here, I will explain how to construct a user interface with JavaScript.
 
 # History of UI libraries
 
-When I used Gmail and Google Maps for the first time about 10 years ago, I was really surprised as to whether such high-performance and rich screen expression can be done with JavaScript alone.
+When I used Gmail and Google Maps for the first time about ten years ago, I was surprised as to whether such high-performance and rich screen expression can be done with JavaScript alone.
 
 People who are tackling things like making DHTML and using websites to move things using JavaScript had long been abhorred even though they were there before.
 
-To run an application with a rich user interface in the browser, we had to use Flash. There were other technologies like browser plug-ins, but in the end it was rarely used.
+To run an application with a rich user interface in the browser, we had to use Flash. There were other technologies like browser plug-ins, but in the end, it was rarely used.
 
-Activities such as Gmail and GoogleMaps that implement GUI applications that work with realistic performance using JavaScript only on the browser have been active since that time, but until the last few years their efforts are very well I did not say that.
+Activities such as Gmail and GoogleMaps that implement GUI applications that work with realistic performance using JavaScript only on the browser have been active since that time, but until the last few years, their efforts are very well I did not say that.
 
 Certainly [YUI Library](http://yuilibrary.com/), [Ext.js](https://www.sencha.com/products/extjs/), [Closure Library](https://developers.google.com/closure/library/) Although libraries such as  came up one after another,
 It was incredibly difficult to make a UI like it was made with VB and Delphi.
@@ -593,7 +593,7 @@ It was incredibly difficult to make a UI like it was made with VB and Delphi.
 For example, it was not realistic to display grid control such that each cell performs a complicated operation as it is after displaying about 1000 data.
 
 As a result, in addition to CSS, it became a standard to work hard on jQuery a bit. If you only want to make a website with a little movement, you can do it with jQuery.
-If you do work with a large number of people, do maintenance for a long time, or do not make extraordinary things, it will generally be fine.
+If you do work with a large number of people, do maintenance for a long time, or do not make extraordinary things, it will be fine.
 Most websites are not GUI applications, so you can quickly create jQuery and its plugins conveniently.
 
 By the way, is there a clear boundary between highly-built websites and GUI applications running on browsers?
@@ -603,11 +603,11 @@ I have never seen a quantitative judgment criterion, but at least one website cr
 On the other hand, three or four programmers who have server applications and can write proper JavaScript are necessary to make UI,
 The UI design and its implementation that would not be established unless it is shared as a role would be a GUI application running on a browser.
 
-Actually, it will not be easy to distinguish this so easily.
+It will not be easy to distinguish this so easily.
 
 The reason why this distinction is important is that the toolkits to use and skill sets of team members to be aligned are different.
 
-If you try to create a website using a framework for implementing sophisticated GUI applications like [React] and [Angular], you will waste a lot of manpower.
+If you try to create a website using a framework for implementing sophisticated GUI applications like [React] and [Angular], you will waste a lot of human resources.
 
 But if you are planning to implement sophisticated GUI applications using jQuery plugin, it will be ruined before that.
 
@@ -616,21 +616,21 @@ Tools should be used properly in appropriate places.
 ## Breakthrough called Virtual DOM
 The task to be surely solved in making GUI applications that run on browsers is performance and usability.
 
-Especially the problem of performance is very difficult to solve. Since it operates on the browser, all UI elements are dropped into the DOM in some form.
+Especially the problem of performance is tough to solve. Since it operates on the browser, all UI elements are dropped into the DOM in some form.
 
 First, since DOM has a general-purpose tree structure, memory efficiency is terribly bad.
-In addition, this tree structure can not limit the number of intermediate internal nodes, and the depth to the terminal node can not be limited, so the cost of scanning tends to be high.
+Also, this tree structure can not limit the number of intermediate internal nodes, and the depth of the terminal node can not be limited, so the cost of scanning tends to be high.
 
-In order for the browser to draw the DOM on the screen, it is necessary to scan all nodes in some form, so this poor efficiency becomes a big problem.
+For the browser to draw the DOM on the screen, it is necessary to scan all nodes in some form, so this poor efficiency becomes a big problem.
 
-In addition, the mechanism of laying out drawing elements completely ignoring the DOM structure called CSS spurs poor performance.
+Also, the mechanism of laying out drawing elements completely ignoring the DOM structure called CSS spurs poor performance.
 
 It is natural in the browser world, such as having to redraw the entire screen with one class attribute that appeared at the terminal node.
 In other words, it is necessary to lock the entire screen just by `appendChild` the newly created node for the DOM already drawn.
 
 However, if the impact of the new node on the entire screen is small enough, the time to keep securing locks will be sufficiently short.
 
-Just updating certain components in the screen may cause redrawing of the entire screen, so you need to pay close attention not to do so.
+Just updating certain components on the screen may cause redrawing of the entire screen, so you need to pay close attention not to do so.
 In such a case, except for some exceptional organizations, it is not possible to efficiently create large-scale GUI applications.
 
 Virtual DOM is the technology that answers this problem.
@@ -638,7 +638,7 @@ Virtual DOM is the technology that answers this problem.
 First, consider the data (model) necessary for rendering the screen and the template (view) into which the data is poured.
 If you add a controller that has the role of updating the model from user input to this, it becomes a classic MVC model.
 
-In the primitive way, programmers decided which part of the view to change, depending on which of the components of the model was changed. Here is a very simple example.
+In a primitive way, programmers decided which part of the view to change, depending on which of the components of the model was changed. Here is a very simple example.
 
 Consider putting the variable `user` in the first half into the HTML-like template in the second half.
 
@@ -660,10 +660,10 @@ Age: ${user.age}
 ```
 
 Updating the model means changing the contents of `name` and` age` which are members of the variable `user`.
-In the primitive way, the programmer must write code to find the corresponding DOM element, depending on which member variable you changed.
-Indeed, in this simple example, you can find the corresponding element by writing `$(".name")` in jQuery.
+In a primitive way, the programmer must write code to find the corresponding DOM element, depending on which member variable you changed.
+Indeed, in this simple example, you can find the relevant element by writing `$(".name")` in jQuery.
 
-Think about it, if there are 1,000 pieces of changeable elements in the screen?
+Think about it, if there are 1,000 pieces of changeable elements on the screen?
 What if some elements change, and there is an element that needs to be transiently changed depending on it?
 What if my component should be changed, affected by elements that did not exist when I incorporated the component into the screen?
 
@@ -701,28 +701,28 @@ If there is plausibility in what they are doing, it will be incorporated into [R
 ### [Angular]
 [TypeScript] is designated as the primary language [Angular] is a fascinating choice for me.
 However, as far as I can observe, the community is not sufficiently large compared to [React].
-This is due to the relatively short period since stable releases of stable ones.
+This is due to the relatively short period of stable releases of stable ones.
 
 The current [Angular] is 2.4, but the first type of [Angular] is my favorite type of framework.
-Anyway, there is a 2way binding, there is a Directive where every black magical act is allowed as a garbage repository, there was a DI container.
-The digest loop was a very difficult concept, but I thought that complexity should be accepted in order to make the screen easier to make.
+Anyway, there is a 2way binding; there is a Directive where every black magic act is allowed as a garbage repository, there was a DI container.
+The digest loop was a very difficult concept, but I thought that complexity should be accepted to make the screen easier to make.
 
 The first line of [Angular] was a framework that seems to exist for SIer in a function group that seems only to be designed for creating business applications.
 
 I think that it is not too late to drop a large learning cost on [Angular] 2 system even after full-scale adoption case inside Google is released.
 
 ### [Vue.js]
-[Vue.js] is a topical framework right now. I liked the 1 series of [Angular] The one I should choose is [Vue.js].
+[Vue.js] is a topical framework right now. I liked the [Angular]1 The one I should choose is [Vue.js].
 
 But, I can not adopt what is [the main developer is only one](https://github.com/vuejs/vue/graphs/contributors) to the base part.
 [Evan You](https://github.com/yyx990803) It can be a catastrophic situation if one person loses a little enthusiasm, or just transforming by some political transaction.
-It's a terrible thing, it's an unbearable risk to me.
+It's a terrible thing, and it's an unacceptable risk to me.
 
-Randomly as far as I can read the code base gets a reasonable impression as such and there are quite polite documentation.
+Randomly as far as I can read the code base gets a reasonable impression as such and there is quite polite documentation.
 It seems there is no shortage in function with the feeling that I tried a little.
 However, when I thought about making a large application as appropriate, I pulled the fundamental problem in an unexpected place and thought about the possibility that I could not cope well with that.
 
-There are large communities, and those that are used as kitsin in a live application have been discovered and carefully dealt with many fine problems.
+There are large communities, and those that are used in a live application have been discovered and carefully dealt with many fine problems.
 The code which seems to have meaningless complexity at first glance may also have important meanings in certain circumstances.
 
 This is only my bad impression theory, but the second line of [Angular] and [Vue.js] have the beauty of the invisible code base as used in a serious production environment.
@@ -737,15 +737,15 @@ Because it is small, you can do it.
 It may be suitable for use with a small team composed only of engineers with sufficient development experience of GUI applications.
 
 It is really difficult to properly determine the specifications of those that are missing and properly implement it, assuming that they are missing while making the application.
-Especially when the cost pressure during project progression is strong, can it do well? At least, I will not be able to do it.
+Especially when the cost pressure during project progression is high, can it do well? At least, I will not be able to do it.
 
 ### About [React]
 Since the body of [React] has a role only for the part of the view, there are various shortcomings in making the application.
 
-I chose [react-router](https://github.com/ReactTraining/react-router) without much trouble about Router. It can be said that I myself do not have standards for selecting Routers.
+I chose [react-router](https://github.com/ReactTraining/react-router) without much trouble about Router. It can be said that I do not have standards for selecting Routers.
 
 As a utility for testing, you can not remove [enzyme](https://github.com/airbnb/enzyme).
-It is the greatest merit of using a de facto standard library that you can use high quality modules created by users who have incorporated frameworks.
+It is the greatest merit of using a de facto standard library that you can use high-quality modules created by users who have incorporated frameworks.
 
 ### About [CSS Modules]
 In other words, CSS is like a programming language with only global variables, a programmer who lives in a world where the default scope is local variable is an unavoidable environment.
@@ -755,25 +755,25 @@ What we have been dealing with this problem up to now has been to divide the nam
 For example, [OOCSS](http://oocss.org/), [BEM](http://getbem.com/), and [SMACSS](https://smacss.com/) are included in major naming conventions is there.
 
 Also, write CSS more securely using meta-language such as [Sass (SCSS)](http://sass-lang.com/) or [less](http://lesscss.org/) Efforts have also been made.
-The most important function of these meta languages ​​is to limit the scope of influence by nesting the definitions of styles.
+The most important feature of these meta-languages ​​is to limit the scope of influence by nesting the definitions of styles.
 
-The meta language is excellent as a mechanism to control the complexity of the CSS itself, but since the CSS is a mechanism for deciding what kind of appearance is given to the DOM structure in the first place, the design of the DOM structure and the design of the CSS can not be separated .
+The meta-language is excellent as a mechanism to control the complexity of the CSS itself, but since the CSS is a mechanism for deciding what kind of appearance is given to the DOM structure in the first place, the design of the DOM structure and the design of the CSS can not be separated.
 
 If so, it is desirable that the design of the [React] component and the design of the CSS are consistent. It would be impossible to treat each as a completely independent event.
 
-[React] In order to ensure consistency between the design of the component and the design of the CSS, either way is the priority. In that case, it is desirable to bring local variables to CSS and make it the default behavior.
+[React] to ensure consistency between the design of the component and the design of the CSS, either way, is the priority. In that case, it is desirable to bring local variables to CSS and make it the default behavior.
 
 The concepts and efforts devised to realize this are [CSS Modules].
 
 [CSS Modules] is a concept derived from the community of [React], but similar functions are also found in [Vue.js](https://vue-loader.vuejs.org/en/features/css-modules.html),
 [There is a similar function in Angular 2](http://joaogarin.github.io/css-modules-angular2/) Looks like.
 
-Detailed information on the CSS problem resolved by [CSS Modules] is [There is a blog entry by members of the CSS Modules team](http://glenmaddern.com/articles/css-modules), so please refer to that .
+Detailed information on the CSS problem resolved by [CSS Modules] is [There is a blog entry by members of the CSS Modules team](http://glenmaddern.com/articles/css-modules), so please refer to that.
 
 To summarize, [CSS Modules] is not just a kind of CSS design methodology based on new naming conventions. Also, using [CSS Modules] does not mean you do not have to use the CSS meta language.
-Even web designers accustomed to existing naming conventions should learn [CSS Modules] if you are doing UI design with projects that share work with large numbers of people.
+Even web designers were accustomed to existing naming conventions should learn [CSS Modules] if you are doing UI design with projects that share work with to add.
 
-Even if you use [CSS Modules], CSS designed to make UI consistent for the entire application will be defined to the global space as before, so existing CSS It does not mean that you do not need design knowledge on the design.
+Even if you use [CSS Modules], CSS designed to make UI consistent for the entire application will be defined in the global space as before, so existing CSS It does not mean that you do not need design knowledge on the design.
 
 ### [React] in [CSS Modules]
 To introduce [CSS Modules] to [React], use [css-loader] of [webpack] to process CSS and then write a dedicated description to the [React] component side. [Webpack] will be explained later.
@@ -797,7 +797,7 @@ export default class Table extends React.Component {
 }
 ```
 
-When this is rendered, it will be roughly like this HTML. Because css class name which does not automatically duplicate by [css-loader] is named, weird name is set in class attribute.
+When this is rendered, it will be roughly like this HTML. Because CSS class name which does not automatically duplicate by [css-loader] is named, the weird name is set in the class attribute.
 
 ```
 <div class="table__table___32osj">
@@ -811,7 +811,7 @@ When this is rendered, it will be roughly like this HTML. Because css class name
 The problem is that importing CSS as if it is a JavaScript object is handled this way.
 
 In this case, the CSS must also be applied to the component during unit tests that do not need to evaluate the state of the style at all.
-If import is processed in a naive manner as it is, it becomes an error because it can not parse import destination CSS as JavaScript.
+If an import is processed in a naive manner as it is, it becomes an error because it can not parse import destination CSS as JavaScript.
 
 It is hard to write code with many curly braces as a code, so I want to avoid it if possible.
 Braces are difficult to type because they require Shift.
@@ -874,11 +874,11 @@ export default class Table extends React.Component {
 You can now avoid handling CSS as a JavaScript object. We use import statements only to show the relationship between CSS and components.
 
 [babel-plugin-react-css-modules] performs processing necessary as [CSS Modules] at compile time.
-Thanks to that, component code does not increase only for [CSS Modules].
+Thanks to that, the component code does not increase only for [CSS Modules].
 
 It is nice to have the code refreshed in this way.
 
-Since import of CSS does not affect components on code, removing such a part with a module like [ignore-styles](https://github.com/bkonkle/ignore-styles) has no adverse effect .
+Since import of CSS does not affect components on code, removing such a part with a module like [ignore-styles](https://github.com/bkonkle/ignore-styles) has no adverse effect.
 
 So in my project I decided to use a combination of [css-loader] and [babel-plugin-react-css-modules] to implement [CSS Modules].
 
@@ -886,7 +886,7 @@ So in my project I decided to use a combination of [css-loader] and [babel-plugi
 It is good to adopt [Flux] as the architecture that defines the structure of the application.
 There are many libraries implementing [Flux], but since it is popular and easy to use, [Redux] is used.
 
-In terms of using [Redux], how much roles and responsibilities are given to Actions and ActionCreators depends on the size of the application, the optimal solution changes.
+Regarding using [Redux], how much roles and responsibilities are given to Actions, and ActionCreators depends on the size of the application, the optimal solution changes.
 
 Using [reducex-thunk](https://github.com/gaearon/redux-thunk) or [redux-promise](https://github.com/acdlite/redux-promise) makes it very Although easy to understand, the ActionCreator code tends to become large.
 As the code related to asynchronous processing appears in Action, measures must be taken to set some criteria and separate codes from Action in the process of increasing the code base.
@@ -898,7 +898,7 @@ It is common in GUI applications that there is some inconsistency between the se
 In such a case, it is not desirable that there is no way to cancel the task being processed with the user operation as the starting point.
 
 [redux-saga] and [redux-observable] are modules that are quite difficult to understand the behavior model.
-Instead, the ActionCreator code will be simpler and Action will be a fairly simple object to store the contents of the event that occurred.
+Instead, the ActionCreator code will be simpler, and Action will be a fairly simple object to store the contents of the event that occurred.
 
 [reducex-saga] and [reducex - observable] add a new layer whose name is different but has the same role to [Redux].
 
@@ -906,8 +906,8 @@ Again, for simplicity, [redux-saga] implements additional layers using Generator
 
 Both [redux-saga] and [redux-observable] have a way to cancel the task.
 
-When writing code to handle errors, the difference between [redux-saga] and [redux-observable] becomes clear.
-For details, see the respective documents, but the point is whether to use `try/catch` or use the event definition handler of library definition.
+When writing code to handle errors, the difference between [redux-saga] and [redux-observable] becomes apparent.
+For details, see the individual documents, but the point is whether to use `try/catch` or use the event definition handler of library definition.
 
 * Redux-saga's [Error handling](https://redux-saga.github.io/redux-saga/docs/basics/ErrorHandling.html)
 * RxJS [Error Handling](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/gettingstarted/errors.md)
@@ -985,9 +985,9 @@ I should learn, but please write a little, hoping that someone will supplement t
   * Since the specification is under development [It does not work on browsers released as stable version](http://caniuse.com/#feat=css-grid)
 
 # Topics on Build
-I talked about basic language talking, testing method, how to make UI, next is build talk.
+I talked about basic language talking, testing method, how to make UI, next is build.
 
-Continuous integration (CI) is essential in contemporary development process.
+Continuous integration (CI) is essential in a contemporary development process.
 In other words, you have to automate the build process with CLI. It will not change even if you develop it in the Windows environment.
 
 SaaS of CI that I use is [CircleCI] and [AppVeyor].
@@ -996,14 +996,14 @@ SaaS of CI that I use is [CircleCI] and [AppVeyor].
 
 It often happens that the build results on the CI server where the environment gets beautiful every time the environment does not match the build results of the local environment where various things are stacked.
 
-Especially, in my case I am developing in Windows environment, so it is easy for the environment to differ from CircleCI in Linux environment. That is, SSH login is an extremely important function.
+Especially, in my case I am developing in Windows environment, so it is easy for the environment to differ from CircleCI in Linux environment. That is, SSH login is a highly important feature.
 
-[AppVeyor] is used to build in a clean Windows environment. Just a little crafted the configuration file, you can debug and collect logs by [can connect to RDP](https://www.appveyor.com/docs/how-to/rdp-to-build-worker/).
+[AppVeyor] is used to build in a clean Windows environment. Just a little crafted the configuration file; you can debug and collect logs by [can connect to RDP](https://www.appveyor.com/docs/how-to/rdp-to-build-worker/).
 
 The OS is Windows Server 2012 R2 (x64), but it does not use it so that the difference between the server OS and the client OS becomes a problem.
 
 About managing dependency modules
-Based on package.json which stores meta information about the project in Node, it comes with a tool called npm that can execute various tasks.
+Based on package.json which stores meta-information about the project in Node, it comes with a tool called npm that can execute various tasks.
 
 Especially important among tasks to be executed from npm is automatic downloading of dependent libraries.
 
@@ -1019,7 +1019,7 @@ After fixing the dependency library version with [Yarn], please use my [ci-yarn-
 It periodically monitors the state of dependent libraries and automatically generates a pull request to update package.json and yarn.lock if necessary.
 
 About the task runner
-Writing a build script that runs on multiple platforms basically imposes a limitation that shell scripts can not be used.
+Writing a build script that runs on multiple platforms imposes a limitation that shell scripts can not be used.
 
 If I have a Linux binary [PowerShell](https://github.com/PowerShell/PowerShell) you can do it, right? It is because it is a Windows user.
 
@@ -1031,7 +1031,7 @@ Do you use [gulp] or not?
 
 Indeed, there are task runners like [Grunt](http://gruntjs.com/) and [broccoli](https://github.com/broccolijs/broccoli).
 
-The reason why these can not be taken into consideration is simple because it does not provide convenience that greatly exceeds npm script.
+The reason why these can not be taken into consideration is simple because it does not provide a convenience that greatly exceeds npm script.
 Since there are many objects to be learned at all, I do not want to pay learning costs to the task runner as much as possible.
 
 Still, the reason why [gulp] can be considered is performance. [gulp] is a task runner that places Node 's Stream API at the center of task construction and operates at high speed.
@@ -1039,7 +1039,7 @@ Still, the reason why [gulp] can be considered is performance. [gulp] is a task 
 In the code base of hundreds of thousands of rows level, it is expected that the execution time of the build can be shortened as much as possible, as well as the test execution time should be shorter.
 
 By the way, there is a thing called "do not predict" to what I like in the maxim of performance.
-In other words, if the reason for adopting [gulp] is really only performance, its adoption is that the code base grows big enough that even if the build time is long enough it will not be late.
+In other words, if the reason for adopting [gulp] is only performance, its adoption is that the code base grows big enough that even if the build time is long enough it, will not be late.
 
 So, in my project, I decided to try as hard as possible with npm script.
 
@@ -1078,14 +1078,14 @@ This is a module that can delete all files and directories in the specified dire
 This is also used to absorb the difference between Linux and Windows.
 
 ## About the module bundle
-I do not use the task runner, but use the module bundle. The module bundle in JavaScript is like a linker to the C compiler.
+I do not use the task runner, but use the module bundle. The module bundle in JavaScript is a linker to the C compiler.
 
-Javascript divided into pieces according to roles and responsibility ranges are compiled into [Babel] and converted to work on ES 5.
+Javascript divided into pieces according to roles, and responsibility ranges are compiled into [Babel] and converted to work on ES 5.
 At this point, each file size increases slightly, but there is no change in the number of files.
 You may think that moving simply by joining the resulting files, it is not.
 
-There are other CSS meta languages ​​that do not work unless compiled. We also compile meta languages ​​such as Sass and Less to CSS as well.
-In the meta language of CSS, files are often combined into one at compile time.
+There are other CSS meta languages ​​that do not work unless compiled. We also compile meta-languages ​​such as Sass and Less to CSS as well.
+In the meta-language of CSS, files are often combined into one at compile time.
 
 If you use [CSS Modules], you also need to compile CSS and JavaScript with consistency.
 
@@ -1120,12 +1120,12 @@ By the way, since the web browser handles `file://` and `localhost` specially, w
 The [webpack] configuration file will create objects every `NODE_ENV`.
 If you describe the same parts in different environments and parts different for each environment, you need to synthesize the configuration objects.
 
-It is this module that can be used at that time. I do not have to use it, since it is not particularly advanced.
+It is this module that can be used at that time. I do not have to use it since it is not particularly advanced.
 
 #### [webpack-validator](https://github.com/js-dxtools/webpack-validator)
 It is a module that can check whether the configuration file of [webpack] is written correctly.
 
-In webpack 2, equivalent functions are implemented, so these modules are not needed.
+In webpack 2, similar features are implemented, so these modules are not needed.
 
 # Topics on [Electron]
 [Electron] is a framework for creating GUI applications that run on multiple operating systems. Internally [Node.js] and [Chromium] move.
@@ -1144,8 +1144,8 @@ For me it's great that [VS Code] is implemented with [Electron].
 My latest work by [Erich Gamma](https://github.com/egamma) who designed the eclipse plug-in framework that dedicated my 20's is [VS Code].
 For over a decade, I thought he was a kind of god almighty, but reading a bad code of [vscode-tslint](https://github.com/Microsoft/vscode-tslint) a little closer I got it.
 
-[Erich Gamma](https://github.com/egamma) The teacher has a great achievement as an architect, but as a programmer he is an ordinary man or less.
-The code is copying the poor quality from that side, and there is no decent unit test. It's small in size and I am working almost entirely, so it's a bit nicely done, is not it? Well, that's right.
+[Erich Gamma](https://github.com/egamma) The teacher has a great achievement as an architect, but as a programmer, he is an ordinary man or less.
+The code is copying the poor quality from that side, and there is no decent unit test. It's small in size, and I am working almost entirely, so it's a bit nicely done, is not it? Well, that's right.
 
 I think it was wonderful of the GitHub era that such things came to be casual.
 
@@ -1169,7 +1169,7 @@ I learned so many things, some sorted out with reasons attached.
 When making an application, there is something like pains of birth, and consciousness turns to the option not taken to escape from it.
 You forget about what you truncated and why, you want to waste your time.
 
-When I become myself in such a state of mind, I will be able to reconsider just by a little going, if my entry comes out. For that purpose I wrote this entry.
+When I become myself in such a state of mind, I will be able to reconsider just by a little going, if my entry comes out. For that purpose, I wrote this entry.
 
 When I discuss with experts on application development with JavaScript, this entry would be a criterion for matching situation recognition.
 
