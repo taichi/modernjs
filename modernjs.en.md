@@ -12,7 +12,7 @@ If you want the sample project I just created immediately, please clone this rep
 # Introduction
 
 ## About Modern JavaScript
-I'm not writing JavaScript as a job, but in the last six months, I have made some small tools. I believe both of them are useful, so please try it by all means and it would be great if you like it.
+I'm not writing JavaScript as a job, but in the last six months, I have made some small tools. I believe both of them are useful, so please try them and it would be great if you like them.
 
 * [ci-yarn-upgrade](https://github.com/taichi/ci-yarn-upgrade)
   * A tool that automatically creates PullRequest if there is a dependency library update in a project using [Yarn]
@@ -21,54 +21,54 @@ I'm not writing JavaScript as a job, but in the last six months, I have made som
 
 Well, as you see, though I am not following the latest JavaScript on daily basis, I know some.
 
-In recent JavaScript ecosystem, my opinion is that what the developers want to do and can do with JavaScript haven't changed much and the scope hasn't got larger then you think. You may feel there have been a lot of changes there, but the truth is that a variety of libraries just pop up and dissapears.
+My opinion is that what the developers, at least I, want to do and can do with JavaScript haven't changed much in recent JavaScript ecosystem, and the scope hasn't got larger then you think. You may feel there have been a lot of changes there, but the truth is that a variety of libraries just pop up and dissapears.
 
 The volume of the content here is kind of large, since I picked up as much movement as possible in the last twot to three years. Though I just told you that there haven't been much changes, three years is long enough for the technology changes. 
 
-## Main problem areas in JavaScript
+## Main problems in JavaScript
 
-From now on, I will explain the knowledge about JavaScript I recently learned, but list the areas to be discussed.
+From now on, I'm going to explain the knowledge about JavaScript I recently learned, and I listed the areas to be discussed in advance.
 
-This is the list of "I wanted to do things and things I got able to do" written earlier.
+This is the list of "What I wanted to do and I am able to do" mentioned earlier.
 
-* Topics on Language
-  * Introduction to type system
+* Topics on the Language
+  * Introduction of type system
   * Topics on static analysis
 * Topics on Testing
 * Topics on Advanced UI
-* Topics on Build
+* Topics on Building project
   * Management of dependent modules
   * Module bundle
 * Topics on Electron
 
-## About target audience
+## Target audience
 
-The intended audience of this document is supposed to be a programmer who has a first language that is fully usable. The language is preferably a language of compiling process like Java or C#.
+The target audience of this document is supporsed to be programmers who have first languages that they can use them fluently. The languages are preferably those with compiling process such as Java and C#.
 
-Also, although I'm interested in new JavaScript, those who want a document to be a guide for effective learning.
+Also, those who are interested in new JavaScript and those who want a document to be a guide for effective learning.
 
-It is not a sentence with consideration for those who can not write much code or those who are not interested in JavaScript.
+Thus, this entry is not aimed at those who can not write much code or those who are not interested in JavaScript.
 
-Those who are mastering advanced JavaScript are not subject readers, but it is nice if you point out something strange or something misunderstood easily through [Twitter](https://twitter.com/ryushi) if appropriate.
+Advanced JavaScript developers are not subject readers, but it is nice if you point out something strange or something misleading. It would be more than greatful if you can tell more accurate information via [Twitter](https://twitter.com/ryushi).
 
 ## Development environment
-I use Windows 10.
+I use Windows 10, just in case.
 
-Since there are few platform dependencies in this story, no matter what OS you use, it does not matter, just in case.
+Since there are few platform dependencies in this story, no matter what OS you use, it does not matter; just for your information.
 
-Node should be installed under [nvm-windows](https://github.com/coreybutler/nvm-windows).
-I like it because there is less trouble than [nodist](https://github.com/marcelklehr/nodist).
-For Mac, I think that it is good to use [nvm](https://github.com/creationix/nvm), I do not know.
+I recommend to install Node using [nvm-windows](https://github.com/coreybutler/nvm-windows).
+I like it because it causes less trouble than [nodist](https://github.com/marcelklehr/nodist).
+For Mac, I think that it is good to use [nvm](https://github.com/creationix/nvm). Well, I'm not a serious Mac user, so feel free to use others if you have more preferable tools.
 
-After installing Node, please install [Yarn](https://yarnpkg.com/) as well. Even if you do not know what this is, there is no problem as it will be explained later.
+After installing Node, install [Yarn](https://yarnpkg.com/) as well. Even if you do not know what this is, no problem. I'll explain it later.
 
-As an editor, I built the environment on the premise that I use [VS Code].
-However, since we do not use extensions like [VS Code], it is not difficult to reproduce the same environment with other editors.
+As for editor, I built the environment on the premise of [VS Code].
+However, since I did not use extensions which only run on [VS Code], it is not difficult to reproduce the similar environment with other editors.
 
-The `.vscode/extensions.json` directly under the project has the ID of the [VS Code] extension listed in the file.
-Open the directory where you `git clone` the repository with [VS Code] and approve the confirmation dialog, and all required extensions will be installed automatically.
+The `.vscode/extensions.json` directly under the project has the ID list of the [VS Code] extensions.
+Open the directory with [VS Code] where you did `git clone` the repository and approve the confirmation dialog, and then all required extensions will be installed automatically.
 
-I use Chrome as a browser to check the operation of the application.
+I use Chrome as a browser to check the application behavior.
 
 ### Hardware
 My laptop as follows.
