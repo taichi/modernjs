@@ -888,7 +888,7 @@ There are many libraries implementing [Flux], but since it is popular and easy t
 
 Regarding using [Redux], how much roles and responsibilities are given to Actions, and ActionCreators depends on the size of the application, the optimal solution changes.
 
-Using [reducex-thunk](https://github.com/gaearon/redux-thunk) or [redux-promise](https://github.com/acdlite/redux-promise) makes it very Although easy to understand, the ActionCreator code tends to become large.
+Using [redux-thunk](https://github.com/gaearon/redux-thunk) or [redux-promise](https://github.com/acdlite/redux-promise) makes it very Although easy to understand, the ActionCreator code tends to become large.
 As the code related to asynchronous processing appears in Action, measures must be taken to set some criteria and separate codes from Action in the process of increasing the code base.
 
 In a very simplistic way, `redux-thunk` implements Action in the callback model. `Redux-promise` implements Action in the` Promise` model.
@@ -900,7 +900,7 @@ In such a case, it is not desirable that there is no way to cancel the task bein
 [redux-saga] and [redux-observable] are modules that are quite difficult to understand the behavior model.
 Instead, the ActionCreator code will be simpler, and Action will be a fairly simple object to store the contents of the event that occurred.
 
-[reducex-saga] and [reducex - observable] add a new layer whose name is different but has the same role to [Redux].
+[redux-saga] and [redux-observable] add a new layer whose name is different but has the same role to [Redux].
 
 Again, for simplicity, [redux-saga] implements additional layers using GeneratorFunction and [redux-observable] uses [RxJS] to implement additional layers.
 
@@ -928,7 +928,7 @@ Here is a summary of the discussion so far.
 </tr>
 </thead> <tbody>
 <tr>
-<td align = "left"> redux - thunk </td>
+<td align = "left"> redux-thunk </td>
 <td align = "left"> callback </td>
 <td align = "center"> low </td>
 <td align = "center"> Large </td>
@@ -937,7 +937,7 @@ Here is a summary of the discussion so far.
 <td align = "left"> try / catch </td>
 </tr>
 <tr>
-<td align = "left"> reducex-promise </td>
+<td align = "left"> redux-promise </td>
 <td align = "left"> Promise </td>
 <td align = "center"> low </td>
 <td align = "center"> Large </td>
@@ -946,7 +946,7 @@ Here is a summary of the discussion so far.
 <td align = "left"> event handler </td>
 </tr>
 <tr>
-<td align = "left"> reducex - saga </td>
+<td align = "left"> redux-saga </td>
 <td align = "left"> Generator </td>
 <td align = "center"> Medium </td>
 <td align = "center"> Small </td>
@@ -955,7 +955,7 @@ Here is a summary of the discussion so far.
 <td align = "left"> try / catch </td>
 </tr>
 <tr>
-<td align = "left"> redux - observable </td>
+<td align = "left"> redux-observable </td>
 <td align = "left"> Rx </td>
 <td align = "center"> high </td>
 <td align = "center"> Small </td>
@@ -965,7 +965,7 @@ Here is a summary of the discussion so far.
 </tr>
 </tbody> </table>
 
-That's why I chose [reducex-observable] in my project.
+That's why I chose [redux-observable] in my project.
 
 ## Unresolved issues in UI
 I should learn, but please write a little, hoping that someone will supplement the tasks that have not been done yet.
