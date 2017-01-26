@@ -164,7 +164,7 @@ So, I wonder not to repel [Babel] so much.
 ## About the type system
 Even if it is a type, nothing is going to talk about such a difficult story. It is a story of trying to make a bit of missing JavaScript's missing taste.
 
-Since JavaScript has almost no type declaration in the first place, as a simple story it is absolutely unknown if you just look at the code of the called side to see what comes up in the function's argument.
+Since JavaScript has almost no type declaration in the first place, as a simple story, it is absolutely unknown if you just look at the code of the called side to see what comes up in the function's argument.
 
 If you write both the caller and the called party in your own time in a short period, you know exactly what to pass as an argument.
 Then, there is a story that it does not bother to declare it.
@@ -245,7 +245,7 @@ The [DefinitelyTyped] project that was working to collect type declaration files
 Now we are managing it in an organization called [types](https://github.com/types) in a straightforward way to allocate one repository for one module.
 Nonetheless, [DefinitelyTyped] is not referenced.
 
-By the way, to retrieve the type declaration file from the npm repository, you can do `npm install -D @types/lodash` etc ... It is not a dedicated tool, it's great to get it in npm.
+By the way, to retrieve the type declaration file from the npm repository, you can do `npm install -D @types/lodash` etc ... It is not a dedicated tool, and it's great to get it in npm.
 
 #### [Flow]
 [Flow] is a static analysis tool made with OCaml, and it checks the type declaration mixed in JavaScript, and it performs a various check.
@@ -330,7 +330,7 @@ By the way, [reading the code of JSLint](https://github.com/douglascrockford/JSL
 Lint that became evangelical for unskilled guys like me is [JSHint](http://jshint.com/). This is not too strict. It is incredibly easy to use because it can cut out the setting file.
 However, JSHint is easy to enable and disable the built-in functions, but adding a new rule is a little troublesome.
 
-Also, in order to incorporate someone's recommended rules into your project, you have to copy and paste the settings.
+Also, to incorporate someone's recommended rules into your project, you have to copy and paste the settings.
 Most people want to use someone's recommendation set as a part of maniacs like me like to make Lint's rules.
 If that recommended set is maintained, you want to use only that final result without doing troublesome things.
 
@@ -359,7 +359,7 @@ So, using this plugin makes it possible to warn you [AVA] obviously when using i
 #### [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import)
 `eslint-plugin-import` finds errors on` import` statements.
 
-Specifically, if you try to `import` a module that does not exist in the project, you will get a warning. Everyone can be typo the module name.
+Specifically, if you try to `import` a module that does not exist in the project, you will get a warning. Everyone can be a typo the module name.
 
 In addition to this, if you pass a string other than literals to `require`, you get an error.
 
@@ -727,7 +727,7 @@ The code which seems to have meaningless complexity at first glance may also hav
 
 This is only my bad impression theory, but the second line of [Angular] and [Vue.js] have the beauty of the invisible code base as used in a serious production environment.
 
-By the way, the first line of [Angular] was a code base that seems to be used in production environment.
+By the way, the first line of [Angular] was a code base that seems to , and some in production environment.
 
 ### [Mithril]
 The goodness of [Mithril] is small. After fully understanding the internal details of the framework, it is a tool used by people who can add it myself by myself by noticing what is missing.
@@ -1082,9 +1082,9 @@ I do not use the task runner, but use the module bundle. The module bundle in Ja
 
 Javascript divided into pieces according to roles, and responsibility ranges are compiled into [Babel] and converted to work on ES 5.
 At this point, each file size increases slightly, but there is no change in the number of files.
-You may think that moving simply by joining the resulting files, it is not.
+You may think that moving simply by joining the resulting files; it is not.
 
-There are other CSS meta languages ​​that do not work unless compiled. We also compile meta-languages ​​such as Sass and Less to CSS as well.
+There are other CSS meta-languages ​​that do not work unless compiled. We also compile meta-languages ​​such as Sass and Less to CSS as well.
 In the meta-language of CSS, files are often combined into one at compile time.
 
 If you use [CSS Modules], you also need to compile CSS and JavaScript with consistency.
@@ -1105,7 +1105,7 @@ I have not used β yet because I can not get β of [extract-text-webpack-plugin]
 There is a pretty polite [migration document](https://webpack.js.org/guides/migrating/), so you can move on if you like that.
 
 ### [webpack] related modules
-In the first place, [webpack] needs to learn carefully with a fairly large application. So, I do not think adding too much.
+In the first place, [webpack] needs to learn carefully with a fairly large application. So, I do not think to add too much.
 
 #### [webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html)
 This is a server for running the build products of [webpack] in a simplified manner.
@@ -1141,8 +1141,8 @@ On the other hand, the advantage of [Electron] is that you can create GUI applic
 ## Why to use Electron
 For me it's great that [VS Code] is implemented with [Electron].
 
-My latest work by [Erich Gamma](https://github.com/egamma) who designed the eclipse plug-in framework that dedicated my 20's is [VS Code].
-For over a decade, I thought he was a kind of god almighty, but reading a bad code of [vscode-tslint](https://github.com/Microsoft/vscode-tslint) a little closer I got it.
+My latest work by [Erich Gamma](https://github.com/egamma) who designed the Eclipse plug-in framework that dedicated my 20's is [VS Code].
+For over a decade, I thought he was a god almighty, but reading a bad code of [vscode-tslint](https://github.com/Microsoft/vscode-tslint) a little closer I got it.
 
 [Erich Gamma](https://github.com/egamma) The teacher has a great achievement as an architect, but as a programmer, he is an ordinary man or less.
 The code is copying the poor quality from that side, and there is no decent unit test. It's small in size, and I am working almost entirely, so it's a bit nicely done, is not it? Well, that's right.
