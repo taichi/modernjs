@@ -891,7 +891,7 @@ Regarding using [Redux], how much roles and responsibilities are given to Action
 Using [redux-thunk](https://github.com/gaearon/redux-thunk) or [redux-promise](https://github.com/acdlite/redux-promise) makes it very Although easy to understand, the ActionCreator code tends to become large.
 As the code related to asynchronous processing appears in Action, measures must be taken to set some criteria and separate codes from Action in the process of increasing the code base.
 
-In a very simplistic way, `redux-thunk` implements Action in the callback model. `Redux-promise` implements Action in the` Promise` model.
+In a very simplistic way, `redux-thunk` implements Action in the callback model. `redux-promise` implements Action in the `promise` model.
 
 The problem with this simple approach is that you can not cancel the task.
 It is common in GUI applications that there is some inconsistency between the server and the client, and users who are irritated by the response delay want to interrupt processing.
