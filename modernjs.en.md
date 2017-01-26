@@ -1,29 +1,29 @@
 # Modern JavaScript overview, and to Electron
 
-I made a repository that organized the learning outcomes for this month so that I will summarize the results.
+I made a repository that organized the learning outcomes in the last one month so that I summarized the results here.
 
-If you want to quickly create only the sample project you just created, please clone this repository.
+If you want the sample project I just created immediately, please clone this repository.
 
 * [taichi/js-boilerplate](https://github.com/taichi/js-boilerplate)
   * The master branch contains a minimal JavaScript development environment with sample code
   * The frontend branch contains development environments for [React] / [Redux] / [webpack] web applications
-  * In the electron branch that is the default branch, in addition to the contents of the frontend branch, an environment for developing applications with [Electron] is included
+  * In the electron branch, the default branch, contains an environment for [Electron] application development in addition to the contents of the frontend branch
 
 # Introduction
 
 ## About Modern JavaScript
-I'm not writing JavaScript as a job, but in the last six months, I have made some small tools. Both of them are useful, so please use it by all means.
+I'm not writing JavaScript as a job, but in the last six months, I have made some small tools. I believe both of them are useful, so please try it by all means and it would be great if you like it.
 
 * [ci-yarn-upgrade](https://github.com/taichi/ci-yarn-upgrade)
   * A tool that automatically creates PullRequest if there is a dependency library update in a project using [Yarn]
 * [vscode-textlint](https://github.com/taichi/vscode-textlint)
   * [textlint](https://github.com/textlint/textlint) extension for [VS Code]
 
-That's why I am not chasing the cutting-edge JavaScript, but I do not know at all.
+Well, as you see, though I am not following the latest JavaScript on daily basis, I know some.
 
-In my current JavaScript, since various libraries and tools are going out or disappearing, it seems like there is movement, so what I want to do and things I can do are not increasing so much It is.
+In recent JavaScript ecosystem, my opinion is that what the developers want to do and can do with JavaScript haven't changed much and the scope hasn't got larger then you think. You may feel there have been a lot of changes there, but the truth is that a variety of libraries just pop up and dissapears.
 
-The content I wrote here is as much as the quantity, as I picked up as much movement as possible for about three years from the past two years. It will change a lot if you fall for three years.
+The volume of the content here is kind of large, since I picked up as much movement as possible in the last twot to three years. Though I just told you that there haven't been much changes, three years is long enough for the technology changes. 
 
 ## Main problem areas in JavaScript
 
