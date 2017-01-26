@@ -71,26 +71,26 @@ Open the directory with [VS Code] where you did `git clone` the repository and a
 I use Chrome as a browser to check the application behavior.
 
 ### Hardware
-My laptop as follows.
+The spec of my laptop is as follows:
 
 * Thinkpad X1 Carbon 2016 model
 * CPU i 7 6600 U @ 2.6 GHz
 * Memory 16 GB
 * Storage SAMSUNG NVMe SSD 950 PRO 512 GB
 
-It may be a little expensive, but it's usual for developers.
+It may be a little expensive, but it's usual for developers, isn't it?
 
-## About my background
-My career started from a place where I spent about ten years as a soldier who makes enterprise systems in Java with a contracted system with SIer.
-So, there are a lot of knowledge about Java, and the most useful thing is server side technology related to Java.
+## My engineering background
+I started my career from a place where I spent about ten years as "a soldier" who makes enterprise systems in Java with a contracted system with SIer.
+So, I have a lot of knowledge about Java, and I know most about server side technology in Java.
 
-Now I can program with various languages as it is, but in the end, I am converting the strange, unique language that closely resembles Java to the brain into Ruby and Python and output it.
+Though now I can write programs with various languages, still those outputs, like Ruby and Python, are the result of the conversion from the strange, unique, my own language closely similar to Java that only exists in my brain.
 
-That's why when learning environments other than Java, there is a tendency to want to work in an environment that is easy to convert to that unique Java.
+With that nature, I have a tendency to prefer the environment where I can easily convert the target language to the Jave like language when I learn new languages other than Java.
 
-Also, since I am carrying on a carrier with SIer and still working at SIer, I am keenly interested in how to use this technology in contract development system development and package development.
+In addition to that, since I have established my career in and I am still working for SIers, I am keenly interested in how to use the technologies in contract development system developments and package system developments.
 
-In other words, I tend to think about how to apply new technology on the premise that technology and its improvement are not tied to revenue.
+In other words, I tend to think about how to apply new technologies to those development projects on the premise that those technologies and the improvements of those are seldom tied to the revenue in those projects.
 
 Please understand that this entry has such bias.
 
