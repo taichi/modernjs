@@ -94,42 +94,42 @@ In other words, I tend to think about how to apply new technologies to those dev
 
 Please understand that this entry has such bias.
 
-# Topics on Language
-There are various execution environments of JavaScript, but ES5 works with most browsers.
-If you do your best on ES5 in the first place, you can talk about how confusing compile are, that is, [Babel].
+# Topics on the language itself
+ES5 works with most browsers, though there are various execution environments of JavaScript.
+If you do your best on ES5 in the first place, you can be freed from confusing compiler (transpiler), that is, [Babel].
 
-As JavaScript has much knowledge to learn, first think about options not to associate with [Babel].
+As JavaScript has a lot to learn, so first you should think about the option not to tackle with [Babel].
 
-It was impossible for me to choose options not to go with [Babel]. The reason is simple; I do not want to write a lot of `function`. How about everyone?
+It was impossible for me to choose that option, not facing [Babel]. The reason is simple; I do not want to write a lot of `function`. How about everyone?
 
-Also, if I came from Java it is true that compiling does not have a sense of evil against work.
+I think I should repeat that I came from Java and it is true that I do not have any negative feelings on the process of compiling.
 
 ## [Babel] is everyone's sandbox
 
-Designing a programming language is somewhat lonely work. Until now, we have released a few language designers carefully until they are shaped to some extent.
+Designing a programming language is somewhat lonely work. Until now, a few language designers have released the language carefully until they get a shape to some extent.
 
-However, at least about JavaScript, it is known by ECMAScript 4's failure that it will not work in such a way.
+However, at least in the case of JavaScript, we had learned from ECMAScript 4's failure that it will not work in such a way.
 
-So you can casually implement experimental language features in the form of plugins [Babel]. Discuss the function of [New language Proposals](https://github.com/tc39/proposals) while using Gashagashi and decide the function to import into the next version of JavaScript.
+So here comes [Babel], where you can casually implement experimental language features in the form of the plugins of it. Discuss the features of [New language Proposals](https://github.com/tc39/proposals) as using them agressively and decide the features to import into the next version of JavaScript.
 
-Users can just try writing a cool new feature by just writing `.babelrc`. It is not enough that the function thought or it is only a matter of stopping using it if the motion is unstable.
+Users can just try using cool new features by just writing `.babelrc`. If the feature is not better than expected or is unstable, you can just stop using it.
 
-It is somewhat fun to add and subtract language features according to your needs.
+It is fun to add and subtract language features depending upon your demands.
 
-### [Babel] related modules
-There are many modules related to [Babel], but there are surprisingly few good ones that you should understand as chitin.
+### [Babel] modules
+There are many modules for [Babel], but there are surprisingly few good ones that you should dig into.
 
 The first two are modules for setting up the environment, and the other two are modules for working with other tools.
 
 #### [babel-preset-env](https://github.com/babel/babel-preset-env)
-`babel-preset-env` is a handy module that automatically selects the [Babel] plugin to use, in conjunction with the environment where JavaScript converted by [Babel] operates.
+`babel-preset-env` is a handy module that automatically selects the [Babel] plugin to use, in conjunction with the environment where the JavaScript source code runs that is converted by [Babel].
 
-As JavaScript improves the execution environment of browsers and [Node.js] and so on, the plug-in of [Babel] required at compile time changes accordingly.
-Compilation time is only slightly increased where unnecessary plugins are activated, so it is not very harmful.
+In JavaScript ecosystem, the execution environment of browsers and [Node.js] and so on get improved hand over hand, the plug-in of [Babel] required at compile time changes accordingly.
+Though even if unnecessary plugins are activated, what happens is only that ompilation time get slightly increased.
 
-However, it is not very healthy not to keep up with the latest state unless you are conscious.
+However, it is not very healthy that you can't keep up with the latest state unless you are conscious.
 
-Using `babel-preset-env` will be freed from such bold work. Just updating the module on a regular basis will bring you the latest environment. Great.
+Using `babel-preset-env` will free you from such bold work. Just updating the module on a regular basis will bring you the latest environment, which is just awesome.
 
 #### [babel-register](https://github.com/babel/babel/tree/master/packages/babel-register)
 `babel-register` is a hacking module that hooks Node's `require` and inserts [Babel]'s processing.
