@@ -132,36 +132,36 @@ However, it is not very healthy that you can't keep up with the latest state unl
 Using `babel-preset-env` will free you from such bold work. Just updating the module on a regular basis will bring you the latest environment, which is just awesome.
 
 #### [babel-register](https://github.com/babel/babel/tree/master/packages/babel-register)
-`babel-register` is a hacking module that hooks Node's `require` and inserts [Babel]'s processing.
+`babel-register` is a hacking module that hooks Node's `require` and inserts [Babel]'s process.
 
-It is not used for loading modules with production code, but mainly for running test code.
+It is not used on loading modules with production code but mainly on running test code.
 
-When executing unit test code in JavaScript, it is common to run a test from detection of a change of file.
+When executing unit test code in JavaScript, it is common to run a test by detecting a change of file.
 
-At this time just modifying the test code slightly, if you compile all the project code, it will not work at all.
+If slight modification of the test code kicks compilation of all the project code, you cannot focus on writing code at all.
 
-If you want to fully automate the process of compiling only files that changed and files related to them, you can hook `require` or` import`.
+To avoid that situation, you can fully automate the process of compiling only files that have changed and that are related to those changes by hooking `require` or` import`.
 
-Please note that the test code does not refer directly to the code under test, such as a test like an E2E test, it does not work very well.
+Please note that the test code which does not refer directly to the code under test, such as a test like an E2E test, sometimes does not work very well.
 
 #### [babel-eslint](https://github.com/babel/babel-eslint)
-`babel-eslint` is a parser for handling JavaScript code extended with [Babel] with [ESLint].
+`babel-eslint` is a parser to handle JavaScript code extended by [Babel] with [ESLint].
 
-[ESLint] has evolved properly with [ESLint], so if you typically write code on ES and JSX, you do not need `babel-eslint`.
+[ESLint] has evolved properly, so if you write code on ES and JSX as usual, you do not need `babel-eslint`.
 
-Why is this necessary because you use a tool to declare and validate the type in JavaScript called [Flow].
+The reason why this is necessary is because you use a tool to declare and validate the type in JavaScript called [Flow].
 
-As for [Flow] and [ESLint], I will explain properly later, so I want you to feel secure.
+As for [Flow] and [ESLint], I will explain properly later.
 
 #### [babel-plugin-transform-flow-strip-types](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-flow-strip-types)
-`babel-plugin-transform-flow-strip-types` is a module that automatically removes information about types declared for [Flow] as its name suggests.
+`babel-plugin-transform-flow-strip-types` is, as its name says, a module that automatically removes information about types declared for [Flow].
 
-After deleting the information on the type, it converts the written code to JavaScript executable at the target runtime.
+After deleting the information for typing, it converts the written code to JavaScript executable at the target runtime.
 
-If [Babel] runs with only a hardened language specification without using [Flow], almost no configuration is required.
-So, I wonder not to repel [Babel] so much.
+On condition with a fixed language specification without using [Flow], [Babel] requires almost no configuration.
+So, I think we don't need to repel [Babel] so much.
 
-## About the type system
+## Typing system
 Even if it is a type, nothing is going to talk about such a difficult story. It is a story of trying to make a bit of missing JavaScript's missing taste.
 
 Since JavaScript has almost no type declaration in the first place, as a simple story, it is absolutely unknown if you just look at the code of the called side to see what comes up in the function's argument.
