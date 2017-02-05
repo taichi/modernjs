@@ -248,7 +248,7 @@ Nonetheless, it is not to say [DefinitelyTyped] is not referenced at all.
 By the way, to retrieve the type declaration files from the npm repository, you can do `npm install -D @types/lodash` etc. It's great that you can get them by npm, not by the decicated tools.
 
 #### [Flow]
-[Flow] is a static analysis tool made with OCaml, and it checks the type declaration mixed in JavaScript, and it performs a various check.
+[Flow] is a static analysis tool written in OCaml, and it checks the type declaration mixed in JavaScript, and it performs various validations.
 
 Let's see a bit of JavaScript code typed in [Flow].
 
@@ -268,21 +268,21 @@ total([1, 2, 3, 4]);
 It looks like it is similar to typeScript's type annotation. But [Flow] has a distinctly different point from [TypeScript].
 [Flow] does static analysis such as evaluating type annotation given to JavaScript, but does not create a new programming language.
 
-It is a closer approach to [Google Closure Compiler]. However, unlike the time when [Google Closure Compiler] was created, there is now [Babel], so once you have extended the syntax of the language primarily and you finish using it, you can safely remove only the description specifically for [Flow] Implementation became possible.
+It is a closer approach to [Google Closure Compiler]. However, unlike the time when [Google Closure Compiler] was created, now there is [Babel], so once you have extended the syntax of the language primarily and you finish using it, it is possible to safely remove only the description specifically for [Flow] implementation.
 
-Type declarations done in comments, expression power will be limited. [Flow] got over it. Nevertheless, compared with Haskell and OCaml, it does not have much rich expressiveness, even compared to Java.
+Type declarations done in comments is limited in terms of expressive power. [Flow] got over the challenge. Nevertheless, compared with Haskell and OCaml, it does not have much rich expressiveness, even compared to Java.
 
-It is not so difficult to understand the extent to which [Flow] infer the type. Or [Flow] does only very simple type inference.
+It is not so difficult to understand the extent where [Flow] infer the type. In other words, [Flow] does only very simple type inference.
 
-In [Flow] there is a repository called [flow-typed] for sharing type declaration like [TypeScript].
-I do not know why I'm going to do the same thing as [Definitely Typed], but I am doing it in a single repository.
+For [Flow], there is a repository called [flow-typed] for sharing type declarations like [TypeScript].
+I do not know why it's going to do the same mistake as [Definitely Typed], but it's managing them in a single repository.
 
-However, this seems to be reviewed severely when throwing out PR, and the contents of the stored type definition file are firm, instead of being absolute.
+However, this seems to reviews the PRs serverly, and the contents of the stored type definition file are strict and the absolute amount of those are small.
 
-When retrieving a type declaration file, using the command `flow-typed` will automatically download the dependency module type declaration file in package.json from the [flow-typed] repository.
-For those without a type declaration, we make a type declaration file that all types declare any.
+On retrieving a type declaration file, the command `flow-typed` will automatically download the type declaration files of dependent module in package.json from the [flow-typed] repository.
+For those without a type declaration, it makes a type declaration file where all types are declared as `any`.
 
-Why will not you make it possible to take type declaration files with the npm command? It is not a good idea to separate the commands that make a miscellaneous type declaration file separately.
+Why does not it let you pull type declaration files with the `npm` command? I wonder it should have another command that make a miscellaneous type declaration file.
 
 ### Which type system to use
 There is no [Google Closure Compiler] at this time.
