@@ -162,25 +162,25 @@ On condition with a fixed language specification without using [Flow], [Babel] r
 So, I think we don't need to repel [Babel] so much.
 
 ## Typing system
-Even if it is a type, nothing is going to talk about such a difficult story. It is a story of trying to make a bit of missing JavaScript's missing taste.
+I'm not going to talk about such a difficult story. It is a story of adding a bit of JavaScript's missing taste.
 
-Since JavaScript has almost no type declaration in the first place, as a simple story, it is absolutely unknown if you just look at the code of the called side to see what comes up in the function's argument.
+Since JavaScript has almost no type declaration in the first place, as a simple logic, it is absolutely impossible to know what kind of objects are passed as function's arguments if you just look at the code of the callee side.
 
-If you write both the caller and the called party in your own time in a short period, you know exactly what to pass as an argument.
-Then, there is a story that it does not bother to declare it.
+If you write both the caller and the callee all by yourself in a short period, you know exactly what to pass as arguments.
+Then, you think it's unnecessary to declare them.
 
-But I want you to think calmly. Are you yourself a week ago? I can say that it is different. Even though I know roughly what last week's I thought about writing the code, it is an honest point that I am not sure in detail.
+But I want you to think calmly. Are you exactly same as yourself a week ago? I can say that it is different. Even though I know roughly what I thought about on writing the code last week, the truth is that I am not sure in details.
 
-It is not a bad idea to provide information to others including yourself in the future by writing comments in the code, but comments do not work, and you can not validate automatically.
-On the other hand, if you write the type like a little memo, you can automatically verify and be happy.
+It is not a bad idea to provide information to others including yourself in the future by writing comments in the code, but comments are not executed on runtime, and you can not validate automatically.
+On the other hand, if you write the type as a little memo, you can automatically verify the code and be happy.
 
 ### Faction of type declaration in JavaScript
-Let's check out how to declare types in JavaScript around here a little.
+Let's check out how to declare types in JavaScript here a bit.
 
 #### [Google Closure Compiler]
-The first time I worked on a type declaration while using JavaScript is [Google Closure Compiler's Type System](https://github.com/google/closure-compiler/wiki/Types-in-the-Closure-Type-System).
+What I worked on a type declaration for the first time on using JavaScript is [Google Closure Compiler's Type System](https://github.com/google/closure-compiler/wiki/Types-in-the-Closure-Type-System).
 
-When he writes a type declaration briefly in the document comment, he is a companion checking it.
+If you write a type declaration briefly in the document comment, it validates the types in the code.
 
 ```
 /**
@@ -197,16 +197,16 @@ function MyClass(opt_value) {
 }
 ```
 
-What makes this approach wonderful is that the type declaration is in the comment so that the programmer can provide the necessary information by the compiler without affecting the behavior of the source code at all.
+What makes this approach wonderful is that the type declaration is in the comment, so the programmer can provide the necessary information by the compiler without affecting the behavior of the source code at all.
 
-On the other hand, there is a problem that the declaration in the comment is easy to be ignored. There is also a problem that expression power is extremely low instead of being easy to understand.
+On the other hand, there is a problem that the declaration in the comment is easy to be ignored. There is also a problem that expression flexibility is extremely low instead of being easy to understand.
 
-'ADVANCED_OPTIMIZATIONS' of [Google Closure Compiler] has a risk that the code will not move at all, but I was surprised because it's seriously smaller.
+`ADVANCED_OPTIMIZATIONS` of [Google Closure Compiler] has a risk that the code will not run at all, but I was really surprised because the code size gets seriously smaller.
 
 #### [TypeScript]
-[TypeScript] appeared as one of a lot of efforts to develop a new language as an advanced JavaScript.
+[TypeScript] emerged as one of a lot of efforts to develop a new language as an advanced JavaScript.
 
-For me, I think that [TypeScript] is a kind of grace from God, with the recognition that Professor Anders Hejlsberg (https://github.com/ahejlsberg) who designed Delphi and C # has the latest work.
+For me, I think that [TypeScript] is a kind of grace from God, with the recognition that it is the latest work by Anders Hejlsberg (https://github.com/ahejlsberg) who designed Delphi and C#.
 
 Let's look at the code of [TypeScript] a bit.
 
@@ -224,10 +224,10 @@ var user = { firstName: "Jane", lastName: "User" };
 
 document.body.innerHTML = greeter(user);
 ```
-It is [TypeScript] that is similar to the original Java in oleore Java in my brain.
+[TypeScript] is more similar to the my own Java I mentioned earlier than the originial Java.
 
-The type declaration of [TypeScript] is provided with a way to mix type annotations in the code to work and a way to create a special file for type declaration.
-For example, if you create a special file, declare it like this.
+[TypeScript] provides 2 ways to daclare types; one is to mix type annotations in the code to work and the other is to create a dedicated file for type declaration.
+For example, if you create a dedicated file, declare it like this.
 
 ```
 declare namespace myLib {
@@ -236,16 +236,16 @@ declare namespace myLib {
 }
 ```
 
-If you have a file called `d.ts` for type declaration, you can write the code as if there is a type in a library with no actual type declaration.
+If you have a file with the extension `d.ts` for type declaration, you can write the code as if there is a type in a library, even if that has no actual type declaration.
 
-It is a crucial feature for utilizing existing assets to be able to type in post-installation as needed for existing libraries without type declarations.
+It is a crucial feature to be able to have types in post-installation of the libraries with out tyep declaration as needed in order to utilize existing assets.
 
-The [DefinitelyTyped] project that was working to collect type declaration files for OSS modules into a single repository was overwhelmed by too many type declaration files.
+The [DefinitelyTyped] project that was working to collect type declaration files for OSS modules into a single repository was busted due to the enormous number of declaration files.
 
-Now we are managing it in an organization called [types](https://github.com/types) in a straightforward way to allocate one repository for one module.
-Nonetheless, [DefinitelyTyped] is not referenced.
+Now the organization called [types](https://github.com/types) is managing them in a straightforward way where allocating one repository for one module.
+Nonetheless, it is not to say [DefinitelyTyped] is not referenced at all.
 
-By the way, to retrieve the type declaration file from the npm repository, you can do `npm install -D @types/lodash` etc ... It is not a dedicated tool, and it's great to get it in npm.
+By the way, to retrieve the type declaration files from the npm repository, you can do `npm install -D @types/lodash` etc. It's great that you can get them by npm, not by the decicated tools.
 
 #### [Flow]
 [Flow] is a static analysis tool made with OCaml, and it checks the type declaration mixed in JavaScript, and it performs a various check.
