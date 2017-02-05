@@ -303,22 +303,21 @@ Especially [VS Code] apparently improves the precision of input completion if yo
 Supplementally, [Flow Language Support](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode) also has a function to enhance input completion.
 
 ## Unresolved issues in the type system
-Supplement the indications received from experts after this entry release.
+Supplement the indications received from experts after the first release of this entry.
 
 * [Dart](https://www.dartlang.org/)
-  * It is a language that makes strong type inference than [TypeScript]
-  * [Dart2js](https://webdev.dartlang.org/tools/dart2js) can convert it to JavaScript
-  * [Angular] Within 2 Google's [large case already exists](http://news.dartlang.org/2016/03/the-new-adwords-ui-uses-dart-we-asked. Html)
-  * Large-scale case is due to [Angular 2 Dart](https://github.com/dart-lang/angular2)
+  * A language that makes stronger type inference than [TypeScript]
+  * [Dart2js](https://webdev.dartlang.org/tools/dart2js) can convert the code to JavaScript
+  * Two large use case [Angular2] within Google's [already exists](http://news.dartlang.org/2016/03/the-new-adwords-ui-uses-dart-we-asked.html)
+  * Large use case is achieved with [Angular 2 Dart](https://github.com/dart-lang/angular2)
  
 ## Let's share best practices with static analysis
 JavaScript has many traps. The trap here is the language specification that many programmers tend to misunderstand, and the behavior of certain libraries.
 Because JavaScript is a truly flexible language, most of the new language specifications can be converted directly into the old language. That is why there are many traps.
 
-Code written as a result of a mistake by programmer or code not written unless misunderstanding about specifications. A code that can be considered a bug in most situations.
-Although it conforms to the language specification, Lint is a tool for automatically finding the code which can not obtain the expected results even if it is operated as an application.
+Code written as results of mistakes by programmers, code not written unless misunderstanding about specifications, code that can be considered a bug in most situations, and code which satisfies the language specification but can not obtain the expected results on runtime in an application... Lint is a tool for automatically finding those codes.
 
-If you use Lint a bit more aggressively, you can inspect anything that has nothing to do with the behavior of the code, such as how to indent and how to name variables, but also on code readability.
+If you want to use Lint a bit more aggressively, you can inspect anything that has nothing to do with the behavior of the code but with code readability, such as how to indent and how to name variables.
 
 ### History of Lint in JavaScript
 Javascript looks a bit, and there are lots of Lint. The one oldest that I have used is [JSLint](http://www.jslint.com/).
