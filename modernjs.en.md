@@ -285,20 +285,20 @@ For those without a type declaration, it makes a type declaration file where all
 Why does not it let you pull type declaration files with the `npm` command? I wonder it should have another command that make a miscellaneous type declaration file.
 
 ### Which type system to use
-There is no [Google Closure Compiler] at this time.
+There is no reason to choose [Google Closure Compiler] anymore.
 
-Since [TypeScript] and [Flow] are different objectives, they are not something that can simply be evaluated in the star table. If you compare it in the Star table, [TypeScript] is a victory.
+Since [TypeScript] and [Flow] are different objectives, they are not something that can simply be evaluated in the score sheet. If you compare it in the Star table, [TypeScript] is a victory.
 
-Well then, which one should you use?
+Well then, which one to use?
 
-It 'd be good to look at the correspondence situation of the library and framework you want to use.
+It'd be good to consider the support for the libraries and the frameworks you want to use.
 
-If you use at least [Angular], it will be [TypeScript] or [React] if you use [Flow] you are confident.
+At least if you use [Angular], [TypeScript] is the choice and if you use [React], definitely you use [Flow].
 
-[There is an official type definition file for TypeScript in Vue.js](https://vuejs.org/v2/guide/typescript.html). However, this does not recommend using [TypeScript], it seems that the contribution by some users was merged.
+[There is an official TypeScript type definition file for Vue.js](https://vuejs.org/v2/guide/typescript.html). However, this does not recommend the use of [TypeScript], it seems that the contribution by some users was merged.
 
-If you normally use JavaScript, it is good to use [Flow], and [TypeScript] is a pretty good choice if you have the type definition files of the library you'd like to use.
-Especially [VS Code] apparently improves the precision of input completion if the type definition file is complete.
+If you use normal JavaScript, it is good to use [Flow], and [TypeScript] is a pretty good choice if you have the type definition files of the library you'd like to use.
+Especially [VS Code] apparently improves the precision of input completion if you have the type definition files.
 
 Supplementally, [Flow Language Support](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode) also has a function to enhance input completion.
 
