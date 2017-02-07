@@ -339,64 +339,64 @@ That's why [ESLint] is now recommended that is easy to extend and easy to create
 
 Airbnb's published [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) is one such kind of recommended rule set.
 
-Airbnb's one contains a lot of things that do not fit my idea, so I did not adopt it.
+Airbnb's one contains a lot of things that do not fit my idea, so I did not adopt it, tho.
 
 ### [ESlint] related modules
-Speaking of [ESLint] related modules, it's about plug-ins.
+[ESLint] related modules are almost all about plug-ins.
 
-I think there are many other things, but list those that I found especially helpful among those I found and used.
+I listed here those at least that I used and found especially useful though I think there are many other modules.
 
-If you are an [ESLint] mania and I know a useful plugin I am not sure, please let me know.
+If you are an [ESLint] mania and know a useful plugin I do not know, please let me know.
 
 #### [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava)
 In my project I use a testing framework called [AVA]. [AVA] will be explained later.
 
-[AVA] is relatively straightforward and easy to use, but it is too simple to understand until you get used to how to write the test code.
+[AVA] is relatively straightforward and easy to use, but it is too simple to understand how to write the test code until you get used to it.
 
-So, using this plugin makes it possible to warn you [AVA] obviously when using incorrect usage.
+So, using this plugin makes it possible to get warned when you use [AVA] obviously incorrectly.
 
 #### [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import)
 `eslint-plugin-import` finds errors on` import` statements.
 
-Specifically, if you try to `import` a module that does not exist in the project, you will get a warning. Everyone can be a typo the module name.
+In concrete, if you try to `import` a module that does not exist in the project, you will get a warning. Everyone can typo the module name.
 
-In addition to this, if you pass a string other than literals to `require`, you get an error.
+In another example, if you pass strings other than literals to `require`, you get errors.
 
 #### [eslint-import-resolver-node](https://github.com/benmosher/eslint-plugin-import/tree/master/resolvers/node)
 Only this one has a different role from other modules.
 
-`eslint-import-resolver-node` can work with` eslint-plugin-import` to customize how to find `import` modules.
+`eslint-import-resolver-node` can work with `eslint-plugin-import` to customize how to find `import` modules.
 
-As for what I mean, in my project, I have stored application code and test code in separate directories `src` and `test` respectively.
+What I mean is, in my project, I store application code and test code in separate directories, `src` and `test` respectively.
 
-On this test code side, when you do `import` application code, it is very painful to write` import world from '../../src/hello/world";`
-To avoid it, by setting `NODE_PATH=src` when executing the test code, we do not need to write that `../../src/`part.
+In this case, in the test code side, when you do `import` application code, I have to write ` import world from '../../src/hello/world";`, and it is painful.
+To avoid that, by setting `NODE_PATH=src` when executing the test code, we do not need to write that `../../src/`part.
 
-It uses `eslint-import-resolver-node` to inform` eslint-plugin-import` about this.
+I use `eslint-import-resolver-node` to inform the omission to `eslint-plugin-import` about this.
 
 #### [eslint-plugin-promise](https://github.com/xjamundx/eslint-plugin-promise)
 The JavaScript `Promise` is a type of library you need to get used to. Moreover, it is hard to understand the correct usage.
-By the way, [JavaScript Promise's book](http://azu.github.io/promises-book/) is a very wonderful document so I can read it many times.
+Speaking of `Promise`, [JavaScript Promise's book](http://azu.github.io/promises-book/) is a very wonderful document so I recoomend to read it many times.
 
-It is highly likely that you are using the wrong `Promise` until you get used to `Promise`.
-If there are JavaScript experts in the vicinity and can receive code reviews, it is very wonderful, although I am writing a bit of JavaScript as a hobby, I can not call such an expert.
+It is highly likely that you are using `Promise` wrongly until you get used to `Promise`.
+If there are JavaScript experts around you and can receive code reviews from them, it is very wonderful. But I am writing a bit of JavaScript as a hobby, I can not ask such an expert casually.
 
-So by using this plug-in, you will get an error in the obviously wrong `Promise` code.
-You can understand how to use `Promise` by simply reading the rule details of this plugin, so please set the rules carefully.
+So by using this plug-in, you will get errors in the obviously wrong `Promise` code.
+You can understand how to use `Promise` by simply reading the rule details of this plugin, so please try setting the rules carefully.
 
-By the way, if `async/await` enters ES, will not you use `Promise` directly?
+By the way, if `async/await` are introduced into ES, will not you use `Promise` directly?
 
-I think that `async/await` and `Promise` typically coexist with the experience of using C # `async/await`, but how about it?
-At least, using `async/await` in [AVA] has the impression that the test code is easy to understand.
+I think that `async/await` and `Promise` can coexist according to my experience of using C#'s `async/await`, but I don't exactly know how they are in JavsScript.
+At least, in my impression using `async/await` in [AVA] has effect to make test code easy to understand.
 
 #### [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security)
 Do you care about security while writing code?
-I am doing security reviews using static analysis tools as a job, so I am going to care about it as it is.
-However, whenever it is said that there is a consideration on security in the head, it is not such a thing.
+I am doing security reviews using static analysis tools as a job, so I'm paying attention on it to some extent.
+However, I am not whenever there is a consideration on security in the head.
 
-The vulnerability that can be checked with this plug-in is not much, but it finds a vulnerability that will make it easy to make a hit.
+The amount of vulnerability that can be checked with this plug-in is not much, but it finds vulnerability that easily get mixed in.
 
-As long as I write the code normally, I do not see any errors due to this plugin, but when I get angry with this plug-in, I want you to be a little cautious.
+As long as you write the code normally, you may not see any errors due to this plugin, but when you get warned by this plug-in, I want you to be cautious a little.
 
 #### [eslint-plugin-flowtype](https://github.com/gajus/eslint-plugin-flowtype)
 Although it is good to type declaration using [Flow], there are things that make a huge mistake.
