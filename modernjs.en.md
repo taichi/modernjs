@@ -317,29 +317,29 @@ Because JavaScript is a truly flexible language, most of the new language specif
 
 Code written as results of mistakes by programmers, code not written unless misunderstanding about specifications, code that can be considered a bug in most situations, and code which satisfies the language specification but can not obtain the expected results on runtime in an application... Lint is a tool for automatically finding those codes.
 
-If you want to use Lint a bit more aggressively, you can inspect anything that has nothing to do with the behavior of the code but with code readability, such as how to indent and how to name variables.
+If you use Lint a bit more aggressively, you can inspect anything that has nothing to do with the behavior of the code but with code readability, such as how to indent and how to name variables.
 
 ### History of Lint in JavaScript
-Javascript looks a bit, and there are lots of Lint. The one oldest that I have used is [JSLint](http://www.jslint.com/).
-This guy is hard at the Lint made by Professor [Douglas Crockford](https://github.com/douglascrockford) of the legend. It's an intense style that does not allow any indulgence.
-It is painful for unskilled guys because it is a tool that feels a strong will that code that can do strange behavior should be a strange look that is never misled by a strange behavior of JavaScript.
+If you take a glance at Javascript ecosystem, you will find lots of Lint tools. The oldest one that I have used is [JSLint](http://www.jslint.com/).
+This guy isthe Lint made by legendary [Douglas Crockford](https://github.com/douglascrockford) and is very strict. It's an hardcore style lint tool that does not allow any indulgence.
+It is painful for unskilled guys because it makes us feel the author's strong will that codes that can do strange behavior should be a strange look and he would never misled by a strange behavior of JavaScript.
 
-By the way, [reading the code of JSLint](https://github.com/douglascrockford/JSLint) is a great learning experience. It's compact and easy to read.
+By the way, [reading the code of JSLint](https://github.com/douglascrockford/JSLint) is a great resource to learn JavaScript. It's compact and easy to read.
 
 Lint that became evangelical for unskilled guys like me is [JSHint](http://jshint.com/). This is not too strict. It is incredibly easy to use because it can cut out the setting file.
 However, JSHint is easy to enable and disable the built-in functions, but adding a new rule is a little troublesome.
 
 Also, to incorporate someone's recommended rules into your project, you have to copy and paste the settings.
-Most people want to use someone's recommendation set as a part of maniacs like me like to make Lint's rules.
+Most people want to use someone's recommendation, and only a part of maniacs like me like to make Lint's rules.
 If that recommended set is maintained, you want to use only that final result without doing troublesome things.
 
-That's why it's easy to extend and easy to create configuration files [ESLint] is now recommended.
+That's why [ESLint] is now recommended that is easy to extend and easy to create configuration files.
 
-[ESLint] is an excellent plug-in system, so there are plenty of plug-ins, and you can publish the suggested rule set as an npm module.
+[ESLint] has the excellent plug-in system, so there are plenty of plug-ins, and you can publish the suggested rule set as an npm module.
 
 Airbnb's published [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) is one such kind of recommended rule set.
 
-Airbnb contains a lot of things that do not fit my idea, so I did not adopt it.
+Airbnb's one contains a lot of things that do not fit my idea, so I did not adopt it.
 
 ### [ESlint] related modules
 Speaking of [ESLint] related modules, it's about plug-ins.
