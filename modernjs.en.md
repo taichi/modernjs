@@ -317,97 +317,97 @@ Because JavaScript is a truly flexible language, most of the new language specif
 
 Code written as results of mistakes by programmers, code not written unless misunderstanding about specifications, code that can be considered a bug in most situations, and code which satisfies the language specification but can not obtain the expected results on runtime in an application... Lint is a tool for automatically finding those codes.
 
-If you want to use Lint a bit more aggressively, you can inspect anything that has nothing to do with the behavior of the code but with code readability, such as how to indent and how to name variables.
+If you use Lint a bit more aggressively, you can inspect anything that has nothing to do with the behavior of the code but with code readability, such as how to indent and how to name variables.
 
 ### History of Lint in JavaScript
-Javascript looks a bit, and there are lots of Lint. The one oldest that I have used is [JSLint](http://www.jslint.com/).
-This guy is hard at the Lint made by Professor [Douglas Crockford](https://github.com/douglascrockford) of the legend. It's an intense style that does not allow any indulgence.
-It is painful for unskilled guys because it is a tool that feels a strong will that code that can do strange behavior should be a strange look that is never misled by a strange behavior of JavaScript.
+If you take a glance at Javascript ecosystem, you will find lots of Lint tools. The oldest one that I have used is [JSLint](http://www.jslint.com/).
+This guy isthe Lint made by legendary [Douglas Crockford](https://github.com/douglascrockford) and is very strict. It's an hardcore style lint tool that does not allow any indulgence.
+It is painful for unskilled guys because it makes us feel the author's strong will that codes that can do strange behavior should be a strange look and he would never misled by a strange behavior of JavaScript.
 
-By the way, [reading the code of JSLint](https://github.com/douglascrockford/JSLint) is a great learning experience. It's compact and easy to read.
+By the way, [reading the code of JSLint](https://github.com/douglascrockford/JSLint) is a great resource to learn JavaScript. It's compact and easy to read.
 
 Lint that became evangelical for unskilled guys like me is [JSHint](http://jshint.com/). This is not too strict. It is incredibly easy to use because it can cut out the setting file.
 However, JSHint is easy to enable and disable the built-in functions, but adding a new rule is a little troublesome.
 
 Also, to incorporate someone's recommended rules into your project, you have to copy and paste the settings.
-Most people want to use someone's recommendation set as a part of maniacs like me like to make Lint's rules.
+Most people want to use someone's recommendation, and only a part of maniacs like me like to make Lint's rules.
 If that recommended set is maintained, you want to use only that final result without doing troublesome things.
 
-That's why it's easy to extend and easy to create configuration files [ESLint] is now recommended.
+That's why [ESLint] is now recommended that is easy to extend and easy to create configuration files.
 
-[ESLint] is an excellent plug-in system, so there are plenty of plug-ins, and you can publish the suggested rule set as an npm module.
+[ESLint] has the excellent plug-in system, so there are plenty of plug-ins, and you can publish the suggested rule set as an npm module.
 
 Airbnb's published [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) is one such kind of recommended rule set.
 
-Airbnb contains a lot of things that do not fit my idea, so I did not adopt it.
+Airbnb's one contains a lot of things that do not fit my idea, so I did not adopt it, tho.
 
 ### [ESlint] related modules
-Speaking of [ESLint] related modules, it's about plug-ins.
+[ESLint] related modules are almost all about plug-ins.
 
-I think there are many other things, but list those that I found especially helpful among those I found and used.
+I listed here those at least that I used and found especially useful though I think there are many other modules.
 
-If you are an [ESLint] mania and I know a useful plugin I am not sure, please let me know.
+If you are an [ESLint] mania and know a useful plugin I do not know, please let me know.
 
 #### [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava)
 In my project I use a testing framework called [AVA]. [AVA] will be explained later.
 
-[AVA] is relatively straightforward and easy to use, but it is too simple to understand until you get used to how to write the test code.
+[AVA] is relatively straightforward and easy to use, but it is too simple to understand how to write the test code until you get used to it.
 
-So, using this plugin makes it possible to warn you [AVA] obviously when using incorrect usage.
+So, using this plugin makes it possible to get warned when you use [AVA] obviously incorrectly.
 
 #### [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import)
 `eslint-plugin-import` finds errors on` import` statements.
 
-Specifically, if you try to `import` a module that does not exist in the project, you will get a warning. Everyone can be a typo the module name.
+In concrete, if you try to `import` a module that does not exist in the project, you will get a warning. Everyone can typo the module name.
 
-In addition to this, if you pass a string other than literals to `require`, you get an error.
+In another example, if you pass strings other than literals to `require`, you get errors.
 
 #### [eslint-import-resolver-node](https://github.com/benmosher/eslint-plugin-import/tree/master/resolvers/node)
 Only this one has a different role from other modules.
 
-`eslint-import-resolver-node` can work with` eslint-plugin-import` to customize how to find `import` modules.
+`eslint-import-resolver-node` can work with `eslint-plugin-import` to customize how to find `import` modules.
 
-As for what I mean, in my project, I have stored application code and test code in separate directories `src` and `test` respectively.
+What I mean is, in my project, I store application code and test code in separate directories, `src` and `test` respectively.
 
-On this test code side, when you do `import` application code, it is very painful to write` import world from '../../src/hello/world";`
-To avoid it, by setting `NODE_PATH=src` when executing the test code, we do not need to write that `../../src/`part.
+In this case, in the test code side, when you do `import` application code, I have to write ` import world from '../../src/hello/world";`, and it is painful.
+To avoid that, by setting `NODE_PATH=src` when executing the test code, we do not need to write that `../../src/`part.
 
-It uses `eslint-import-resolver-node` to inform` eslint-plugin-import` about this.
+I use `eslint-import-resolver-node` to inform the omission to `eslint-plugin-import` about this.
 
 #### [eslint-plugin-promise](https://github.com/xjamundx/eslint-plugin-promise)
 The JavaScript `Promise` is a type of library you need to get used to. Moreover, it is hard to understand the correct usage.
-By the way, [JavaScript Promise's book](http://azu.github.io/promises-book/) is a very wonderful document so I can read it many times.
+Speaking of `Promise`, [JavaScript Promise's book](http://azu.github.io/promises-book/) is a very wonderful document so I recoomend to read it many times.
 
-It is highly likely that you are using the wrong `Promise` until you get used to `Promise`.
-If there are JavaScript experts in the vicinity and can receive code reviews, it is very wonderful, although I am writing a bit of JavaScript as a hobby, I can not call such an expert.
+It is highly likely that you are using `Promise` wrongly until you get used to `Promise`.
+If there are JavaScript experts around you and can receive code reviews from them, it is very wonderful. But I am writing a bit of JavaScript as a hobby, I can not ask such an expert casually.
 
-So by using this plug-in, you will get an error in the obviously wrong `Promise` code.
-You can understand how to use `Promise` by simply reading the rule details of this plugin, so please set the rules carefully.
+So by using this plug-in, you will get errors in the obviously wrong `Promise` code.
+You can understand how to use `Promise` by simply reading the rule details of this plugin, so please try setting the rules carefully.
 
-By the way, if `async/await` enters ES, will not you use `Promise` directly?
+By the way, if `async/await` are introduced into ES, will not you use `Promise` directly?
 
-I think that `async/await` and `Promise` typically coexist with the experience of using C # `async/await`, but how about it?
-At least, using `async/await` in [AVA] has the impression that the test code is easy to understand.
+I think that `async/await` and `Promise` can coexist according to my experience of using C#'s `async/await`, but I don't exactly know how they are in JavsScript.
+At least, in my impression using `async/await` in [AVA] has effect to make test code easy to understand.
 
 #### [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security)
 Do you care about security while writing code?
-I am doing security reviews using static analysis tools as a job, so I am going to care about it as it is.
-However, whenever it is said that there is a consideration on security in the head, it is not such a thing.
+I am doing security reviews using static analysis tools as a job, so I'm paying attention on it to some extent.
+However, I am not whenever there is a consideration on security in the head.
 
-The vulnerability that can be checked with this plug-in is not much, but it finds a vulnerability that will make it easy to make a hit.
+The amount of vulnerability that can be checked with this plug-in is not much, but it finds vulnerability that easily get mixed in.
 
-As long as I write the code normally, I do not see any errors due to this plugin, but when I get angry with this plug-in, I want you to be a little cautious.
+As long as you write the code normally, you may not see any errors due to this plugin, but when you get warned by this plug-in, I want you to be cautious a little.
 
 #### [eslint-plugin-flowtype](https://github.com/gajus/eslint-plugin-flowtype)
-Although it is good to type declaration using [Flow], there are things that make a huge mistake.
+Although it is good to type declaration using [Flow], sometimes you may make a huge mistake.
 
-Also, since the type declaration by [Flow] is not ordinary JavaScript, the standard rule in [ESLint] is not applied at all.
-In other words, you need to reimplement it for [Flow], indentation, sticking a semicolon at the end of the line, or killing trailing comma.
+Also, since the type declaration by [Flow] is not ordinary JavaScript, the standard rules in [ESLint] are not applied at all.
+In other words, you need to reimplement rules for [Flow], such as indentation, sticking a semicolon at the end of the line, killing trailing comma, etc.
 
-[Flow] itself has its traps, and if you declare a consistent type declaration, it would be better to keep it a bit Lint.
+[Flow] itself has its traps, and if you declare a consistent type declaration, it would be better to keep them linted.
 
-Although we did the same story even at `Promise`, it is good to use `eslint-plugin-flowtype` as a training Gibbs until [Flow] is also a new technology.
-If you get used to it properly, the error will not come out completely.
+I told the same story at `Promise`, but it is good to use `eslint-plugin-flowtype` as a training plaster jacket since [Flow] is a new technology.
+If you get used to it properly, no error will come out at all.
 
 #### [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
 In my project [React] is used as a framework for building UI.
@@ -418,22 +418,22 @@ Everything defined as a rule is not always desirable for our project, but it is 
 
 In fact, to get knowledge about the rules as defined in this plug-in by yourself, it will not be enough to simply use it with a small project.
 
-The merit of using a de facto standard framework lies in this place.
+The merit of using a de-facto standard framework lies in this place.
 
 #### [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)
-How careful are you using the `Accessibility` of the system that we are making?
+How carefully are you using the `Accessibility` of the system that we are making?
 
-I feel that it is `Accessibility` that has a lower priority than Security which tends to be negligible.
+I feel that it is `Accessibility` that has a lower priority than `Security` which tends to be negligible.
 
-Because it is to provide a rich UI for a better user experience, it may be good to give consideration to users with handicapped on the extension line.
+Because it is to provide a rich UI for a better user experience, it may be good to give consideration to users with disabilities on the extension line.
 
-However [WAI-ARIA 1.1](https://www.w3.org/TR/2016/CR-wai-aria-1.1-20161027/) and [MDN's ARIA page](https: / /developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) from end to end and it's impossible to say you're going to do it.
+However reading through [WAI-ARIA 1.1](https://www.w3.org/TR/2016/CR-wai-aria-1.1-20161027/) and [MDN's ARIA page](https: / /developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) from end to end is extremely hard if you are to do it.
 
-[HTML5 Accessibility](http://www.html5accessibility.com/) I would like to provide maximum value with minimal effort to one easy, handy reference hand.
+I hope to provide the maximum value as much as I can with the munimum effort, such as referencing to [HTML5 Accessibility](http://www.html5accessibility.com/).
 
-That's why let's first make sure that the JSX in the project uses the `eslint-plugin-jsx-a11y` recommended rule to deal with the `Accessibility` correspondence.
+So I recommend to make sure first that the JSX in the project uses the `eslint-plugin-jsx-a11y` recommended rule to deal with the `Accessibility` support.
 
-# Topics on Testing
+# Testing
 Even if it says a test in a bite there are various. Here we talk about developer testing.
 
 I think the technology that the programmer should master the most in application creation tests.
