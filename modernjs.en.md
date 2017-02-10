@@ -399,15 +399,15 @@ The amount of vulnerability that can be checked with this plug-in is not much, b
 As long as you write the code normally, you may not see any errors due to this plugin, but when you get warned by this plug-in, I want you to be cautious a little.
 
 #### [eslint-plugin-flowtype](https://github.com/gajus/eslint-plugin-flowtype)
-Although it is good to type declaration using [Flow], there are things that make a huge mistake.
+Although it is good to type declaration using [Flow], sometimes you may make a huge mistake.
 
-Also, since the type declaration by [Flow] is not ordinary JavaScript, the standard rule in [ESLint] is not applied at all.
-In other words, you need to reimplement it for [Flow], indentation, sticking a semicolon at the end of the line, or killing trailing comma.
+Also, since the type declaration by [Flow] is not ordinary JavaScript, the standard rules in [ESLint] are not applied at all.
+In other words, you need to reimplement rules for [Flow], such as indentation, sticking a semicolon at the end of the line, killing trailing comma, etc.
 
-[Flow] itself has its traps, and if you declare a consistent type declaration, it would be better to keep it a bit Lint.
+[Flow] itself has its traps, and if you declare a consistent type declaration, it would be better to keep them linted.
 
-Although we did the same story even at `Promise`, it is good to use `eslint-plugin-flowtype` as a training Gibbs until [Flow] is also a new technology.
-If you get used to it properly, the error will not come out completely.
+I told the same story at `Promise`, but it is good to use `eslint-plugin-flowtype` as a training plaster jacket since [Flow] is a new technology.
+If you get used to it properly, no error will come out at all.
 
 #### [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
 In my project [React] is used as a framework for building UI.
@@ -418,22 +418,22 @@ Everything defined as a rule is not always desirable for our project, but it is 
 
 In fact, to get knowledge about the rules as defined in this plug-in by yourself, it will not be enough to simply use it with a small project.
 
-The merit of using a de facto standard framework lies in this place.
+The merit of using a de-facto standard framework lies in this place.
 
 #### [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)
-How careful are you using the `Accessibility` of the system that we are making?
+How carefully are you using the `Accessibility` of the system that we are making?
 
-I feel that it is `Accessibility` that has a lower priority than Security which tends to be negligible.
+I feel that it is `Accessibility` that has a lower priority than `Security` which tends to be negligible.
 
-Because it is to provide a rich UI for a better user experience, it may be good to give consideration to users with handicapped on the extension line.
+Because it is to provide a rich UI for a better user experience, it may be good to give consideration to users with disabilities on the extension line.
 
-However [WAI-ARIA 1.1](https://www.w3.org/TR/2016/CR-wai-aria-1.1-20161027/) and [MDN's ARIA page](https: / /developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) from end to end and it's impossible to say you're going to do it.
+However reading through [WAI-ARIA 1.1](https://www.w3.org/TR/2016/CR-wai-aria-1.1-20161027/) and [MDN's ARIA page](https: / /developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) from end to end is extremely hard if you are to do it.
 
-[HTML5 Accessibility](http://www.html5accessibility.com/) I would like to provide maximum value with minimal effort to one easy, handy reference hand.
+I hope to provide the maximum value as much as I can with the munimum effort, such as referencing to [HTML5 Accessibility](http://www.html5accessibility.com/).
 
-That's why let's first make sure that the JSX in the project uses the `eslint-plugin-jsx-a11y` recommended rule to deal with the `Accessibility` correspondence.
+So I recommend to make sure first that the JSX in the project uses the `eslint-plugin-jsx-a11y` recommended rule to deal with the `Accessibility` support.
 
-# Topics on Testing
+# Testing
 Even if it says a test in a bite there are various. Here we talk about developer testing.
 
 I think the technology that the programmer should master the most in application creation tests.
