@@ -522,20 +522,20 @@ This is just awesome!
 But, if you use [AVA], it does not require such a little troublesome.
 
 ### Faster execution speed
-The speed at which the test is executed becomes a problem after releasing a real application properly and entering the maintenance phase.
+When the speed at which the test is executed becomes a problem is after releasing a real application and entering the maintenance phase.
 
-While running for a while, the execution speed will be 5 seconds, but it will be 1 second, unchanged. But what if the amount of test code is 1,000 or 10,000?
+While running for a while, it doesn't matter if the execution speed is 5 seconds or 1 second. But what if the amount of test case is 1,000 or 10,000?
 
 It is no longer possible to run all the tests on your local machine each time you change the code.
 
-Just run the test code that seems to be directly related to the part you changed, and then just throw it to a CI server like Jenkins or CircleCI and pray. I wish for not knowing about it. However, it gets mocked.
+Just run the test code that seems to be directly related to the part you changed, and then just throw it to a CI server like Jenkins or CircleCI, and pray with hope that somewhere I do not expect doesn't fail... However, as you expected, it fails.
 
-Since the test is always mocked regularly, it is better to shorten the cycle of change → test → debug → change ......
+Since the test always fails regularly, it is better to shorten the cycle of change → test → debug → change ......
 
 [AVA] is designed not to dare to write a test code of a very complicated structure to secure the test execution speed.
-From a person who wrote a complicated structure test with a testing framework like [Mocha](https://mochajs.org/), it may seem strange, but it is familiar.
+For a person who wrote a complicated structure test with a testing framework like [Mocha](https://mochajs.org/), it may seem strange, but it is a matter of habit.
 
-A variable scope of test code is accumulated many times, it is good when writing, but after all, it will be a hard time.
+Accumulated variable scopes of test code is good when writing, but after all, it will be a pain.
 
 ### Perfect support
 This is only a talk that the API of [AVA] can be perfect as it is simple.
