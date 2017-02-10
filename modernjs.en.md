@@ -434,18 +434,18 @@ I hope to provide the maximum value as much as I can with the munimum effort, su
 So I recommend to make sure first that the JSX in the project uses the `eslint-plugin-jsx-a11y` recommended rule to deal with the `Accessibility` support.
 
 # Testing
-Even if it says a test in a bite there are various. Here we talk about developer testing.
+There are variety of tests. Here we talk about developer testing.
 
-I think the technology that the programmer should master the most in application creation tests.
-It is because we believe that by expressing what it is supposed to be in the form of tests, better ones can be made by implementing the target software.
+I think the technology that the programmer should master the most in application creation is tests.
+It is because I believe that better ones can be made by expressing what it is supposed to be in the form of tests and by implementing based on those.
 In other words, I do not want to talk that I should be able to do something that a real test engineer is doing.
 
-For quality assurance, there is enormous systematized knowledge, knowledge to make applications, both excellent, but the time is finite.
-There are families or games that I want to do. I want to sleep ten hours a day to live long; I want to eat delicious meals slowly.
+For quality assurance, there is enormous systematized knowledge, and it would be great if developers can aquire the knowledge both to make applications and to assure the quality, but the time is finite.
+They have lovely families or fancy games to play with at night. I want to sleep ten hours a day to live long; I want to eat delicious meals slowly. Again, time is finite.
 
-You should spare time learning what to test and what to test, so do not take time to learn how to use the testing framework coolly.
+You should spare time learning what to test, so do not take time to learn how to use the testing framework coolly.
 
-That's why the testing framework chooses the API that is as simple as possible.
+That's why the testing framework we should chooses is the one with APIs that is as simple as possible.
 
 That is, it is [AVA].
 
@@ -470,14 +470,14 @@ test('bar', async t => {
 Let me briefly list why I like [AVA].
 
 * API is small
-* [Power-assert] is built as standard
+* [Power-assert] is built-in as standard
 * Faster execution speed
 * Perfect support for the `=>` operator, `Promise`,`async/await`, [observable](https://github.com/tc39/proposal-observable)
 
 ### [AVA] API is small
 After importing with `import test from 'ava';` you can do whatever you want by calling the function defined in the `test` variable.
 
-And even if this `test` is a default function, there are only 11 functions. Let's enumerate
+And there are only 11 functions including this `test` default function. Let's enumerate those.
 
 * **test([title], implementation)**
 * test.serial([title], implementation)
@@ -491,14 +491,14 @@ And even if this `test` is a default function, there are only 11 functions. Let'
 * **test.beforeEach([title], implementation)**
 * **test.afterEach([title], implementation)**
 
-The only thing to keep in mind is the four highlighted APIs. Other than that, you can refer to the manual when it becomes necessary.
+The only thing to keep in mind is the four highlighted APIs. Other than that, you can refer to the manual when they get necessary.
 
 It is also important that [AVA] does not work on global space or functions placed in implicit `this`.
 
 ### [power-assert] is included as standard
-When writing tests, use [power-assert] which will give you the richest assertion error if you use it without thinking anything.
+When writing tests, I recommend to use [power-assert] which will give you the richest assertion error if you use it without thinking anything.
 
-This test is
+This test generates:
 ```
 test(t => {
     const a = /foo/;
@@ -508,18 +508,18 @@ test(t => {
 });
 ```
 
-This is an error.
+This kind of error:
 ```
 t.true(a.test(b) || b === c)
        |      |     |     |
        |      "bar" "bar" "baz"
        false
 ```
-Awesome!
+This is just awesome!
 
-[power-assert] rewrites the code to issue this assertion error, but the setup for that is a little troublesome. It is easy to do, and manuals are available, but well, it is troublesome to have trouble.
+[power-assert] rewrites the code to issue this assertion error, but the setup for that is a little troublesome. It is easy to do, and manuals for it are fully available, but well, it is bothersome still.
 
-But, if you use [AVA], it does not even have to be a little troublesome.
+But, if you use [AVA], it does not require such a little troublesome.
 
 ### Faster execution speed
 The speed at which the test is executed becomes a problem after releasing a real application properly and entering the maintenance phase.
