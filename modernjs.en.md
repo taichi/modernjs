@@ -95,26 +95,26 @@ In other words, I tend to think about how to apply new technologies to those dev
 Please understand that this entry has such bias.
 
 # Topics on Language
-There are various execution environments of JavaScript, but ES5 works with most browsers.
-If you do your best on ES5 in the first place, you can talk about how confusing compile are, that is, [Babel].
+There are various runtime environments of JavaScript, but only ES5 works on most browsers.
+If you do your best with ES5, you can live without the messy transpiler, that is, [Babel].
 
-As JavaScript has much knowledge to learn, first think about options not to associate with [Babel].
+As JavaScript has a lot of points to learn, you should think about the options not to associate with [Babel] first.
 
-It was impossible for me to choose options not to go with [Babel]. The reason is simple; I do not want to write a lot of `function`. How about everyone?
+It was impossible for me to choose options not to go with [Babel]. The reason is simple; I do not want to write a lot of `function`. How about you guys?
 
-Also, if I came from Java it is true that compiling does not have a sense of evil against work.
+For note, as I mentioned, my background is Java and it is true that I do not have negative feelings on the process of compiling itself.
 
 ## [Babel] is everyone's sandbox
 
-Designing a programming language is somewhat lonely work. Until now, we have released a few language designers carefully until they are shaped to some extent.
+Designing a programming language is somewhat lonely work. Until now, a few language designers have released carefully programming languages until the designers feel they got shaped to some extent.
 
-However, at least about JavaScript, it is known by ECMAScript 4's failure that it will not work in such a way.
+However, at least in the case of JavaScript, it is known that it will not work in such a way by ECMAScript4's failure.
 
-So you can casually implement experimental language features in the form of plugins [Babel]. Discuss the function of [New language Proposals](https://github.com/tc39/proposals) while using Gashagashi and decide the function to import into the next version of JavaScript.
+So here it comes [Babel] that enables you to casually implement experimental language features in the form of plugins. You can discuss the function of [New language Proposals](https://github.com/tc39/proposals) while using the implementation of those aggresively, and decide the function to import into the next version of JavaScript.
 
-Users can just try writing a cool new feature by just writing `.babelrc`. It is not enough that the function thought or it is only a matter of stopping using it if the motion is unstable.
+Users can try writing a cool new feature by just writing `.babelrc`. It is only a matter of stopping using it if the behaviour is not as expected or the motion is unstable. 
 
-It is somewhat fun to add and subtract language features according to your needs.
+It is somewhat fun to add and subtract language features depending upon your needs.
 
 ### [Babel] related modules
 There are many modules related to [Babel], but there are surprisingly few good ones that you should understand as chitin.
