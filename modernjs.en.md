@@ -538,15 +538,15 @@ For a person who wrote a complicated structure test with a testing framework lik
 Accumulated variable scopes of test code is good when writing, but after all, it will be a pain.
 
 ### Perfect support
-This is only a talk that the API of [AVA] can be perfect as it is simple.
+It is just said that the API of [AVA] can be perfect as it is simple.
 
-Since `it` is not rewritten badly, the`=>`operator moves comfortably.
+Since `this` is not rewritten badly, the `=>` operator works comfortably.
 
-Since the return value of the test method is determined as the responsibility of [AVA], whether it is `Promise`, but if you return it as [observable](https://github.com/tc39/proposal-observable) [AVA] will do it for you.
+Since the return value of the test method is determined that it is within the responsibility of [AVA], even if it is `Promise` or [observable](https://github.com/tc39/proposal-observable) or any others, [AVA] will do it for you.
 
-Function calls aligned with test code files are not nested.
+Function calls listed in test code files won't be nested.
 
-By the way, to reference the variable created by `test.beforeEach` with` test`, do this.
+By the way, the following is how to reference the variable created by `test.beforeEach` from `test`:
 
 ```
 test.beforeEach(t => {
@@ -557,21 +557,22 @@ test(t => {
     t.is(t.context, 'unicorn');
 });
 ```
-`context` is not shared among multiple` test`, so you can touch it altogether.
-However, multiple `test` can not guarantee to order unless` test.serial` is used, so do not modify `context` in` test`.
+
+`context` is not shared among multiple `test`, so you can touch it as much as you want.
+However, the execusion order of multiple `test` are not guaranteed unless `test.serial` is used, so do not modify `context` in `test`.
 In the first place `test.serial` should not be used unless there are any special reasons.
 
-Also, do not do it because it is bad either to share some information between test methods or to write in such a way that the test execution order has meaning.
+Do not share the infomation among test methods and write test in a way that the test execution order has meaning, because it is a bad practice.
 
 ## Unresolved issues in testing
-I should learn, but please write a little, hoping that someone will supplement the tasks that have not been done yet.
+The followings are what I should learn, but I hope someone will supplement the tasks that I haven't researched well yet.
 
 * E2E test or system test
-  * It seems that [React application can be tested](http://www.joelotter.com/2015/04/18/protractor-reactjs.html) at [Protractor](http://www.protractortest.org/) 
+  * It seems that [React application can be tested](http://www.joelotter.com/2015/04/18/protractor-reactjs.html) using [Protractor](http://www.protractortest.org/) 
 * Mutation test
-  * [Stryker](http://stryker-mutator.github.io/) is okay but there is no [AVA] support
-* stress test
-  * In particular, there is a rich UI load test methodology and a tool for that, made by JS, but it should be nice, but it has not been successfully found
+  * [Stryker](http://stryker-mutator.github.io/) looks okay but there is no [AVA] support.
+* Stress test
+  * In particular, there should be a rich UI load test methodology and a tool made in JS for it, but I couldn't have found one yet.
 
 # How to make a UI
 From here, I will explain how to construct a user interface with JavaScript.
