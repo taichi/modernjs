@@ -94,93 +94,93 @@ In other words, I tend to think about how to apply new technologies to those dev
 
 Please understand that this entry has such bias.
 
-# Topics on Language
-There are various runtime environments of JavaScript, but only ES5 works on most browsers.
-If you do your best with ES5, you can live without the messy transpiler, that is, [Babel].
+# Topics on the language itself
+ES5 works with most browsers, though there are various execution environments of JavaScript.
+If you do your best on ES5 in the first place, you can be freed from confusing compiler (transpiler), that is, [Babel].
 
-As JavaScript has a lot of points to learn, you should think about the options not to associate with [Babel] first.
+As JavaScript has a lot to learn, so first you should think about the option not to tackle with [Babel].
 
-It was impossible for me to choose options not to go with [Babel]. The reason is simple; I do not want to write a lot of `function`. How about you guys?
+It was impossible for me to choose that option, not facing [Babel]. The reason is simple; I do not want to write a lot of `function`. How about everyone?
 
-For note, as I mentioned, my background is Java and it is true that I do not have negative feelings on the process of compiling itself.
+I think I should repeat that I came from Java and it is true that I do not have any negative feelings on the process of compiling.
 
 ## [Babel] is everyone's sandbox
 
-Designing a programming language is somewhat lonely work. Until now, a few language designers have released carefully programming languages until the designers feel they got shaped to some extent.
+Designing a programming language is somewhat lonely work. Until now, a few language designers have released the language carefully until they get a shape to some extent.
 
-However, at least in the case of JavaScript, it is known that it will not work in such a way by ECMAScript4's failure.
+However, at least in the case of JavaScript, we had learned from ECMAScript 4's failure that it will not work in such a way.
 
-So here it comes [Babel] that enables you to casually implement experimental language features in the form of plugins. You can discuss the function of [New language Proposals](https://github.com/tc39/proposals) while using the implementation of those aggresively, and decide the function to import into the next version of JavaScript.
+So here comes [Babel], where you can casually implement experimental language features in the form of the plugins of it. Discuss the features of [New language Proposals](https://github.com/tc39/proposals) as using them agressively and decide the features to import into the next version of JavaScript.
 
-Users can try writing a cool new feature by just writing `.babelrc`. It is only a matter of stopping using it if the behaviour is not as expected or the motion is unstable. 
+Users can just try using cool new features by just writing `.babelrc`. If the feature is not better than expected or is unstable, you can just stop using it.
 
-It is somewhat fun to add and subtract language features depending upon your needs.
+It is fun to add and subtract language features depending upon your demands.
 
-### [Babel] related modules
-There are many modules related to [Babel], but there are surprisingly few good ones that you should understand as chitin.
+### [Babel] modules
+There are many modules for [Babel], but there are surprisingly few good ones that you should dig into.
 
 The first two are modules for setting up the environment, and the other two are modules for working with other tools.
 
 #### [babel-preset-env](https://github.com/babel/babel-preset-env)
-`babel-preset-env` is a handy module that automatically selects the [Babel] plugin to use, in conjunction with the environment where JavaScript converted by [Babel] operates.
+`babel-preset-env` is a handy module that automatically selects the [Babel] plugin to use, in conjunction with the environment where the JavaScript source code runs that is converted by [Babel].
 
-As JavaScript improves the execution environment of browsers and [Node.js] and so on, the plug-in of [Babel] required at compile time changes accordingly.
-Compilation time is only slightly increased where unnecessary plugins are activated, so it is not very harmful.
+In JavaScript ecosystem, the execution environment of browsers and [Node.js] and so on get improved hand over hand, the plug-in of [Babel] required at compile time changes accordingly.
+Though even if unnecessary plugins are activated, what happens is only that ompilation time get slightly increased.
 
-However, it is not very healthy not to keep up with the latest state unless you are conscious.
+However, it is not very healthy that you can't keep up with the latest state unless you are conscious.
 
-Using `babel-preset-env` will be freed from such bold work. Just updating the module on a regular basis will bring you the latest environment. Great.
+Using `babel-preset-env` will free you from such bold work. Just updating the module on a regular basis will bring you the latest environment, which is just awesome.
 
 #### [babel-register](https://github.com/babel/babel/tree/master/packages/babel-register)
-`babel-register` is a hacking module that hooks Node's `require` and inserts [Babel]'s processing.
+`babel-register` is a hacking module that hooks Node's `require` and inserts [Babel]'s process.
 
-It is not used for loading modules with production code, but mainly for running test code.
+It is not used on loading modules with production code but mainly on running test code.
 
-When executing unit test code in JavaScript, it is common to run a test from detection of a change of file.
+When executing unit test code in JavaScript, it is common to run a test by detecting a change of file.
 
-At this time just modifying the test code slightly, if you compile all the project code, it will not work at all.
+If slight modification of the test code kicks compilation of all the project code, you cannot focus on writing code at all.
 
-If you want to fully automate the process of compiling only files that changed and files related to them, you can hook `require` or` import`.
+To avoid that situation, you can fully automate the process of compiling only files that have changed and that are related to those changes by hooking `require` or` import`.
 
-Please note that the test code does not refer directly to the code under test, such as a test like an E2E test, it does not work very well.
+Please note that the test code which does not refer directly to the code under test, such as a test like an E2E test, sometimes does not work very well.
 
 #### [babel-eslint](https://github.com/babel/babel-eslint)
-`babel-eslint` is a parser for handling JavaScript code extended with [Babel] with [ESLint].
+`babel-eslint` is a parser to handle JavaScript code extended by [Babel] with [ESLint].
 
-[ESLint] has evolved properly with [ESLint], so if you typically write code on ES and JSX, you do not need `babel-eslint`.
+[ESLint] has evolved properly, so if you write code on ES and JSX as usual, you do not need `babel-eslint`.
 
-Why is this necessary because you use a tool to declare and validate the type in JavaScript called [Flow].
+The reason why this is necessary is because you use a tool to declare and validate the type in JavaScript called [Flow].
 
-As for [Flow] and [ESLint], I will explain properly later, so I want you to feel secure.
+As for [Flow] and [ESLint], I will explain properly later.
 
 #### [babel-plugin-transform-flow-strip-types](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-flow-strip-types)
-`babel-plugin-transform-flow-strip-types` is a module that automatically removes information about types declared for [Flow] as its name suggests.
+`babel-plugin-transform-flow-strip-types` is, as its name says, a module that automatically removes information about types declared for [Flow].
 
-After deleting the information on the type, it converts the written code to JavaScript executable at the target runtime.
+After deleting the information for typing, it converts the written code to JavaScript executable at the target runtime.
 
-If [Babel] runs with only a hardened language specification without using [Flow], almost no configuration is required.
-So, I wonder not to repel [Babel] so much.
+On condition with a fixed language specification without using [Flow], [Babel] requires almost no configuration.
+So, I think we don't need to repel [Babel] so much.
 
-## About the type system
-Even if it is a type, nothing is going to talk about such a difficult story. It is a story of trying to make a bit of missing JavaScript's missing taste.
+## Typing system
+I'm not going to talk about such a difficult story. It is a story of adding a bit of JavaScript's missing taste.
 
-Since JavaScript has almost no type declaration in the first place, as a simple story, it is absolutely unknown if you just look at the code of the called side to see what comes up in the function's argument.
+Since JavaScript has almost no type declaration in the first place, as a simple logic, it is absolutely impossible to know what kind of objects are passed as function's arguments if you just look at the code of the callee side.
 
-If you write both the caller and the called party in your own time in a short period, you know exactly what to pass as an argument.
-Then, there is a story that it does not bother to declare it.
+If you write both the caller and the callee all by yourself in a short period, you know exactly what to pass as arguments.
+Then, you think it's unnecessary to declare them.
 
-But I want you to think calmly. Are you yourself a week ago? I can say that it is different. Even though I know roughly what last week's I thought about writing the code, it is an honest point that I am not sure in detail.
+But I want you to think calmly. Are you exactly same as yourself a week ago? I can say that it is different. Even though I know roughly what I thought about on writing the code last week, the truth is that I am not sure in details.
 
-It is not a bad idea to provide information to others including yourself in the future by writing comments in the code, but comments do not work, and you can not validate automatically.
-On the other hand, if you write the type like a little memo, you can automatically verify and be happy.
+It is not a bad idea to provide information to others including yourself in the future by writing comments in the code, but comments are not executed on runtime, and you can not validate automatically.
+On the other hand, if you write the type as a little memo, you can automatically verify the code and be happy.
 
 ### Faction of type declaration in JavaScript
-Let's check out how to declare types in JavaScript around here a little.
+Let's check out how to declare types in JavaScript here a bit.
 
 #### [Google Closure Compiler]
-The first time I worked on a type declaration while using JavaScript is [Google Closure Compiler's Type System](https://github.com/google/closure-compiler/wiki/Types-in-the-Closure-Type-System).
+What I worked on a type declaration for the first time on using JavaScript is [Google Closure Compiler's Type System](https://github.com/google/closure-compiler/wiki/Types-in-the-Closure-Type-System).
 
-When he writes a type declaration briefly in the document comment, he is a companion checking it.
+If you write a type declaration briefly in the document comment, it validates the types in the code.
 
 ```
 /**
@@ -197,16 +197,16 @@ function MyClass(opt_value) {
 }
 ```
 
-What makes this approach wonderful is that the type declaration is in the comment so that the programmer can provide the necessary information by the compiler without affecting the behavior of the source code at all.
+What makes this approach wonderful is that the type declaration is in the comment, so the programmer can provide the necessary information by the compiler without affecting the behavior of the source code at all.
 
-On the other hand, there is a problem that the declaration in the comment is easy to be ignored. There is also a problem that expression power is extremely low instead of being easy to understand.
+On the other hand, there is a problem that the declaration in the comment is easy to be ignored. There is also a problem that expression flexibility is extremely low instead of being easy to understand.
 
-'ADVANCED_OPTIMIZATIONS' of [Google Closure Compiler] has a risk that the code will not move at all, but I was surprised because it's seriously smaller.
+`ADVANCED_OPTIMIZATIONS` of [Google Closure Compiler] has a risk that the code will not run at all, but I was really surprised because the code size gets seriously smaller.
 
 #### [TypeScript]
-[TypeScript] appeared as one of a lot of efforts to develop a new language as an advanced JavaScript.
+[TypeScript] emerged as one of a lot of efforts to develop a new language as an advanced JavaScript.
 
-For me, I think that [TypeScript] is a kind of grace from God, with the recognition that Professor Anders Hejlsberg (https://github.com/ahejlsberg) who designed Delphi and C # has the latest work.
+For me, I think that [TypeScript] is a kind of grace from God, with the recognition that it is the latest work by Anders Hejlsberg (https://github.com/ahejlsberg) who designed Delphi and C#.
 
 Let's look at the code of [TypeScript] a bit.
 
@@ -224,10 +224,10 @@ var user = { firstName: "Jane", lastName: "User" };
 
 document.body.innerHTML = greeter(user);
 ```
-It is [TypeScript] that is similar to the original Java in oleore Java in my brain.
+[TypeScript] is more similar to the my own Java I mentioned earlier than the originial Java.
 
-The type declaration of [TypeScript] is provided with a way to mix type annotations in the code to work and a way to create a special file for type declaration.
-For example, if you create a special file, declare it like this.
+[TypeScript] provides 2 ways to daclare types; one is to mix type annotations in the code to work and the other is to create a dedicated file for type declaration.
+For example, if you create a dedicated file, declare it like this.
 
 ```
 declare namespace myLib {
@@ -236,19 +236,19 @@ declare namespace myLib {
 }
 ```
 
-If you have a file called `d.ts` for type declaration, you can write the code as if there is a type in a library with no actual type declaration.
+If you have a file with the extension `d.ts` for type declaration, you can write the code as if there is a type in a library, even if that has no actual type declaration.
 
-It is a crucial feature for utilizing existing assets to be able to type in post-installation as needed for existing libraries without type declarations.
+It is a crucial feature to be able to have types in post-installation of the libraries with out tyep declaration as needed in order to utilize existing assets.
 
-The [DefinitelyTyped] project that was working to collect type declaration files for OSS modules into a single repository was overwhelmed by too many type declaration files.
+The [DefinitelyTyped] project that was working to collect type declaration files for OSS modules into a single repository was busted due to the enormous number of declaration files.
 
-Now we are managing it in an organization called [types](https://github.com/types) in a straightforward way to allocate one repository for one module.
-Nonetheless, [DefinitelyTyped] is not referenced.
+Now the organization called [types](https://github.com/types) is managing them in a straightforward way where allocating one repository for one module.
+Nonetheless, it is not to say [DefinitelyTyped] is not referenced at all.
 
-By the way, to retrieve the type declaration file from the npm repository, you can do `npm install -D @types/lodash` etc ... It is not a dedicated tool, and it's great to get it in npm.
+By the way, to retrieve the type declaration files from the npm repository, you can do `npm install -D @types/lodash` etc. It's great that you can get them by npm, not by the decicated tools.
 
 #### [Flow]
-[Flow] is a static analysis tool made with OCaml, and it checks the type declaration mixed in JavaScript, and it performs a various check.
+[Flow] is a static analysis tool written in OCaml, and it checks the type declaration mixed in JavaScript, and it performs various validations.
 
 Let's see a bit of JavaScript code typed in [Flow].
 
@@ -268,147 +268,146 @@ total([1, 2, 3, 4]);
 It looks like it is similar to typeScript's type annotation. But [Flow] has a distinctly different point from [TypeScript].
 [Flow] does static analysis such as evaluating type annotation given to JavaScript, but does not create a new programming language.
 
-It is a closer approach to [Google Closure Compiler]. However, unlike the time when [Google Closure Compiler] was created, there is now [Babel], so once you have extended the syntax of the language primarily and you finish using it, you can safely remove only the description specifically for [Flow] Implementation became possible.
+It is a closer approach to [Google Closure Compiler]. However, unlike the time when [Google Closure Compiler] was created, now there is [Babel], so once you have extended the syntax of the language primarily and you finish using it, it is possible to safely remove only the description specifically for [Flow] implementation.
 
-Type declarations done in comments, expression power will be limited. [Flow] got over it. Nevertheless, compared with Haskell and OCaml, it does not have much rich expressiveness, even compared to Java.
+Type declarations done in comments is limited in terms of expressive power. [Flow] got over the challenge. Nevertheless, compared with Haskell and OCaml, it does not have much rich expressiveness, even compared to Java.
 
-It is not so difficult to understand the extent to which [Flow] infer the type. Or [Flow] does only very simple type inference.
+It is not so difficult to understand the extent where [Flow] infer the type. In other words, [Flow] does only very simple type inference.
 
-In [Flow] there is a repository called [flow-typed] for sharing type declaration like [TypeScript].
-I do not know why I'm going to do the same thing as [Definitely Typed], but I am doing it in a single repository.
+For [Flow], there is a repository called [flow-typed] for sharing type declarations like [TypeScript].
+I do not know why it's going to do the same mistake as [Definitely Typed], but it's managing them in a single repository.
 
-However, this seems to be reviewed severely when throwing out PR, and the contents of the stored type definition file are firm, instead of being absolute.
+However, this seems to reviews the PRs serverly, and the contents of the stored type definition file are strict and the absolute amount of those are small.
 
-When retrieving a type declaration file, using the command `flow-typed` will automatically download the dependency module type declaration file in package.json from the [flow-typed] repository.
-For those without a type declaration, we make a type declaration file that all types declare any.
+On retrieving a type declaration file, the command `flow-typed` will automatically download the type declaration files of dependent module in package.json from the [flow-typed] repository.
+For those without a type declaration, it makes a type declaration file where all types are declared as `any`.
 
-Why will not you make it possible to take type declaration files with the npm command? It is not a good idea to separate the commands that make a miscellaneous type declaration file separately.
+Why does not it let you pull type declaration files with the `npm` command? I wonder it should have another command that make a miscellaneous type declaration file.
 
 ### Which type system to use
-There is no [Google Closure Compiler] at this time.
+There is no reason to choose [Google Closure Compiler] anymore.
 
-Since [TypeScript] and [Flow] are different objectives, they are not something that can simply be evaluated in the star table. If you compare it in the Star table, [TypeScript] is a victory.
+Since [TypeScript] and [Flow] are different objectives, they are not something that can simply be evaluated in the score sheet. If you compare it in the Star table, [TypeScript] is a victory.
 
-Well then, which one should you use?
+Well then, which one to use?
 
-It 'd be good to look at the correspondence situation of the library and framework you want to use.
+It'd be good to consider the support for the libraries and the frameworks you want to use.
 
-If you use at least [Angular], it will be [TypeScript] or [React] if you use [Flow] you are confident.
+At least if you use [Angular], [TypeScript] is the choice and if you use [React], definitely you use [Flow].
 
-[There is an official type definition file for TypeScript in Vue.js](https://vuejs.org/v2/guide/typescript.html). However, this does not recommend using [TypeScript], it seems that the contribution by some users was merged.
+[There is an official TypeScript type definition file for Vue.js](https://vuejs.org/v2/guide/typescript.html). However, this does not recommend the use of [TypeScript], it seems that the contribution by some users was merged.
 
-If you normally use JavaScript, it is good to use [Flow], and [TypeScript] is a pretty good choice if you have the type definition files of the library you'd like to use.
-Especially [VS Code] apparently improves the precision of input completion if the type definition file is complete.
+If you use normal JavaScript, it is good to use [Flow], and [TypeScript] is a pretty good choice if you have the type definition files of the library you'd like to use.
+Especially [VS Code] apparently improves the precision of input completion if you have the type definition files.
 
 Supplementally, [Flow Language Support](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode) also has a function to enhance input completion.
 
 ## Unresolved issues in the type system
-Supplement the indications received from experts after this entry release.
+Supplement the indications received from experts after the first release of this entry.
 
 * [Dart](https://www.dartlang.org/)
-  * It is a language that makes strong type inference than [TypeScript]
-  * [Dart2js](https://webdev.dartlang.org/tools/dart2js) can convert it to JavaScript
-  * [Angular] Within 2 Google's [large case already exists](http://news.dartlang.org/2016/03/the-new-adwords-ui-uses-dart-we-asked. Html)
-  * Large-scale case is due to [Angular 2 Dart](https://github.com/dart-lang/angular2)
+  * A language that makes stronger type inference than [TypeScript]
+  * [Dart2js](https://webdev.dartlang.org/tools/dart2js) can convert the code to JavaScript
+  * Two large use case [Angular2] within Google's [already exists](http://news.dartlang.org/2016/03/the-new-adwords-ui-uses-dart-we-asked.html)
+  * Large use case is achieved with [Angular 2 Dart](https://github.com/dart-lang/angular2)
  
 ## Let's share best practices with static analysis
 JavaScript has many traps. The trap here is the language specification that many programmers tend to misunderstand, and the behavior of certain libraries.
 Because JavaScript is a truly flexible language, most of the new language specifications can be converted directly into the old language. That is why there are many traps.
 
-Code written as a result of a mistake by programmer or code not written unless misunderstanding about specifications. A code that can be considered a bug in most situations.
-Although it conforms to the language specification, Lint is a tool for automatically finding the code which can not obtain the expected results even if it is operated as an application.
+Code written as results of mistakes by programmers, code not written unless misunderstanding about specifications, code that can be considered a bug in most situations, and code which satisfies the language specification but can not obtain the expected results on runtime in an application... Lint is a tool for automatically finding those codes.
 
-If you use Lint a bit more aggressively, you can inspect anything that has nothing to do with the behavior of the code, such as how to indent and how to name variables, but also on code readability.
+If you use Lint a bit more aggressively, you can inspect anything that has nothing to do with the behavior of the code but with code readability, such as how to indent and how to name variables.
 
 ### History of Lint in JavaScript
-Javascript looks a bit, and there are lots of Lint. The one oldest that I have used is [JSLint](http://www.jslint.com/).
-This guy is hard at the Lint made by Professor [Douglas Crockford](https://github.com/douglascrockford) of the legend. It's an intense style that does not allow any indulgence.
-It is painful for unskilled guys because it is a tool that feels a strong will that code that can do strange behavior should be a strange look that is never misled by a strange behavior of JavaScript.
+If you take a glance at Javascript ecosystem, you will find lots of Lint tools. The oldest one that I have used is [JSLint](http://www.jslint.com/).
+This guy isthe Lint made by legendary [Douglas Crockford](https://github.com/douglascrockford) and is very strict. It's an hardcore style lint tool that does not allow any indulgence.
+It is painful for unskilled guys because it makes us feel the author's strong will that codes that can do strange behavior should be a strange look and he would never misled by a strange behavior of JavaScript.
 
-By the way, [reading the code of JSLint](https://github.com/douglascrockford/JSLint) is a great learning experience. It's compact and easy to read.
+By the way, [reading the code of JSLint](https://github.com/douglascrockford/JSLint) is a great resource to learn JavaScript. It's compact and easy to read.
 
 Lint that became evangelical for unskilled guys like me is [JSHint](http://jshint.com/). This is not too strict. It is incredibly easy to use because it can cut out the setting file.
 However, JSHint is easy to enable and disable the built-in functions, but adding a new rule is a little troublesome.
 
 Also, to incorporate someone's recommended rules into your project, you have to copy and paste the settings.
-Most people want to use someone's recommendation set as a part of maniacs like me like to make Lint's rules.
+Most people want to use someone's recommendation, and only a part of maniacs like me like to make Lint's rules.
 If that recommended set is maintained, you want to use only that final result without doing troublesome things.
 
-That's why it's easy to extend and easy to create configuration files [ESLint] is now recommended.
+That's why [ESLint] is now recommended that is easy to extend and easy to create configuration files.
 
-[ESLint] is an excellent plug-in system, so there are plenty of plug-ins, and you can publish the suggested rule set as an npm module.
+[ESLint] has the excellent plug-in system, so there are plenty of plug-ins, and you can publish the suggested rule set as an npm module.
 
 Airbnb's published [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) is one such kind of recommended rule set.
 
-Airbnb contains a lot of things that do not fit my idea, so I did not adopt it.
+Airbnb's one contains a lot of things that do not fit my idea, so I did not adopt it, tho.
 
 ### [ESlint] related modules
-Speaking of [ESLint] related modules, it's about plug-ins.
+[ESLint] related modules are almost all about plug-ins.
 
-I think there are many other things, but list those that I found especially helpful among those I found and used.
+I listed here those at least that I used and found especially useful though I think there are many other modules.
 
-If you are an [ESLint] mania and I know a useful plugin I am not sure, please let me know.
+If you are an [ESLint] mania and know a useful plugin I do not know, please let me know.
 
 #### [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava)
 In my project I use a testing framework called [AVA]. [AVA] will be explained later.
 
-[AVA] is relatively straightforward and easy to use, but it is too simple to understand until you get used to how to write the test code.
+[AVA] is relatively straightforward and easy to use, but it is too simple to understand how to write the test code until you get used to it.
 
-So, using this plugin makes it possible to warn you [AVA] obviously when using incorrect usage.
+So, using this plugin makes it possible to get warned when you use [AVA] obviously incorrectly.
 
 #### [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import)
 `eslint-plugin-import` finds errors on` import` statements.
 
-Specifically, if you try to `import` a module that does not exist in the project, you will get a warning. Everyone can be a typo the module name.
+In concrete, if you try to `import` a module that does not exist in the project, you will get a warning. Everyone can typo the module name.
 
-In addition to this, if you pass a string other than literals to `require`, you get an error.
+In another example, if you pass strings other than literals to `require`, you get errors.
 
 #### [eslint-import-resolver-node](https://github.com/benmosher/eslint-plugin-import/tree/master/resolvers/node)
 Only this one has a different role from other modules.
 
-`eslint-import-resolver-node` can work with` eslint-plugin-import` to customize how to find `import` modules.
+`eslint-import-resolver-node` can work with `eslint-plugin-import` to customize how to find `import` modules.
 
-As for what I mean, in my project, I have stored application code and test code in separate directories `src` and `test` respectively.
+What I mean is, in my project, I store application code and test code in separate directories, `src` and `test` respectively.
 
-On this test code side, when you do `import` application code, it is very painful to write` import world from '../../src/hello/world";`
-To avoid it, by setting `NODE_PATH=src` when executing the test code, we do not need to write that `../../src/`part.
+In this case, in the test code side, when you do `import` application code, I have to write ` import world from '../../src/hello/world";`, and it is painful.
+To avoid that, by setting `NODE_PATH=src` when executing the test code, we do not need to write that `../../src/`part.
 
-It uses `eslint-import-resolver-node` to inform` eslint-plugin-import` about this.
+I use `eslint-import-resolver-node` to inform the omission to `eslint-plugin-import` about this.
 
 #### [eslint-plugin-promise](https://github.com/xjamundx/eslint-plugin-promise)
 The JavaScript `Promise` is a type of library you need to get used to. Moreover, it is hard to understand the correct usage.
-By the way, [JavaScript Promise's book](http://azu.github.io/promises-book/) is a very wonderful document so I can read it many times.
+Speaking of `Promise`, [JavaScript Promise's book](http://azu.github.io/promises-book/) is a very wonderful document so I recoomend to read it many times.
 
-It is highly likely that you are using the wrong `Promise` until you get used to `Promise`.
-If there are JavaScript experts in the vicinity and can receive code reviews, it is very wonderful, although I am writing a bit of JavaScript as a hobby, I can not call such an expert.
+It is highly likely that you are using `Promise` wrongly until you get used to `Promise`.
+If there are JavaScript experts around you and can receive code reviews from them, it is very wonderful. But I am writing a bit of JavaScript as a hobby, I can not ask such an expert casually.
 
-So by using this plug-in, you will get an error in the obviously wrong `Promise` code.
-You can understand how to use `Promise` by simply reading the rule details of this plugin, so please set the rules carefully.
+So by using this plug-in, you will get errors in the obviously wrong `Promise` code.
+You can understand how to use `Promise` by simply reading the rule details of this plugin, so please try setting the rules carefully.
 
-By the way, if `async/await` enters ES, will not you use `Promise` directly?
+By the way, if `async/await` are introduced into ES, will not you use `Promise` directly?
 
-I think that `async/await` and `Promise` typically coexist with the experience of using C # `async/await`, but how about it?
-At least, using `async/await` in [AVA] has the impression that the test code is easy to understand.
+I think that `async/await` and `Promise` can coexist according to my experience of using C#'s `async/await`, but I don't exactly know how they are in JavsScript.
+At least, in my impression using `async/await` in [AVA] has effect to make test code easy to understand.
 
 #### [eslint-plugin-security](https://github.com/nodesecurity/eslint-plugin-security)
 Do you care about security while writing code?
-I am doing security reviews using static analysis tools as a job, so I am going to care about it as it is.
-However, whenever it is said that there is a consideration on security in the head, it is not such a thing.
+I am doing security reviews using static analysis tools as a job, so I'm paying attention on it to some extent.
+However, I am not whenever there is a consideration on security in the head.
 
-The vulnerability that can be checked with this plug-in is not much, but it finds a vulnerability that will make it easy to make a hit.
+The amount of vulnerability that can be checked with this plug-in is not much, but it finds vulnerability that easily get mixed in.
 
-As long as I write the code normally, I do not see any errors due to this plugin, but when I get angry with this plug-in, I want you to be a little cautious.
+As long as you write the code normally, you may not see any errors due to this plugin, but when you get warned by this plug-in, I want you to be cautious a little.
 
 #### [eslint-plugin-flowtype](https://github.com/gajus/eslint-plugin-flowtype)
-Although it is good to type declaration using [Flow], there are things that make a huge mistake.
+Although it is good to type declaration using [Flow], sometimes you may make a huge mistake.
 
-Also, since the type declaration by [Flow] is not ordinary JavaScript, the standard rule in [ESLint] is not applied at all.
-In other words, you need to reimplement it for [Flow], indentation, sticking a semicolon at the end of the line, or killing trailing comma.
+Also, since the type declaration by [Flow] is not ordinary JavaScript, the standard rules in [ESLint] are not applied at all.
+In other words, you need to reimplement rules for [Flow], such as indentation, sticking a semicolon at the end of the line, killing trailing comma, etc.
 
-[Flow] itself has its traps, and if you declare a consistent type declaration, it would be better to keep it a bit Lint.
+[Flow] itself has its traps, and if you declare a consistent type declaration, it would be better to keep them linted.
 
-Although we did the same story even at `Promise`, it is good to use `eslint-plugin-flowtype` as a training Gibbs until [Flow] is also a new technology.
-If you get used to it properly, the error will not come out completely.
+I told the same story at `Promise`, but it is good to use `eslint-plugin-flowtype` as a training plaster jacket since [Flow] is a new technology.
+If you get used to it properly, no error will come out at all.
 
 #### [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
 In my project [React] is used as a framework for building UI.
@@ -419,34 +418,34 @@ Everything defined as a rule is not always desirable for our project, but it is 
 
 In fact, to get knowledge about the rules as defined in this plug-in by yourself, it will not be enough to simply use it with a small project.
 
-The merit of using a de facto standard framework lies in this place.
+The merit of using a de-facto standard framework lies in this place.
 
 #### [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)
-How careful are you using the `Accessibility` of the system that we are making?
+How carefully are you using the `Accessibility` of the system that we are making?
 
-I feel that it is `Accessibility` that has a lower priority than Security which tends to be negligible.
+I feel that it is `Accessibility` that has a lower priority than `Security` which tends to be negligible.
 
-Because it is to provide a rich UI for a better user experience, it may be good to give consideration to users with handicapped on the extension line.
+Because it is to provide a rich UI for a better user experience, it may be good to give consideration to users with disabilities on the extension line.
 
-However [WAI-ARIA 1.1](https://www.w3.org/TR/2016/CR-wai-aria-1.1-20161027/) and [MDN's ARIA page](https: / /developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) from end to end and it's impossible to say you're going to do it.
+However reading through [WAI-ARIA 1.1](https://www.w3.org/TR/2016/CR-wai-aria-1.1-20161027/) and [MDN's ARIA page](https: / /developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) from end to end is extremely hard if you are to do it.
 
-[HTML5 Accessibility](http://www.html5accessibility.com/) I would like to provide maximum value with minimal effort to one easy, handy reference hand.
+I hope to provide the maximum value as much as I can with the munimum effort, such as referencing to [HTML5 Accessibility](http://www.html5accessibility.com/).
 
-That's why let's first make sure that the JSX in the project uses the `eslint-plugin-jsx-a11y` recommended rule to deal with the `Accessibility` correspondence.
+So I recommend to make sure first that the JSX in the project uses the `eslint-plugin-jsx-a11y` recommended rule to deal with the `Accessibility` support.
 
-# Topics on Testing
-Even if it says a test in a bite there are various. Here we talk about developer testing.
+# Testing
+There are variety of tests. Here we talk about developer testing.
 
-I think the technology that the programmer should master the most in application creation tests.
-It is because we believe that by expressing what it is supposed to be in the form of tests, better ones can be made by implementing the target software.
+I think the technology that the programmer should master the most in application creation is tests.
+It is because I believe that better ones can be made by expressing what it is supposed to be in the form of tests and by implementing based on those.
 In other words, I do not want to talk that I should be able to do something that a real test engineer is doing.
 
-For quality assurance, there is enormous systematized knowledge, knowledge to make applications, both excellent, but the time is finite.
-There are families or games that I want to do. I want to sleep ten hours a day to live long; I want to eat delicious meals slowly.
+For quality assurance, there is enormous systematized knowledge, and it would be great if developers can aquire the knowledge both to make applications and to assure the quality, but the time is finite.
+They have lovely families or fancy games to play with at night. I want to sleep ten hours a day to live long; I want to eat delicious meals slowly. Again, time is finite.
 
-You should spare time learning what to test and what to test, so do not take time to learn how to use the testing framework coolly.
+You should spare time learning what to test, so do not take time to learn how to use the testing framework coolly.
 
-That's why the testing framework chooses the API that is as simple as possible.
+That's why the testing framework we should chooses is the one with APIs that is as simple as possible.
 
 That is, it is [AVA].
 
@@ -471,14 +470,14 @@ test('bar', async t => {
 Let me briefly list why I like [AVA].
 
 * API is small
-* [Power-assert] is built as standard
+* [Power-assert] is built-in as standard
 * Faster execution speed
 * Perfect support for the `=>` operator, `Promise`,`async/await`, [observable](https://github.com/tc39/proposal-observable)
 
 ### [AVA] API is small
 After importing with `import test from 'ava';` you can do whatever you want by calling the function defined in the `test` variable.
 
-And even if this `test` is a default function, there are only 11 functions. Let's enumerate
+And there are only 11 functions including this `test` default function. Let's enumerate those.
 
 * **test([title], implementation)**
 * test.serial([title], implementation)
@@ -492,14 +491,14 @@ And even if this `test` is a default function, there are only 11 functions. Let'
 * **test.beforeEach([title], implementation)**
 * **test.afterEach([title], implementation)**
 
-The only thing to keep in mind is the four highlighted APIs. Other than that, you can refer to the manual when it becomes necessary.
+The only thing to keep in mind is the four highlighted APIs. Other than that, you can refer to the manual when they get necessary.
 
 It is also important that [AVA] does not work on global space or functions placed in implicit `this`.
 
 ### [power-assert] is included as standard
-When writing tests, use [power-assert] which will give you the richest assertion error if you use it without thinking anything.
+When writing tests, I recommend to use [power-assert] which will give you the richest assertion error if you use it without thinking anything.
 
-This test is
+This test generates:
 ```
 test(t => {
     const a = /foo/;
@@ -509,34 +508,34 @@ test(t => {
 });
 ```
 
-This is an error.
+This kind of error:
 ```
 t.true(a.test(b) || b === c)
        |      |     |     |
        |      "bar" "bar" "baz"
        false
 ```
-Awesome!
+This is just awesome!
 
-[power-assert] rewrites the code to issue this assertion error, but the setup for that is a little troublesome. It is easy to do, and manuals are available, but well, it is troublesome to have trouble.
+[power-assert] rewrites the code to issue this assertion error, but the setup for that is a little troublesome. It is easy to do, and manuals for it are fully available, but well, it is bothersome still.
 
-But, if you use [AVA], it does not even have to be a little troublesome.
+But, if you use [AVA], it does not require such a little troublesome.
 
 ### Faster execution speed
-The speed at which the test is executed becomes a problem after releasing a real application properly and entering the maintenance phase.
+When the speed at which the test is executed becomes a problem is after releasing a real application and entering the maintenance phase.
 
-While running for a while, the execution speed will be 5 seconds, but it will be 1 second, unchanged. But what if the amount of test code is 1,000 or 10,000?
+While running for a while, it doesn't matter if the execution speed is 5 seconds or 1 second. But what if the amount of test case is 1,000 or 10,000?
 
 It is no longer possible to run all the tests on your local machine each time you change the code.
 
-Just run the test code that seems to be directly related to the part you changed, and then just throw it to a CI server like Jenkins or CircleCI and pray. I wish for not knowing about it. However, it gets mocked.
+Just run the test code that seems to be directly related to the part you changed, and then just throw it to a CI server like Jenkins or CircleCI, and pray with hope that somewhere I do not expect doesn't fail... However, as you expected, it fails.
 
-Since the test is always mocked regularly, it is better to shorten the cycle of change → test → debug → change ......
+Since the test always fails regularly, it is better to shorten the cycle of change → test → debug → change ......
 
 [AVA] is designed not to dare to write a test code of a very complicated structure to secure the test execution speed.
-From a person who wrote a complicated structure test with a testing framework like [Mocha](https://mochajs.org/), it may seem strange, but it is familiar.
+For a person who wrote a complicated structure test with a testing framework like [Mocha](https://mochajs.org/), it may seem strange, but it is a matter of habit.
 
-A variable scope of test code is accumulated many times, it is good when writing, but after all, it will be a hard time.
+Accumulated variable scopes of test code is good when writing, but after all, it will be a pain.
 
 ### Perfect support
 This is only a talk that the API of [AVA] can be perfect as it is simple.
