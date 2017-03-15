@@ -575,43 +575,41 @@ The followings are what I should learn, but I hope someone will supplement the t
   * In particular, there should be a rich UI load test methodology and a tool made in JS for it, but I couldn't have found one yet.
 
 # How to make a UI
-From here, I will explain how to construct a user interface with JavaScript.
+From here, I will explain how to construct UI with JavaScript.
 
 # History of UI libraries
 
-When I used Gmail and Google Maps for the first time about ten years ago, I was surprised as to whether such high-performance and rich screen expression can be done with JavaScript alone.
+When I used Gmail and Google Maps for the first time about ten years ago, I was surprised how such high-performance and rich screen expression can be done with JavaScript alone.
 
-People who are tackling things like making DHTML and using websites to move things using JavaScript had long been abhorred even though they were there before.
+Though there was a group of people who tried to make dynamic websites by DHTML where JavaScript is used to move things using JavaScript, they had been abhorred in general.
 
-To run an application with a rich user interface in the browser, we had to use Flash. There were other technologies like browser plug-ins, but in the end, it was rarely used.
+To run an application with a rich user interface in the browser, we had to use Flash. There were other technologies like browser plug-ins, but in the end, they were rarely used.
 
-Activities such as Gmail and GoogleMaps that implement GUI applications that work with realistic performance using JavaScript only on the browser have been active since that time, but until the last few years, their efforts are very well I did not say that.
+Activities like implementing GUI applications that work in realistic performance using only JavaScript on the browser have been active since then, but until the last few years, those efforts had not worked not that well.
 
-Certainly [YUI Library](http://yuilibrary.com/), [Ext.js](https://www.sencha.com/products/extjs/), [Closure Library](https://developers.google.com/closure/library/) Although libraries such as  came up one after another,
-It was incredibly difficult to make a UI like it was made with VB and Delphi.
+Although libraries such as [YUI Library](http://yuilibrary.com/), [Ext.js](https://www.sencha.com/products/extjs/), [Closure Library](https://developers.google.com/closure/library/) came up one after another, it had been incredibly difficult to make a UI like what was made with VB and Delphi.
 
-For example, it was not realistic to display grid control such that each cell performs a complicated operation as it is after displaying about 1000 data.
+For example, it was not realistic to display grid control such that each cell performs a complicated operation with displaying about 1000 data.
 
-As a result, in addition to CSS, it became a standard to work hard on jQuery a bit. If you only want to make a website with a little movement, you can do it with jQuery.
-If you do work with a large number of people, do maintenance for a long time, or do not make extraordinary things, it will be fine.
-Most websites are not GUI applications, so you can quickly create jQuery and its plugins conveniently.
+As a result, in addition to CSS, it became a standard to work hard a bit with jQuery. If you only want to make a website with a little dynamics, you can do it with jQuery.
+If you do not work with a large number of people, do not maintain for a long time, or do not make extraordinary things, it should work fine.
+Most websites are not GUI applications, so you can quickly create a website with jQuery and its plugins conveniently.
 
 By the way, is there a clear boundary between highly-built websites and GUI applications running on browsers?
 
-I have never seen a quantitative judgment criterion, but at least one website creator can use jQuery in one hand to create a movement without hurting, at least it will be a website.
+I have never seen quantitative judgment criteria for it, but at least the one with dynamic behaviour would be a website that a few web designer can create without hurting by using jQuery.
 
-On the other hand, three or four programmers who have server applications and can write proper JavaScript are necessary to make UI,
-The UI design and its implementation that would not be established unless it is shared as a role would be a GUI application running on a browser.
+On the other hand, the one should be a GUI application on the browser that has server side application, that requires three or four programmers to create the UI, and that can't be achieved without design boundary between UI design and its logics.
 
-It will not be easy to distinguish this so easily.
+Actually it is not such an easy task to distinguish these so easily.
 
 The reason why this distinction is important is that the toolkits to use and skill sets of team members to be aligned are different.
 
 If you try to create a website using a framework for implementing sophisticated GUI applications like [React] and [Angular], you will waste a lot of human resources.
 
-But if you are planning to implement sophisticated GUI applications using jQuery plugin, it will be ruined before that.
+On the other hand, if you are planning to implement sophisticated GUI applications using jQuery plugin, you will doom.
 
-Tools should be used properly in appropriate places.
+Tools should be properly used in appropriate places.
 
 ## Breakthrough called Virtual DOM
 The task to be surely solved in making GUI applications that run on browsers is performance and usability.
