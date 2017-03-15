@@ -612,26 +612,26 @@ On the other hand, if you are planning to implement sophisticated GUI applicatio
 Tools should be properly used in appropriate places.
 
 ## Breakthrough called Virtual DOM
-The task to be surely solved in making GUI applications that run on browsers is performance and usability.
+The task to be surely solved on making GUI applications that run on browsers is performance and usability.
 
-Especially the problem of performance is tough to solve. Since it operates on the browser, all UI elements are dropped into the DOM in some form.
+Especially the problem of performance is tough to solve. Since it run on the browser, all UI elements are dropped into the DOM in some form.
 
-First, since DOM has a general-purpose tree structure, memory efficiency is terribly bad.
-Also, this tree structure can not limit the number of intermediate internal nodes, and the depth of the terminal node can not be limited, so the cost of scanning tends to be high.
+First, since DOM is a general-purpose tree structure, memory efficiency is terribly bad.
+In addition, this tree structure can not limit the number of intermediate internal nodes, and the depth to the terminal node can not be limited, so the cost of scanning tends to be high.
 
-For the browser to draw the DOM on the screen, it is necessary to scan all nodes in some form, so this poor efficiency becomes a big problem.
+For the browser to draw the DOM on the screen, it is necessary to scan all nodes in some manner, so this poor efficiency becomes a big problem.
 
 Also, the mechanism of laying out drawing elements completely ignoring the DOM structure called CSS spurs poor performance.
 
-It is natural in the browser world, such as having to redraw the entire screen with one class attribute that appeared at the terminal node.
-In other words, it is necessary to lock the entire screen just by `appendChild` the newly created node for the DOM already drawn.
+It is natural in the browser world, such as having to redraw the entire screen with one class attribute that appears at the terminal node.
+In other words, it is necessary to lock the entire screen just to `appendChild` the newly created node for the DOM already drawn.
 
 However, if the impact of the new node on the entire screen is small enough, the time to keep securing locks will be sufficiently short.
 
 Just updating certain components on the screen may cause redrawing of the entire screen, so you need to pay close attention not to do so.
-In such a case, except for some exceptional organizations, it is not possible to efficiently create large-scale GUI applications.
+Thus, except for some exceptional organizations, it is not possible to efficiently create large-scale GUI applications.
 
-Virtual DOM is the technology that answers this problem.
+Virtual DOM is the technology that solves this problem.
 
 First, consider the data (model) necessary for rendering the screen and the template (view) into which the data is poured.
 If you add a controller that has the role of updating the model from user input to this, it becomes a classic MVC model.
@@ -641,7 +641,7 @@ In a primitive way, programmers decided which part of the view to change, depend
 Consider putting the variable `user` in the first half into the HTML-like template in the second half.
 
 ```
-// Example model
+// Model example
 var user = {
   "name": "John Doe",
   "age" : 22
@@ -657,25 +657,25 @@ Age: ${user.age}
 </body></html>
 ```
 
-Updating the model means changing the contents of `name` and` age` which are members of the variable `user`.
+Updating the model means changing the contents of `name` and `age` which are members of the variable `user`.
 In a primitive way, the programmer must write code to find the corresponding DOM element, depending on which member variable you changed.
 Indeed, in this simple example, you can find the relevant element by writing `$(".name")` in jQuery.
 
-Think about it, if there are 1,000 pieces of changeable elements on the screen?
+Imagine if there are thousands pieces of changeable elements on the screen?
 What if some elements change, and there is an element that needs to be transiently changed depending on it?
 What if my component should be changed, affected by elements that did not exist when I incorporated the component into the screen?
 
 It's a nightmare.
 
-In summary, Virtual DOM takes the difference between the current DOM and the next DOM output and passes only the difference to the browser's rendering engine.
-It is a mechanism that automatically does the code which was written by the human beings in partial spirit up to date.
-Of course, it may be slower than an implementation where craftsmen choose elements to be updated one by one.
+In rough summary, Virtual DOM takes the difference between the current DOM and the next DOM output and passes only the difference to the browser's rendering engine.
+It is a mechanism that automatically achieve what was done by codes written by the human beings with huge efforts.
+Of course, it may be slower than an implementation where high skill engineers choose elements to be updated one by one.
 
-In reality, there are only a few rare artists, so those who automatically get the differences will operate at high speed.
+In reality, there are only a few such rare artists, so those that automatically pick the differences will run faster in general.
 
 A similar argument was from around the time of C language and assembler.
-If you hand assembled all the applications, you can make binary faster than binaries issued by ordinary compilers, that's the story.
-It is a story that can not be established unless the object to be hand assembled is limited to a small size or the application is not small enough.
+If you hand assembled all the applications, can you make binary faster than binaries issued by ordinary compilers or not? It's in the same logic.
+It cannot be achieved unless the object to be hand assembled is limited to a small size or the application is small enough.
 
 ## Which framework to use
 
