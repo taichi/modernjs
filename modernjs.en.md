@@ -679,7 +679,7 @@ It cannot be achieved unless the object to be hand assembled is limited to a sma
 
 ## Which framework to use
 
-Roughly speaking, what I made the candidates for selection is this. In any case, they use Virtual DOM internally.
+I made a list of the candidate frameworks to use. In any case, they use Virtual DOM internally.
 
 * [React]
 * [Angular]
@@ -693,51 +693,51 @@ There are also many good quality tutorials like [SurviveJS](https://survivejs.co
 
 That's why I selected [React] in my project.
 
-There is also a framework compatible with [React] such as [Inferno](https://github.com/infernojs/inferno) and [Rax](https://github.com/alibaba/rax)
+There is also frameworks compatible with [React] such as [Inferno](https://github.com/infernojs/inferno) and [Rax](https://github.com/alibaba/rax)
 If there is plausibility in what they are doing, it will be incorporated into [React] either.
 
 ### [Angular]
-[TypeScript] is designated as the primary language [Angular] is a fascinating choice for me.
+[TypeScript] is chosen as the primary language in [Angular], so it is a fascinating choice for me.
 However, as far as I can observe, the community is not sufficiently large compared to [React].
-This is due to the relatively short period of stable releases of stable ones.
+This is due to that the period is relative short since the stable release launched.
 
-The current [Angular] is 2.4, but the first type of [Angular] is my favorite type of framework.
-Anyway, there is a 2way binding; there is a Directive where every black magic act is allowed as a garbage repository, there was a DI container.
-The digest loop was a very difficult concept, but I thought that complexity should be accepted to make the screen easier to make.
+The current [Angular] is 2.4, but the [Angular] 1.x is my favorite type of framework.
+Anyway, in [Angular] 1.x, there is 2 way binding; there is Directive where every black magic act is allowed as a garbage repository, there is DI container.
+The digest loop was a very difficult concept, but I thought that complexity should be accepted to make the UI easier to make.
 
-The first line of [Angular] was a framework that seems to exist for SIer in a function group that seems only to be designed for creating business applications.
+[Angular] 1.x was a framework that seems to exist only for SIer and that seems only to be designed for creating business applications.
 
 I think that it is not too late to drop a large learning cost on [Angular] 2 system even after full-scale adoption case inside Google is released.
 
 ### [Vue.js]
-[Vue.js] is a topical framework right now. I liked the [Angular]1 The one I should choose is [Vue.js].
+[Vue.js] is a topical framework right now. Who like me who preferred the [Angular] 1.x should choose is [Vue.js].
 
-But, I can not adopt what is [the main developer is only one](https://github.com/vuejs/vue/graphs/contributors) to the base part.
-[Evan You](https://github.com/yyx990803) It can be a catastrophic situation if one person loses a little enthusiasm, or just transforming by some political transaction.
-It's a terrible thing, and it's an unacceptable risk to me.
+But, I can not adopt what is [the main developer is only one](https://github.com/vuejs/vue/graphs/contributors) to the fundamental systems.
+If [Evan You](https://github.com/yyx990803) loses a little enthusiasm, or just get involved in some political transaction, it can be a catastrophic situation.
+It's a terrible situation, and it's an unacceptable risk to me.
 
-Randomly as far as I can read the code base gets a reasonable impression as such and there is quite polite documentation.
-It seems there is no shortage in function with the feeling that I tried a little.
-However, when I thought about making a large application as appropriate, I pulled the fundamental problem in an unexpected place and thought about the possibility that I could not cope well with that.
+As far as I could read the code base, I got reasonable impressions and there is quite polite documentation.
+It seems there is no shortage in function as long as I tried a little.
+However, when I thought about making a large application, I expect some possibility that I face the fundamental problem in an unexpected place and I can not cope well with that.
 
-There are large communities, and those that are used in a live application have been discovered and carefully dealt with many fine problems.
+There are large communities, and functions that are used in a live application are well maintained and the many problems there have been discovered and carefully dealt with.
 The code which seems to have meaningless complexity at first glance may also have important meanings in certain circumstances.
 
-This is only my bad impression theory, but the second line of [Angular] and [Vue.js] have the beauty of the invisible code base as used in a serious production environment.
+This is only my bad impression theory, but [Angular] 2 and [Vue.js] have the beauty of the code base which does not seem to be used in a serious production environment.
 
-By the way, the first line of [Angular] was a code base that seems to , and some in production environment.
+By the way, the code base of [Angular] 1.x seemed to be used in production envorimients.
 
 ### [Mithril]
-The goodness of [Mithril] is small. After fully understanding the internal details of the framework, it is a tool used by people who can add it myself by myself by noticing what is missing.
+The goodness of [Mithril] is small. It is a tool for people who can notice what are missing and add those by themselves after fully understanding the internal details of the framework.
 
 Because it is small, you can do it.
 
-It may be suitable for use with a small team composed only of engineers with sufficient development experience of GUI applications.
+It may be suitable for using in a small team composed only of engineers with sufficient development experience of GUI applications.
 
-It is really difficult to properly determine the specifications of those that are missing and properly implement it, assuming that they are missing while making the application.
-Especially when the cost pressure during project progression is high, can it do well? At least, I will not be able to do it.
+Noticing what are missing while making the application, it is really difficult to properly determine the specifications of those and to implement those.
+Especially when the cost pressure during project progression is high, I wonder I can it do well. At least, I will not be able to do it.
 
-### About [React]
+### About how to use [React]
 Since the body of [React] has a role only for the part of the view, there are various shortcomings in making the application.
 
 I chose [react-router](https://github.com/ReactTraining/react-router) without much trouble about Router. It can be said that I do not have standards for selecting Routers.
