@@ -434,18 +434,18 @@ I hope to provide the maximum value as much as I can with the munimum effort, su
 So I recommend to make sure first that the JSX in the project uses the `eslint-plugin-jsx-a11y` recommended rule to deal with the `Accessibility` support.
 
 # Testing
-Even if it says a test in a bite there are various. Here we talk about developer testing.
+There are variety of tests. Here we talk about developer testing.
 
-I think the technology that the programmer should master the most in application creation tests.
-It is because we believe that by expressing what it is supposed to be in the form of tests, better ones can be made by implementing the target software.
+I think the technology that the programmer should master the most in application creation is tests.
+It is because I believe that better ones can be made by expressing what it is supposed to be in the form of tests and by implementing based on those.
 In other words, I do not want to talk that I should be able to do something that a real test engineer is doing.
 
-For quality assurance, there is enormous systematized knowledge, knowledge to make applications, both excellent, but the time is finite.
-There are families or games that I want to do. I want to sleep ten hours a day to live long; I want to eat delicious meals slowly.
+For quality assurance, there is enormous systematized knowledge, and it would be great if developers can aquire the knowledge both to make applications and to assure the quality, but the time is finite.
+They have lovely families or fancy games to play with at night. I want to sleep ten hours a day to live long; I want to eat delicious meals slowly. Again, time is finite.
 
-You should spare time learning what to test and what to test, so do not take time to learn how to use the testing framework coolly.
+You should spare time learning what to test, so do not take time to learn how to use the testing framework coolly.
 
-That's why the testing framework chooses the API that is as simple as possible.
+That's why the testing framework we should chooses is the one with APIs that is as simple as possible.
 
 That is, it is [AVA].
 
@@ -470,14 +470,14 @@ test('bar', async t => {
 Let me briefly list why I like [AVA].
 
 * API is small
-* [Power-assert] is built as standard
+* [Power-assert] is built-in as standard
 * Faster execution speed
 * Perfect support for the `=>` operator, `Promise`,`async/await`, [observable](https://github.com/tc39/proposal-observable)
 
 ### [AVA] API is small
 After importing with `import test from 'ava';` you can do whatever you want by calling the function defined in the `test` variable.
 
-And even if this `test` is a default function, there are only 11 functions. Let's enumerate
+And there are only 11 functions including this `test` default function. Let's enumerate those.
 
 * **test([title], implementation)**
 * test.serial([title], implementation)
@@ -491,14 +491,14 @@ And even if this `test` is a default function, there are only 11 functions. Let'
 * **test.beforeEach([title], implementation)**
 * **test.afterEach([title], implementation)**
 
-The only thing to keep in mind is the four highlighted APIs. Other than that, you can refer to the manual when it becomes necessary.
+The only thing to keep in mind is the four highlighted APIs. Other than that, you can refer to the manual when they get necessary.
 
 It is also important that [AVA] does not work on global space or functions placed in implicit `this`.
 
 ### [power-assert] is included as standard
-When writing tests, use [power-assert] which will give you the richest assertion error if you use it without thinking anything.
+When writing tests, I recommend to use [power-assert] which will give you the richest assertion error if you use it without thinking anything.
 
-This test is
+This test generates:
 ```
 test(t => {
     const a = /foo/;
@@ -508,45 +508,45 @@ test(t => {
 });
 ```
 
-This is an error.
+This kind of error:
 ```
 t.true(a.test(b) || b === c)
        |      |     |     |
        |      "bar" "bar" "baz"
        false
 ```
-Awesome!
+This is just awesome!
 
-[power-assert] rewrites the code to issue this assertion error, but the setup for that is a little troublesome. It is easy to do, and manuals are available, but well, it is troublesome to have trouble.
+[power-assert] rewrites the code to issue this assertion error, but the setup for that is a little troublesome. It is easy to do, and manuals for it are fully available, but well, it is bothersome still.
 
-But, if you use [AVA], it does not even have to be a little troublesome.
+But, if you use [AVA], it does not require such a little troublesome.
 
 ### Faster execution speed
-The speed at which the test is executed becomes a problem after releasing a real application properly and entering the maintenance phase.
+When the speed at which the test is executed becomes a problem is after releasing a real application and entering the maintenance phase.
 
-While running for a while, the execution speed will be 5 seconds, but it will be 1 second, unchanged. But what if the amount of test code is 1,000 or 10,000?
+While running for a while, it doesn't matter if the execution speed is 5 seconds or 1 second. But what if the amount of test case is 1,000 or 10,000?
 
 It is no longer possible to run all the tests on your local machine each time you change the code.
 
-Just run the test code that seems to be directly related to the part you changed, and then just throw it to a CI server like Jenkins or CircleCI and pray. I wish for not knowing about it. However, it gets mocked.
+Just run the test code that seems to be directly related to the part you changed, and then just throw it to a CI server like Jenkins or CircleCI, and pray with hope that somewhere I do not expect doesn't fail... However, as you expected, it fails.
 
-Since the test is always mocked regularly, it is better to shorten the cycle of change → test → debug → change ......
+Since the test always fails regularly, it is better to shorten the cycle of change → test → debug → change ......
 
 [AVA] is designed not to dare to write a test code of a very complicated structure to secure the test execution speed.
-From a person who wrote a complicated structure test with a testing framework like [Mocha](https://mochajs.org/), it may seem strange, but it is familiar.
+For a person who wrote a complicated structure test with a testing framework like [Mocha](https://mochajs.org/), it may seem strange, but it is a matter of habit.
 
-A variable scope of test code is accumulated many times, it is good when writing, but after all, it will be a hard time.
+Accumulated variable scopes of test code is good when writing, but after all, it will be a pain.
 
 ### Perfect support
-This is only a talk that the API of [AVA] can be perfect as it is simple.
+It is just said that the API of [AVA] can be perfect as it is simple.
 
-Since `it` is not rewritten badly, the`=>`operator moves comfortably.
+Since `this` is not rewritten badly, the `=>` operator works comfortably.
 
-Since the return value of the test method is determined as the responsibility of [AVA], whether it is `Promise`, but if you return it as [observable](https://github.com/tc39/proposal-observable) [AVA] will do it for you.
+Since the return value of the test method is determined that it is within the responsibility of [AVA], even if it is `Promise` or [observable](https://github.com/tc39/proposal-observable) or any others, [AVA] will do it for you.
 
-Function calls aligned with test code files are not nested.
+Function calls listed in test code files won't be nested.
 
-By the way, to reference the variable created by `test.beforeEach` with` test`, do this.
+By the way, the following is how to reference the variable created by `test.beforeEach` from `test`:
 
 ```
 test.beforeEach(t => {
@@ -557,82 +557,81 @@ test(t => {
     t.is(t.context, 'unicorn');
 });
 ```
-`context` is not shared among multiple` test`, so you can touch it altogether.
-However, multiple `test` can not guarantee to order unless` test.serial` is used, so do not modify `context` in` test`.
+
+`context` is not shared among multiple `test`, so you can touch it as much as you want.
+However, the execusion order of multiple `test` are not guaranteed unless `test.serial` is used, so do not modify `context` in `test`.
 In the first place `test.serial` should not be used unless there are any special reasons.
 
-Also, do not do it because it is bad either to share some information between test methods or to write in such a way that the test execution order has meaning.
+Do not share the infomation among test methods and write test in a way that the test execution order has meaning, because it is a bad practice.
 
 ## Unresolved issues in testing
-I should learn, but please write a little, hoping that someone will supplement the tasks that have not been done yet.
+The followings are what I should learn, but I hope someone will supplement the tasks that I haven't researched well yet.
 
 * E2E test or system test
-  * It seems that [React application can be tested](http://www.joelotter.com/2015/04/18/protractor-reactjs.html) at [Protractor](http://www.protractortest.org/) 
+  * It seems that [React application can be tested](http://www.joelotter.com/2015/04/18/protractor-reactjs.html) using [Protractor](http://www.protractortest.org/) 
 * Mutation test
-  * [Stryker](http://stryker-mutator.github.io/) is okay but there is no [AVA] support
-* stress test
-  * In particular, there is a rich UI load test methodology and a tool for that, made by JS, but it should be nice, but it has not been successfully found
+  * [Stryker](http://stryker-mutator.github.io/) looks okay but there is no [AVA] support.
+* Stress test
+  * In particular, there should be a rich UI load test methodology and a tool made in JS for it, but I couldn't have found one yet.
 
 # How to make a UI
-From here, I will explain how to construct a user interface with JavaScript.
+From here, I will explain how to construct UI with JavaScript.
 
 # History of UI libraries
 
-When I used Gmail and Google Maps for the first time about ten years ago, I was surprised as to whether such high-performance and rich screen expression can be done with JavaScript alone.
+When I used Gmail and Google Maps for the first time about ten years ago, I was surprised how such high-performance and rich screen expression can be done with JavaScript alone.
 
-People who are tackling things like making DHTML and using websites to move things using JavaScript had long been abhorred even though they were there before.
+Though there was a group of people who tried to make dynamic websites by DHTML where JavaScript is used to move things using JavaScript, they had been abhorred in general.
 
-To run an application with a rich user interface in the browser, we had to use Flash. There were other technologies like browser plug-ins, but in the end, it was rarely used.
+To run an application with a rich user interface in the browser, we had to use Flash. There were other technologies like browser plug-ins, but in the end, they were rarely used.
 
-Activities such as Gmail and GoogleMaps that implement GUI applications that work with realistic performance using JavaScript only on the browser have been active since that time, but until the last few years, their efforts are very well I did not say that.
+Activities like implementing GUI applications that work in realistic performance using only JavaScript on the browser have been active since then, but until the last few years, those efforts had not worked not that well.
 
-Certainly [YUI Library](http://yuilibrary.com/), [Ext.js](https://www.sencha.com/products/extjs/), [Closure Library](https://developers.google.com/closure/library/) Although libraries such as  came up one after another,
-It was incredibly difficult to make a UI like it was made with VB and Delphi.
+Although libraries such as [YUI Library](http://yuilibrary.com/), [Ext.js](https://www.sencha.com/products/extjs/), [Closure Library](https://developers.google.com/closure/library/) came up one after another, it had been incredibly difficult to make a UI like what was made with VB and Delphi.
 
-For example, it was not realistic to display grid control such that each cell performs a complicated operation as it is after displaying about 1000 data.
+For example, it was not realistic to display grid control such that each cell performs a complicated operation with displaying about 1000 data.
 
-As a result, in addition to CSS, it became a standard to work hard on jQuery a bit. If you only want to make a website with a little movement, you can do it with jQuery.
-If you do work with a large number of people, do maintenance for a long time, or do not make extraordinary things, it will be fine.
-Most websites are not GUI applications, so you can quickly create jQuery and its plugins conveniently.
+As a result, in addition to CSS, it became a standard to work hard a bit with jQuery. If you only want to make a website with a little dynamics, you can do it with jQuery.
+If you do not work with a large number of people, do not maintain for a long time, or do not make extraordinary things, it should work fine.
+Most websites are not GUI applications, so you can quickly create a website with jQuery and its plugins conveniently.
 
 By the way, is there a clear boundary between highly-built websites and GUI applications running on browsers?
 
-I have never seen a quantitative judgment criterion, but at least one website creator can use jQuery in one hand to create a movement without hurting, at least it will be a website.
+I have never seen quantitative judgment criteria for it, but at least the one with dynamic behaviour would be a website that a few web designer can create without hurting by using jQuery.
 
-On the other hand, three or four programmers who have server applications and can write proper JavaScript are necessary to make UI,
-The UI design and its implementation that would not be established unless it is shared as a role would be a GUI application running on a browser.
+On the other hand, the one should be a GUI application on the browser that has server side application, that requires three or four programmers to create the UI, and that can't be achieved without design boundary between UI design and its logics.
 
-It will not be easy to distinguish this so easily.
+Actually it is not such an easy task to distinguish these so easily.
 
 The reason why this distinction is important is that the toolkits to use and skill sets of team members to be aligned are different.
 
 If you try to create a website using a framework for implementing sophisticated GUI applications like [React] and [Angular], you will waste a lot of human resources.
 
-But if you are planning to implement sophisticated GUI applications using jQuery plugin, it will be ruined before that.
+On the other hand, if you are planning to implement sophisticated GUI applications using jQuery plugin, you will doom.
 
-Tools should be used properly in appropriate places.
+Tools should be properly used in appropriate places.
 
 ## Breakthrough called Virtual DOM
-The task to be surely solved in making GUI applications that run on browsers is performance and usability.
+The task to be surely solved on making GUI applications that run on browsers is performance and usability.
 
-Especially the problem of performance is tough to solve. Since it operates on the browser, all UI elements are dropped into the DOM in some form.
+Especially the problem of performance is tough to solve. Since it run on the browser, all UI elements are dropped into the DOM in some form.
 
-First, since DOM has a general-purpose tree structure, memory efficiency is terribly bad.
-Also, this tree structure can not limit the number of intermediate internal nodes, and the depth of the terminal node can not be limited, so the cost of scanning tends to be high.
+First, since DOM is a general-purpose tree structure, memory efficiency is terribly bad.
+In addition, this tree structure can not limit the number of intermediate internal nodes, and the depth to the terminal node can not be limited, so the cost of scanning tends to be high.
 
-For the browser to draw the DOM on the screen, it is necessary to scan all nodes in some form, so this poor efficiency becomes a big problem.
+For the browser to draw the DOM on the screen, it is necessary to scan all nodes in some manner, so this poor efficiency becomes a big problem.
 
 Also, the mechanism of laying out drawing elements completely ignoring the DOM structure called CSS spurs poor performance.
 
-It is natural in the browser world, such as having to redraw the entire screen with one class attribute that appeared at the terminal node.
-In other words, it is necessary to lock the entire screen just by `appendChild` the newly created node for the DOM already drawn.
+It is natural in the browser world, such as having to redraw the entire screen with one class attribute that appears at the terminal node.
+In other words, it is necessary to lock the entire screen just to `appendChild` the newly created node for the DOM already drawn.
 
 However, if the impact of the new node on the entire screen is small enough, the time to keep securing locks will be sufficiently short.
 
 Just updating certain components on the screen may cause redrawing of the entire screen, so you need to pay close attention not to do so.
-In such a case, except for some exceptional organizations, it is not possible to efficiently create large-scale GUI applications.
+Thus, except for some exceptional organizations, it is not possible to efficiently create large-scale GUI applications.
 
-Virtual DOM is the technology that answers this problem.
+Virtual DOM is the technology that solves this problem.
 
 First, consider the data (model) necessary for rendering the screen and the template (view) into which the data is poured.
 If you add a controller that has the role of updating the model from user input to this, it becomes a classic MVC model.
@@ -642,7 +641,7 @@ In a primitive way, programmers decided which part of the view to change, depend
 Consider putting the variable `user` in the first half into the HTML-like template in the second half.
 
 ```
-// Example model
+// Model example
 var user = {
   "name": "John Doe",
   "age" : 22
@@ -658,25 +657,25 @@ Age: ${user.age}
 </body></html>
 ```
 
-Updating the model means changing the contents of `name` and` age` which are members of the variable `user`.
+Updating the model means changing the contents of `name` and `age` which are members of the variable `user`.
 In a primitive way, the programmer must write code to find the corresponding DOM element, depending on which member variable you changed.
 Indeed, in this simple example, you can find the relevant element by writing `$(".name")` in jQuery.
 
-Think about it, if there are 1,000 pieces of changeable elements on the screen?
+Imagine if there are thousands pieces of changeable elements on the screen?
 What if some elements change, and there is an element that needs to be transiently changed depending on it?
 What if my component should be changed, affected by elements that did not exist when I incorporated the component into the screen?
 
 It's a nightmare.
 
-In summary, Virtual DOM takes the difference between the current DOM and the next DOM output and passes only the difference to the browser's rendering engine.
-It is a mechanism that automatically does the code which was written by the human beings in partial spirit up to date.
-Of course, it may be slower than an implementation where craftsmen choose elements to be updated one by one.
+In rough summary, Virtual DOM takes the difference between the current DOM and the next DOM output and passes only the difference to the browser's rendering engine.
+It is a mechanism that automatically achieve what was done by codes written by the human beings with huge efforts.
+Of course, it may be slower than an implementation where high skill engineers choose elements to be updated one by one.
 
-In reality, there are only a few rare artists, so those who automatically get the differences will operate at high speed.
+In reality, there are only a few such rare artists, so those that automatically pick the differences will run faster in general.
 
 A similar argument was from around the time of C language and assembler.
-If you hand assembled all the applications, you can make binary faster than binaries issued by ordinary compilers, that's the story.
-It is a story that can not be established unless the object to be hand assembled is limited to a small size or the application is not small enough.
+If you hand assembled all the applications, can you make binary faster than binaries issued by ordinary compilers or not? It's in the same logic.
+It cannot be achieved unless the object to be hand assembled is limited to a small size or the application is small enough.
 
 ## Which framework to use
 
