@@ -738,12 +738,12 @@ Noticing what are missing while making the application, it is really difficult t
 Especially when the cost pressure during project progression is high, I wonder I can it do well. At least, I will not be able to do it.
 
 ### About how to use [React]
-Since the body of [React] has a role only for the part of the view, there are various shortcomings in making the application.
+Since [React] itself has a role only for the part of the view, there are various shortcomings in making the application.
 
-I chose [react-router](https://github.com/ReactTraining/react-router) without much trouble about Router. It can be said that I do not have standards for selecting Routers.
+I chose [react-router](https://github.com/ReactTraining/react-router) as router without having enough trouble. It can be said that I do not have standards for selecting routers as well.
 
-As a utility for testing, you can not remove [enzyme](https://github.com/airbnb/enzyme).
-It is the greatest merit of using a de facto standard library that you can use high-quality modules created by users who have incorporated frameworks.
+As a utility for testing, you can not miss [enzyme](https://github.com/airbnb/enzyme).
+It is the greatest merit of using the de-facto standard library with high-quality modules created by users who have incorporated frameworks pretty much.
 
 ### About [CSS Modules]
 In other words, CSS is like a programming language with only global variables, a programmer who lives in a world where the default scope is local variable is an unavoidable environment.
