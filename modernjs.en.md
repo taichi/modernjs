@@ -746,38 +746,38 @@ As a utility for testing, you can not miss [enzyme](https://github.com/airbnb/en
 It is the greatest merit of using the de-facto standard library with high-quality modules created by users who have incorporated frameworks pretty much.
 
 ### About [CSS Modules]
-In other words, CSS is like a programming language with only global variables, a programmer who lives in a world where the default scope is local variable is an unavoidable environment.
-In an environment where the complexity rises in proportion to the amount of code, I think that it is impossible to make perfectly consistent work.
+CSS is, in other words, like a programming language with only global variables, which is an unbelievable environment for a programmer who lives in a world where the default scope is local variable.
+I think that it is impossible to make perfectly consistent work in an environment where the complexity rises in proportion to the amount of code.
 
-What we have been dealing with this problem up to now has been to divide the namespace by explicitly defining the naming conventions by humans.
-For example, [OOCSS](http://oocss.org/), [BEM](http://getbem.com/), and [SMACSS](https://smacss.com/) are included in major naming conventions is there.
+What we have been dealing with this problem up to now is to divide the namespace by explicitly defining the naming conventions by humans.
+For example, [OOCSS](http://oocss.org/), [BEM](http://getbem.com/), and [SMACSS](https://smacss.com/) are major naming conventions.
 
-Also, write CSS more securely using meta-language such as [Sass (SCSS)](http://sass-lang.com/) or [less](http://lesscss.org/) Efforts have also been made.
+Also, the efforts have also been made to write CSS more securely using meta-language such as [Sass (SCSS)](http://sass-lang.com/) or [less](http://lesscss.org/).
 The most important feature of these meta-languages ​​is to limit the scope of influence by nesting the definitions of styles.
 
-The meta-language is excellent as a mechanism to control the complexity of the CSS itself, but since the CSS is a mechanism for deciding what kind of appearance is given to the DOM structure in the first place, the design of the DOM structure and the design of the CSS can not be separated.
+The meta-language is excellent as a mechanism to control the complexity of the CSS itself, but since the CSS is a mechanism for deciding what kind of appearance is given to the DOM structure, the design of the DOM structure and the design of the CSS can not be separated.
 
-If so, it is desirable that the design of the [React] component and the design of the CSS are consistent. It would be impossible to treat each as a completely independent event.
+Thus, it is desirable that the design of the [React] component and the design of the CSS are consistent. It doesn't make sense to handle them as completely independent things.
 
-[React] to ensure consistency between the design of the component and the design of the CSS, either way, is the priority. In that case, it is desirable to bring local variables to CSS and make it the default behavior.
+In order to ensure consistency between the design of the [React] component and the design of the CSS, there is no other way to prior to the manner of either of them. In that case, it is desirable to bring local variables to CSS and make it the default behavior.
 
 The concepts and efforts devised to realize this are [CSS Modules].
 
-[CSS Modules] is a concept derived from the community of [React], but similar functions are also found in [Vue.js](https://vue-loader.vuejs.org/en/features/css-modules.html),
-[There is a similar function in Angular 2](http://joaogarin.github.io/css-modules-angular2/) Looks like.
+[CSS Modules] is a concept derived from the community of [React], and similar functions are also found in [Vue.js](https://vue-loader.vuejs.org/en/features/css-modules.html),
+It seems [there is a similar function in Angular 2](http://joaogarin.github.io/css-modules-angular2/).
 
-Detailed information on the CSS problem resolved by [CSS Modules] is [There is a blog entry by members of the CSS Modules team](http://glenmaddern.com/articles/css-modules), so please refer to that.
+The detailed information on the CSS problem resolved by [CSS Modules] is [written in the blog entry by members of the CSS Modules team](http://glenmaddern.com/articles/css-modules), so please refer to it.
 
 To summarize, [CSS Modules] is not just a kind of CSS design methodology based on new naming conventions. Also, using [CSS Modules] does not mean you do not have to use the CSS meta language.
-Even web designers were accustomed to existing naming conventions should learn [CSS Modules] if you are doing UI design with projects that share work with to add.
+Even web designers were accustomed to existing naming conventions should learn [CSS Modules] if you are doing UI design in projects where you share work with a number of members.
 
-Even if you use [CSS Modules], CSS designed to make UI consistent for the entire application will be defined in the global space as before, so existing CSS It does not mean that you do not need design knowledge on the design.
+Even if you use [CSS Modules], CSS designed to make UI consistent for the entire application will be defined in the global space as before, so it does not mean that you do not need CSS design knowledge.
 
 ### [React] in [CSS Modules]
-To introduce [CSS Modules] to [React], use [css-loader] of [webpack] to process CSS and then write a dedicated description to the [React] component side. [Webpack] will be explained later.
+To adopt [CSS Modules] to [React], use [css-loader] of [webpack] to process CSS and then write a dedicated description to the [React] component side. [Webpack] will be explained later.
 
-#### Introduction of [CSS Modules]
-The easiest way to use [CSS Modules] is this code.
+#### Adoption of [CSS Modules]
+The easiest way to use [CSS Modules] is the following:
 
 ```
 import React from 'react';
@@ -795,7 +795,7 @@ export default class Table extends React.Component {
 }
 ```
 
-When this is rendered, it will be roughly like this HTML. Because CSS class name which does not automatically duplicate by [css-loader] is named, the weird name is set in the class attribute.
+It will be rendered roughly like this HTML. The weird class name is set to the class attribute that[css-loader] automatically generates not to duplicate.
 
 ```
 <div class="table__table___32osj">
@@ -806,18 +806,18 @@ When this is rendered, it will be roughly like this HTML. Because CSS class name
 </div>
 ```
 
-The problem is that importing CSS as if it is a JavaScript object is handled this way.
+The problem here is that importing CSS as if it is a JavaScript object.
 
 In this case, the CSS must also be applied to the component during unit tests that do not need to evaluate the state of the style at all.
-If an import is processed in a naive manner as it is, it becomes an error because it can not parse import destination CSS as JavaScript.
+If an import is processed in a naive manner as it is, it becomes an error because it can not parse imported CSS as JavaScript.
 
-It is hard to write code with many curly braces as a code, so I want to avoid it if possible.
-Braces are difficult to type because they require Shift.
+It is hard to write code with many curly braces as a code, so I want to avoid it if possible as well.
+Braces are difficult to type because they require pressing Shift key.
 
 #### Improvement with [react-css-modules](https://github.com/gajus/react-css-modules)
-There is [react-css-modules] as a module to remedy the problem that occurs when using [CSS Modules] in the simplest way.
+There is [react-css-modules] as a module to remedy the problem that occurs when using [CSS Modules] in the simplest way mentioned above.
 
-Using this makes it such a code.
+Using this makes it such a code:
 
 ```
 import React from 'react';
@@ -844,14 +844,14 @@ A special property called `styleName` has been introduced which is added to the 
 
 Although code easiness was improved, the difficulty of the code has not improved much.
 
-Especially, as you can see from the last line, the problem of handling imported CSS as a JavaScript object has not been solved.
+Especially, as you can see from the last line, the problem of handling imported CSS as a JavaScript object is solved.
 
 #### Improvement with [babel-plugin-react-css-modules]
 There is [babel-plugin-react-css-modules] as a plugin of [Babel] to solve the problem of [react-css-modules].
 
 By the way, the developers of [react-css-modules] and [babel-plugin-react-css-modules] are the same.
 
-Using this makes it such a code.
+Using this makes it such a code:
 
 ```
 import React from 'react';
@@ -871,14 +871,14 @@ export default class Table extends React.Component {
 
 You can now avoid handling CSS as a JavaScript object. We use import statements only to show the relationship between CSS and components.
 
-[babel-plugin-react-css-modules] performs processing necessary as [CSS Modules] at compile time.
+[babel-plugin-react-css-modules] performs necessary processes as [CSS Modules] at compile time.
 Thanks to that, the component code does not increase only for [CSS Modules].
 
 It is nice to have the code refreshed in this way.
 
 Since import of CSS does not affect components on code, removing such a part with a module like [ignore-styles](https://github.com/bkonkle/ignore-styles) has no adverse effect.
 
-So in my project I decided to use a combination of [css-loader] and [babel-plugin-react-css-modules] to implement [CSS Modules].
+So in my project I decided to use the combination of [css-loader] and [babel-plugin-react-css-modules] to implement [CSS Modules].
 
 ### About [Flux] implementation
 It is good to adopt [Flux] as the architecture that defines the structure of the application.
