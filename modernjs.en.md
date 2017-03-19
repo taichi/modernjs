@@ -1000,44 +1000,44 @@ Especially, in my case I am developing in Windows environment, so it is easy for
 
 Though The OS version is Windows Server 2012 R2 (x64), I do not use it so that the difference between the server OS and the client OS becomes a problem.
 
-## About managing dependency modules
-Based on package.json which stores meta-information about the project in Node, it comes with a tool called npm that can execute various tasks.
+## About managing dependent modules
+In Node, based on package.json which stores meta-information about the project, it comes with a tool called npm that can execute various tasks.
 
-Especially important among tasks to be executed from npm is automatic downloading of dependent libraries.
+Especially the most important task executed from npm is automatic downloading of dependent libraries.
 
-Although npm is done very well, `npm-shrinkwrap` for fixing the dependency library version is very hard to use.
+Although npm is well developed, `npm-shrinkwrap` for fixing the dependency library version is very hard to use.
 If you do not explicitly execute the `npm shrinkwrap` command in the first place, the file that preserves the state of the dependency library is not created.
-Furthermore, there is no indication that the `production` mode [bug that effectively does not work](https://github.com/npm/npm/issues/11189) will be fixed.
+Furthermore, there is no indication that [the bug that the `production` mode effectively does not work](https://github.com/npm/npm/issues/11189) will be fixed.
 
-So I decided to use [Yarn] as an alternative to npm in my project.
+So I decided to use [Yarn] as the alternative to npm in my project.
 [Yarn] creates a file that saves the state of dependent libraries unless explicitly specified with command line options.
 Of course, the `production` mode works properly.
 
-After fixing the dependency library version with [Yarn], please use my [ci-yarn-upgrade](https://github.com/taichi/ci-yarn-upgrade).
-It periodically monitors the state of dependent libraries and automatically generates a pull request to update package.json and yarn.lock if necessary.
+After fixing the dependent library version with [Yarn], please use my [ci-yarn-upgrade](https://github.com/taichi/ci-yarn-upgrade).
+It periodically monitors the state of dependent libraries and automatically generates a pull request to update `package.json` and `yarn.lock` if necessary.
 
-About the task runner
+## About the task runner
 Writing a build script that runs on multiple platforms imposes a limitation that shell scripts can not be used.
 
-If I have a Linux binary [PowerShell](https://github.com/PowerShell/PowerShell) you can do it, right? It is because it is a Windows user.
+Since I am a Windows user, I wonder if I can manage all platforms with [PowerShell](https://github.com/PowerShell/PowerShell). Well, no one usually doesn't.
 
 Since the language used in the project is JavaScript and Node works properly on multiple platforms, it is preferable to write the build script in JavaScript.
 
-There are many modules for writing build scripts with JavaScript, but my way of thinking is simple.
+There are many modules for writing build scripts in JavaScript, but my plan is simple.
 
-Do you use [gulp] or not?
+To use [gulp] or not?
 
 Indeed, there are task runners like [Grunt](http://gruntjs.com/) and [broccoli](https://github.com/broccolijs/broccoli).
 
-The reason why these can not be taken into consideration is simple because it does not provide a convenience that greatly exceeds npm script.
-Since there are many objects to be learned at all, I do not want to pay learning costs to the task runner as much as possible.
+The reason why these can not be taken into consideration is simple because it does not provide convenience that greatly exceeds npm script.
+Since there are a lot to learn for task runners, I do not want to pay learning costs as much as possible.
 
-Still, the reason why [gulp] can be considered is performance. [gulp] is a task runner that places Node 's Stream API at the center of task construction and operates at high speed.
+Still, the reason why [gulp] can be considered is its performance. [gulp] is a task runner that places Node's Stream API at the center of task construction and operates at high speed.
 
-In the code base of hundreds of thousands of rows level, it is expected that the execution time of the build can be shortened as much as possible, as well as the test execution time should be shorter.
+In the code base of hundreds of thousands of rows, it is expected that the build execution time can be shortened as much as possible as well as the test execution time should be shorter.
 
-By the way, there is a thing called "do not predict" to what I like in the maxim of performance.
-In other words, if the reason for adopting [gulp] is only performance, its adoption is that the code base grows big enough that even if the build time is long enough it, will not be late.
+By the way, my favorite proverbs related to the performance is "Don't guess, measure!".
+In this case, if the reason for adopting [gulp] is only for the performance, the adoption will not be late until the code base grows big enough and the build time get long enough.
 
 So, in my project, I decided to try as hard as possible with npm script.
 
@@ -1048,14 +1048,14 @@ There are several useful modules for writing build scripts that run on multiple 
 This is a module for easily setting environment variables.
 
 How to define environment variables is subtly different between Linux and Windows. This is used to absorb the difference.
-However, there is nothing to set except for `NODE_ENV` and` NODE_PATH`.
+There is nothing to set except for `NODE_ENV` and `NODE_PATH` though.
 
 #### [npm-run-all](https://github.com/mysticatea/npm-run-all)
-This is a module that can call other npm scripts collectively in npm script and move multiple npm scripts in parallel as separate processes.
+This is a module that can call other npm scripts collectively in the npm script and can run multiple npm scripts in parallel as separate processes.
 
-Since there is this module, it is no exaggeration to say that you can do your best with the npm script.
+I can say, tanks to this module, you can do your best with the npm script.
 
-For example, you can use like this.
+For example, you can use it like this:
 
 ```
 {
@@ -1068,7 +1068,7 @@ For example, you can use like this.
 }
 ```
 
-When this is run with `yarn compile`, the` compile` task has `run-p compile: *`, so `compile: main` and` compile: renderer` are executed at the same time.
+When this is run with `yarn compile`, since the `compile` task has `run-p compile:*`, so `compile: main` and `compile: renderer` are executed at the same time.
 
 #### [rimraf](https://github.com/isaacs/rimraf)
 This is a module that can delete all files and directories in the specified directory.
