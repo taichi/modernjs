@@ -208,7 +208,7 @@ On the other hand, there is a problem that the declaration in the comment is eas
 #### [TypeScript]
 [TypeScript] emerged as one of a lot of efforts to develop a new language as an advanced JavaScript.
 
-For me, I think that [TypeScript] is a kind of grace from God, with the recognition that it is the latest work by [Anders Hejlsberg] (https://github.com/ahejlsberg) who designed Delphi and C#.
+For me, I think that [TypeScript] is a kind of grace from God, with the recognition that it is the latest work by [Anders Hejlsberg](https://github.com/ahejlsberg) who designed Delphi and C#.
 
 Let's look at the code of [TypeScript] a bit.
 
@@ -274,7 +274,7 @@ total([1, 2, 3, 4]);
 
 ```
 
-It looks like it is similar to typeScript's type annotation. But [Flow] has a distinctly different point from [TypeScript].
+It looks like it is similar to TypeScript's type annotation. But [Flow] has a distinctly different point from [TypeScript].
 [Flow] does static analysis such as evaluating type annotation given to JavaScript, but does not create a new programming language.
 
 It is a closer approach to [Google Closure Compiler]. However, unlike the time when [Google Closure Compiler] was created, now there is [Babel], so once you have extended the syntax of the language primarily and you finish using it, it is possible to safely remove only the description specifically for [Flow] implementation.
@@ -436,7 +436,7 @@ I feel that it is `Accessibility` that has a lower priority than `Security` whic
 
 Because it is to provide a rich UI for a better user experience, it may be good to give consideration to users with disabilities on the extension line.
 
-However reading through [WAI-ARIA 1.1](https://www.w3.org/TR/2016/CR-wai-aria-1.1-20161027/) and [MDN's ARIA page](https: / /developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) from end to end is extremely hard if you are to do it.
+However reading through [WAI-ARIA 1.1](https://www.w3.org/TR/2016/CR-wai-aria-1.1-20161027/) and [MDN's ARIA page](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) from end to end is extremely hard if you are to do it.
 
 I hope to provide the maximum value as much as I can with the munimum effort, such as referencing to [HTML5 Accessibility](http://www.html5accessibility.com/).
 
@@ -481,7 +481,7 @@ test('bar', async t => {
 Let me briefly list why I like [AVA].
 
 * API is small
-* [Power-assert] is built-in as standard
+* [power-assert] is built-in as standard
 * Faster execution speed
 * Perfect support for the `=>` operator, `Promise`,`async/await`, [observable](https://github.com/tc39/proposal-observable)
 
@@ -1128,7 +1128,7 @@ Because I use [CSS Modules] in my project.
 
 In addition, because I use [React Hot Loader](https://github.com/gaearon/react-hot-loader) which is strongly dependent on [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
 
-Though [Webpack 2.2 has been officially released](https://medium.com/webpack/webpack-2-2-the-final-release-76c3d43bf144#.suepi 2729), I have not used it yet because [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin/releases) is still in beta.
+Though [Webpack 2.2 has been officially released](https://medium.com/webpack/webpack-2-2-the-final-release-76c3d43bf144), I have not used it yet because [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin/releases) is still in beta.
 
 Since a pretty polite [migration document](https://webpack.js.org/guides/migrating/) is provided, you can migrate it if you need.
 
