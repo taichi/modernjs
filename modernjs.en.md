@@ -438,7 +438,7 @@ Because it is to provide a rich UI for a better user experience, it may be good 
 
 However reading through [WAI-ARIA 1.1](https://www.w3.org/TR/2016/CR-wai-aria-1.1-20161027/) and [MDN's ARIA page](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) from end to end is extremely hard if you are to do it.
 
-I hope to provide the maximum value as much as I can with the munimum effort, such as referencing to [HTML5 Accessibility](http://www.html5accessibility.com/).
+I hope to provide the maximum value as much as I can with the minimum effort, such as referencing to [HTML5 Accessibility](http://www.html5accessibility.com/).
 
 So I recommend to make sure first that the JSX in the project uses the `eslint-plugin-jsx-a11y` recommended rule to deal with the `Accessibility` support.
 
@@ -449,7 +449,7 @@ I think the technology that the programmer should master the most in application
 It is because I believe that better ones can be made by expressing what it is supposed to be in the form of tests and by implementing based on those.
 In other words, I do not want to talk that I should be able to do something that a real test engineer is doing.
 
-For quality assurance, there is enormous systematized knowledge, and it would be great if developers can aquire the knowledge both to make applications and to assure the quality, but the time is finite.
+For quality assurance, there is enormous systematized knowledge, and it would be great if developers can acquire the knowledge both to make applications and to assure the quality, but the time is finite.
 They have lovely families or fancy games to play with at night. I want to sleep ten hours a day to live long; I want to eat delicious meals slowly. Again, time is finite.
 
 You should spare time learning what to test, so do not take time to learn how to use the testing framework coolly.
@@ -582,7 +582,7 @@ test(t => {
 However, the execusion order of multiple `test` are not guaranteed unless `test.serial` is used, so do not modify `context` in `test`.
 In the first place `test.serial` should not be used unless there are any special reasons.
 
-Do not share the infomation among test methods and write test in a way that the test execution order has meaning, because it is a bad practice.
+Do not share the information among test methods and write test in a way that the test execution order has meaning, because it is a bad practice.
 
 ## Unresolved issues in testing
 The followings are what I should learn, but I hope someone will supplement the tasks that I haven't researched well yet.
@@ -747,7 +747,7 @@ The code which seems to have meaningless complexity at first glance may also hav
 
 This is only my bad impression theory, but [Angular] 2 and [Vue.js] have the beauty of the code base which does not seem to be used in a serious production environment.
 
-By the way, the code base of [Angular] 1.x seemed to be used in production envorimients.
+By the way, the code base of [Angular] 1.x seemed to be used in production environments.
 
 ### [Mithril]
 The goodness of [Mithril] is small. It is a tool for people who can notice what are missing and add those by themselves after fully understanding the internal details of the framework.
@@ -775,7 +775,7 @@ What we have been dealing with this problem up to now is to divide the namespace
 For example, [OOCSS](http://oocss.org/), [BEM](http://getbem.com/), and [SMACSS](https://smacss.com/) are major naming conventions.
 
 Also, the efforts have also been made to write CSS more securely using meta-language such as [Sass (SCSS)](http://sass-lang.com/) or [less](http://lesscss.org/).
-The most important feature of these meta-languages ​​is to limit the scope of influence by nesting the definitions of styles.
+The most important feature of these meta-languages is to limit the scope of influence by nesting the definitions of styles.
 
 The meta-language is excellent as a mechanism to control the complexity of the CSS itself, but since the CSS is a mechanism for deciding what kind of appearance is given to the DOM structure, the design of the DOM structure and the design of the CSS can not be separated.
 
@@ -796,7 +796,7 @@ Even web designers were accustomed to existing naming conventions should learn [
 Even if you use [CSS Modules], CSS designed to make UI consistent for the entire application will be defined in the global space as before, so it does not mean that you do not need CSS design knowledge.
 
 ### [React] in [CSS Modules]
-To adopt [CSS Modules] to [React], use [css-loader] of [webpack] to process CSS and then write a dedicated description to the [React] component side. [Webpack] will be explained later.
+To adopt [CSS Modules] to [React], use [css-loader] of [Webpack] to process CSS and then write a dedicated description to the [React] component side. [Webpack] will be explained later.
 
 #### Adoption of [CSS Modules]
 The easiest way to use [CSS Modules] is the following:
@@ -819,7 +819,7 @@ export default class Table extends React.Component {
 
 ```
 
-It will be rendered roughly like this HTML. The weird class name is set to the class attribute that[css-loader] automatically generates not to duplicate.
+It will be rendered roughly like this HTML. The weird class name is set to the class attribute that [css-loader] automatically generates not to duplicate.
 
 ```
 
@@ -1110,7 +1110,7 @@ This is also used to absorb the difference between Linux and Windows.
 ## About the module bundler
 I do not use the task runner but use the module bundler. The module bundler in JavaScript is a linker to the C compiler.
 
-Javascript divided into pieces according to roles and responsibility ranges are compiled into [Babel] and converted to work on ES5.
+JavaScript divided into pieces according to roles and responsibility ranges are compiled into [Babel] and converted to work on ES5.
 At this point, each file size increases slightly, but there is no change in the number of files.
 You may think that simply by joining the resulting files it runs, but the truth is not.
 
