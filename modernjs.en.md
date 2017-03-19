@@ -1124,36 +1124,36 @@ This module can check whether the configuration file of [webpack] is written cor
 In webpack 2, similar features are implemented, so these modules are not necessary.
 
 # Topics on [Electron]
-[Electron] is a framework for creating GUI applications that run on multiple operating systems. Internally [Node.js] and [Chromium] move.
+[Electron] is a framework to create GUI applications that run on multiple operating systems. Internally [Node.js] and [Chromium] are running.
 
-[Electron] operates on a rich model derived from Chrome. To talk about it, if you do not have threads and want to do that, start the process of [Node.js]. Processes are started as tabs or windows.
+[Electron] operates on a rich model derived from Chrome. That is, if you do not have threads, start the process of [Node.js]. Processes are started per each windows.
 
-In models that start more and more processes, there is only interprocess communication to share the state. In other words, complicated bugs like thread contention do not occur. Instead, it consumes a lot of memory.
+In models that run more and more processes, there is only interprocess communication to share the state. In other words, complicated bugs like thread contention do not occur. Instead, it consumes a lot of memory.
 
-There are various toolkits of this kind from the past. [JavaFX](http://www.oracle.com/technetwork/jp/java/javafx/overview/index.html), [Qt](https://www.qt.io/) something like that.
+There are various toolkits of this kind from the past. [JavaFX](http://www.oracle.com/technetwork/jp/java/javafx/overview/index.html), [Qt](https://www.qt.io/) are something like that.
 
 On the other hand, the advantage of [Electron] is that you can create GUI applications with a knowledge set to write web applications.
 
 ## Why to use Electron
-For me it's great that [VS Code] is implemented with [Electron].
+For me it's great reason that [VS Code] is implemented with [Electron].
 
-My latest work by [Erich Gamma](https://github.com/egamma) who designed the Eclipse plug-in framework that dedicated my 20's is [VS Code].
-For over a decade, I thought he was a god almighty, but reading a bad code of [vscode-tslint](https://github.com/Microsoft/vscode-tslint) a little closer I got it.
+The latest work by [Erich Gamma](https://github.com/egamma) is [VS Code] who designed the Eclipse plug-in framework to which I dedicated my 20's.
+For over a decade, I have thought he was a god almighty, but by reading a bad code of [vscode-tslint](https://github.com/Microsoft/vscode-tslint), I felt a little closer to him.
 
-[Erich Gamma](https://github.com/egamma) The teacher has a great achievement as an architect, but as a programmer, he is an ordinary man or less.
-The code is copying the poor quality from that side, and there is no decent unit test. It's small in size, and I am working almost entirely, so it's a bit nicely done, is not it? Well, that's right.
+[Erich Gamma](https://github.com/egamma) has established great achievements as an architect, but as a programmer, he is an ordinary man or less.
+The code is copying the poor quality from somewhere around, and there is no decent unit test. It's small in size, and he is working almost alone entirely, I can understand it's going to be a bit rough. 
 
-I think it was wonderful of the GitHub era that such things came to be casual.
+I think it is wonderful in the GitHub era that we can observe such a thing casually.
 
-Returning the story, other applications that are being used everyday [Electron] include [GitKraken](https://www.gitkraken.com/) and [Curse](https://www.curse.com/), [Insomnia](https://insomnia.rest/), [Marp](https://yhatt.github.io/marp/).
-Slack's Windows client is also [Electron], but I do not use it because it is not particularly user-friendly. Although it is a serpent, Kindle's Windows client is Qt.
+Returning the story, other everyday use applications where [Electron] is included are [GitKraken](https://www.gitkraken.com/) and [Curse](https://www.curse.com/), [Insomnia](https://insomnia.rest/), [Marp](https://yhatt.github.io/marp/).
+Slack's Windows client is also [Electron] based, but I do not use it because it is not particularly user-friendly. Just FYI but Kindle's Windows client is Qt.
 
-Applications that UIs are far from the OS native ones used to be hated.
-Recently OS native UI and web application UI are gradually approaching, so [Electron] based application releases less discomfort.
+Once applications that UIs are far from the OS native ones used to be hated.
+Recently OS native UI and web application UI are gradually approaching, so discomfort of [Electron] based application are getting less.
 
-The last reason to tackle [Electron] is that the build process for creating execution binaries that run on each OS is easy.
+The last reason to tackle [Electron] is that the build process is easy to create execution binaries that run on each OS.
 
-[electron-builder](https://github.com/electron-userland/electron-builder) If you write a little bit in the package.json and build it with a little bit on the CI server, the executable binary with installer will pop up Come out.
+With [electron-builder](https://github.com/electron-userland/electron-builder), you write a little bit in the package.json and build it on the CI server, then the executable binary with installer will pop up immediately.
 
 # Summary
 At last, I'm going to develop the application I wanted to make.
