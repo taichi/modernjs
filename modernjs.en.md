@@ -208,7 +208,7 @@ On the other hand, there is a problem that the declaration in the comment is eas
 #### [TypeScript]
 [TypeScript] emerged as one of a lot of efforts to develop a new language as an advanced JavaScript.
 
-For me, I think that [TypeScript] is a kind of grace from God, with the recognition that it is the latest work by Anders Hejlsberg (https://github.com/ahejlsberg) who designed Delphi and C#.
+For me, I think that [TypeScript] is a kind of grace from God, with the recognition that it is the latest work by [Anders Hejlsberg] (https://github.com/ahejlsberg) who designed Delphi and C#.
 
 Let's look at the code of [TypeScript] a bit.
 
