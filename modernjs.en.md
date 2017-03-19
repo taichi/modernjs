@@ -183,6 +183,7 @@ What I worked on a type declaration for the first time on using JavaScript is [G
 If you write a type declaration briefly in the document comment, it validates the types in the code.
 
 ```
+
 /**
  * Some class, initialized with an optional value.
  * @param {!Object=} opt_value Some value (optional).
@@ -195,6 +196,7 @@ function MyClass(opt_value) {
    */
   this.myValue_ = opt_value;
 }
+
 ```
 
 What makes this approach wonderful is that the type declaration is in the comment, so the programmer can provide the necessary information by the compiler without affecting the behavior of the source code at all.
@@ -211,6 +213,7 @@ For me, I think that [TypeScript] is a kind of grace from God, with the recognit
 Let's look at the code of [TypeScript] a bit.
 
 ```
+
 interface Person {
     firstName: string;
     lastName: string;
@@ -223,17 +226,21 @@ function greeter(person: Person) {
 var user = { firstName: "Jane", lastName: "User" };
 
 document.body.innerHTML = greeter(user);
+
 ```
+
 [TypeScript] is more similar to the my own Java I mentioned earlier than the originial Java.
 
 [TypeScript] provides 2 ways to daclare types; one is to mix type annotations in the code to work and the other is to create a dedicated file for type declaration.
 For example, if you create a dedicated file, declare it like this.
 
 ```
+
 declare namespace myLib {
     function makeGreeting(s: string): string;
     let numberOfGreetings: number;
 }
+
 ```
 
 If you have a file with the extension `d.ts` for type declaration, you can write the code as if there is a type in a library, even if that has no actual type declaration.
@@ -253,6 +260,7 @@ By the way, to retrieve the type declaration files from the npm repository, you 
 Let's see a bit of JavaScript code typed in [Flow].
 
 ```
+
 // @flow
 function total(numbers: Array<number>) {
   var result = 0;
@@ -263,6 +271,7 @@ function total(numbers: Array<number>) {
 }
 
 total([1, 2, 3, 4]);
+
 ```
 
 It looks like it is similar to typeScript's type annotation. But [Flow] has a distinctly different point from [TypeScript].
@@ -454,6 +463,7 @@ That is, it is [AVA].
 The test code written in [AVA] is like this.
 
 ```
+
 import test from 'ava';
 
 test('foo', t => {
@@ -465,6 +475,7 @@ test('bar', async t => {
 
     t.is(await bar, 'bar');
 });
+
 ```
 
 Let me briefly list why I like [AVA].
@@ -499,22 +510,29 @@ It is also important that [AVA] does not work on global space or functions place
 When writing tests, I recommend to use [power-assert] which will give you the richest assertion error if you use it without thinking anything.
 
 This test generates:
+
 ```
+
 test(t => {
     const a = /foo/;
     const b = 'bar';
     const c = 'baz';
     t.true(a.test(b) || b === c);
 });
+
 ```
 
 This kind of error:
+
 ```
+
 t.true(a.test(b) || b === c)
        |      |     |     |
        |      "bar" "bar" "baz"
        false
+
 ```
+
 This is just awesome!
 
 [power-assert] rewrites the code to issue this assertion error, but the setup for that is a little troublesome. It is easy to do, and manuals for it are fully available, but well, it is bothersome still.
@@ -549,6 +567,7 @@ Function calls listed in test code files won't be nested.
 By the way, the following is how to reference the variable created by `test.beforeEach` from `test`:
 
 ```
+
 test.beforeEach(t => {
     t.context = 'unicorn';
 });
@@ -556,6 +575,7 @@ test.beforeEach(t => {
 test(t => {
     t.is(t.context, 'unicorn');
 });
+
 ```
 
 `context` is not shared among multiple `test`, so you can touch it as much as you want.
@@ -641,6 +661,7 @@ In a primitive way, programmers decided which part of the view to change, depend
 Consider putting the variable `user` in the first half into the HTML-like template in the second half.
 
 ```
+
 // Model example
 var user = {
   "name": "John Doe",
@@ -655,6 +676,7 @@ Name: ${user.name}
 Age: ${user.age}
 </div>
 </body></html>
+
 ```
 
 Updating the model means changing the contents of `name` and `age` which are members of the variable `user`.
@@ -780,6 +802,7 @@ To adopt [CSS Modules] to [React], use [css-loader] of [webpack] to process CSS 
 The easiest way to use [CSS Modules] is the following:
 
 ```
+
 import React from 'react';
 import styles from './table.css';
 
@@ -793,17 +816,20 @@ export default class Table extends React.Component {
         </div>;
     }
 }
+
 ```
 
 It will be rendered roughly like this HTML. The weird class name is set to the class attribute that[css-loader] automatically generates not to duplicate.
 
 ```
+
 <div class="table__table___32osj">
     <div class="table__row___2w27N">
         <div class="table__cell___1oVw5">A0</div>
         <div class="table__cell___1oVw5">B0</div>
     </div>
 </div>
+
 ```
 
 The problem here is that importing CSS as if it is a JavaScript object.
@@ -820,6 +846,7 @@ There is [react-css-modules] as a module to remedy the problem that occurs when 
 Using this makes it such a code:
 
 ```
+
 import React from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './table.css';
@@ -836,6 +863,7 @@ class Table extends React.Component {
 }
 
 export default CSSModules(Table, styles);
+
 ```
 
 Instead of the braces disappearing, we now import [react-css-modules].
@@ -854,6 +882,7 @@ By the way, the developers of [react-css-modules] and [babel-plugin-react-css-mo
 Using this makes it such a code:
 
 ```
+
 import React from 'react';
 import './table.css';
 
@@ -867,6 +896,7 @@ export default class Table extends React.Component {
     </div>;
   }
 }
+
 ```
 
 You can now avoid handling CSS as a JavaScript object. We use import statements only to show the relationship between CSS and components.
@@ -1058,6 +1088,7 @@ I can say, tanks to this module, you can do your best with the npm script.
 For example, you can use it like this:
 
 ```
+
 {
   "Name": "sample",
   "scripts": {
@@ -1066,6 +1097,7 @@ For example, you can use it like this:
     "compile: renderer": "cross-env NODE_ENV = production webpack --profile - config config / webpack.renderer.js",
   }
 }
+
 ```
 
 When this is run with `yarn compile`, since the `compile` task has `run-p compile:*`, so `compile: main` and `compile: renderer` are executed at the same time.
