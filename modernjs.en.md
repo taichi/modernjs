@@ -679,7 +679,7 @@ It cannot be achieved unless the object to be hand assembled is limited to a sma
 
 ## Which framework to use
 
-Roughly speaking, what I made the candidates for selection is this. In any case, they use Virtual DOM internally.
+I made a list of the candidate frameworks to use. In any case, they use Virtual DOM internally.
 
 * [React]
 * [Angular]
@@ -693,91 +693,91 @@ There are also many good quality tutorials like [SurviveJS](https://survivejs.co
 
 That's why I selected [React] in my project.
 
-There is also a framework compatible with [React] such as [Inferno](https://github.com/infernojs/inferno) and [Rax](https://github.com/alibaba/rax)
+There is also frameworks compatible with [React] such as [Inferno](https://github.com/infernojs/inferno) and [Rax](https://github.com/alibaba/rax)
 If there is plausibility in what they are doing, it will be incorporated into [React] either.
 
 ### [Angular]
-[TypeScript] is designated as the primary language [Angular] is a fascinating choice for me.
+[TypeScript] is chosen as the primary language in [Angular], so it is a fascinating choice for me.
 However, as far as I can observe, the community is not sufficiently large compared to [React].
-This is due to the relatively short period of stable releases of stable ones.
+This is due to that the period is relative short since the stable release launched.
 
-The current [Angular] is 2.4, but the first type of [Angular] is my favorite type of framework.
-Anyway, there is a 2way binding; there is a Directive where every black magic act is allowed as a garbage repository, there was a DI container.
-The digest loop was a very difficult concept, but I thought that complexity should be accepted to make the screen easier to make.
+The current [Angular] is 2.4, but the [Angular] 1.x is my favorite type of framework.
+Anyway, in [Angular] 1.x, there is 2 way binding; there is Directive where every black magic act is allowed as a garbage repository, there is DI container.
+The digest loop was a very difficult concept, but I thought that complexity should be accepted to make the UI easier to make.
 
-The first line of [Angular] was a framework that seems to exist for SIer in a function group that seems only to be designed for creating business applications.
+[Angular] 1.x was a framework that seems to exist only for SIer and that seems only to be designed for creating business applications.
 
 I think that it is not too late to drop a large learning cost on [Angular] 2 system even after full-scale adoption case inside Google is released.
 
 ### [Vue.js]
-[Vue.js] is a topical framework right now. I liked the [Angular]1 The one I should choose is [Vue.js].
+[Vue.js] is a topical framework right now. Who like me who preferred the [Angular] 1.x should choose is [Vue.js].
 
-But, I can not adopt what is [the main developer is only one](https://github.com/vuejs/vue/graphs/contributors) to the base part.
-[Evan You](https://github.com/yyx990803) It can be a catastrophic situation if one person loses a little enthusiasm, or just transforming by some political transaction.
-It's a terrible thing, and it's an unacceptable risk to me.
+But, I can not adopt what is [the main developer is only one](https://github.com/vuejs/vue/graphs/contributors) to the fundamental systems.
+If [Evan You](https://github.com/yyx990803) loses a little enthusiasm, or just get involved in some political transaction, it can be a catastrophic situation.
+It's a terrible situation, and it's an unacceptable risk to me.
 
-Randomly as far as I can read the code base gets a reasonable impression as such and there is quite polite documentation.
-It seems there is no shortage in function with the feeling that I tried a little.
-However, when I thought about making a large application as appropriate, I pulled the fundamental problem in an unexpected place and thought about the possibility that I could not cope well with that.
+As far as I could read the code base, I got reasonable impressions and there is quite polite documentation.
+It seems there is no shortage in function as long as I tried a little.
+However, when I thought about making a large application, I expect some possibility that I face the fundamental problem in an unexpected place and I can not cope well with that.
 
-There are large communities, and those that are used in a live application have been discovered and carefully dealt with many fine problems.
+There are large communities, and functions that are used in a live application are well maintained and the many problems there have been discovered and carefully dealt with.
 The code which seems to have meaningless complexity at first glance may also have important meanings in certain circumstances.
 
-This is only my bad impression theory, but the second line of [Angular] and [Vue.js] have the beauty of the invisible code base as used in a serious production environment.
+This is only my bad impression theory, but [Angular] 2 and [Vue.js] have the beauty of the code base which does not seem to be used in a serious production environment.
 
-By the way, the first line of [Angular] was a code base that seems to , and some in production environment.
+By the way, the code base of [Angular] 1.x seemed to be used in production envorimients.
 
 ### [Mithril]
-The goodness of [Mithril] is small. After fully understanding the internal details of the framework, it is a tool used by people who can add it myself by myself by noticing what is missing.
+The goodness of [Mithril] is small. It is a tool for people who can notice what are missing and add those by themselves after fully understanding the internal details of the framework.
 
 Because it is small, you can do it.
 
-It may be suitable for use with a small team composed only of engineers with sufficient development experience of GUI applications.
+It may be suitable for using in a small team composed only of engineers with sufficient development experience of GUI applications.
 
-It is really difficult to properly determine the specifications of those that are missing and properly implement it, assuming that they are missing while making the application.
-Especially when the cost pressure during project progression is high, can it do well? At least, I will not be able to do it.
+Noticing what are missing while making the application, it is really difficult to properly determine the specifications of those and to implement those.
+Especially when the cost pressure during project progression is high, I wonder I can it do well. At least, I will not be able to do it.
 
-### About [React]
-Since the body of [React] has a role only for the part of the view, there are various shortcomings in making the application.
+### About how to use [React]
+Since [React] itself has a role only for the part of the view, there are various shortcomings in making the application.
 
-I chose [react-router](https://github.com/ReactTraining/react-router) without much trouble about Router. It can be said that I do not have standards for selecting Routers.
+I chose [react-router](https://github.com/ReactTraining/react-router) as router without having enough trouble. It can be said that I do not have standards for selecting routers as well.
 
-As a utility for testing, you can not remove [enzyme](https://github.com/airbnb/enzyme).
-It is the greatest merit of using a de facto standard library that you can use high-quality modules created by users who have incorporated frameworks.
+As a utility for testing, you can not miss [enzyme](https://github.com/airbnb/enzyme).
+It is the greatest merit of using the de-facto standard library with high-quality modules created by users who have incorporated frameworks pretty much.
 
 ### About [CSS Modules]
-In other words, CSS is like a programming language with only global variables, a programmer who lives in a world where the default scope is local variable is an unavoidable environment.
-In an environment where the complexity rises in proportion to the amount of code, I think that it is impossible to make perfectly consistent work.
+CSS is, in other words, like a programming language with only global variables, which is an unbelievable environment for a programmer who lives in a world where the default scope is local variable.
+I think that it is impossible to make perfectly consistent work in an environment where the complexity rises in proportion to the amount of code.
 
-What we have been dealing with this problem up to now has been to divide the namespace by explicitly defining the naming conventions by humans.
-For example, [OOCSS](http://oocss.org/), [BEM](http://getbem.com/), and [SMACSS](https://smacss.com/) are included in major naming conventions is there.
+What we have been dealing with this problem up to now is to divide the namespace by explicitly defining the naming conventions by humans.
+For example, [OOCSS](http://oocss.org/), [BEM](http://getbem.com/), and [SMACSS](https://smacss.com/) are major naming conventions.
 
-Also, write CSS more securely using meta-language such as [Sass (SCSS)](http://sass-lang.com/) or [less](http://lesscss.org/) Efforts have also been made.
+Also, the efforts have also been made to write CSS more securely using meta-language such as [Sass (SCSS)](http://sass-lang.com/) or [less](http://lesscss.org/).
 The most important feature of these meta-languages ​​is to limit the scope of influence by nesting the definitions of styles.
 
-The meta-language is excellent as a mechanism to control the complexity of the CSS itself, but since the CSS is a mechanism for deciding what kind of appearance is given to the DOM structure in the first place, the design of the DOM structure and the design of the CSS can not be separated.
+The meta-language is excellent as a mechanism to control the complexity of the CSS itself, but since the CSS is a mechanism for deciding what kind of appearance is given to the DOM structure, the design of the DOM structure and the design of the CSS can not be separated.
 
-If so, it is desirable that the design of the [React] component and the design of the CSS are consistent. It would be impossible to treat each as a completely independent event.
+Thus, it is desirable that the design of the [React] component and the design of the CSS are consistent. It doesn't make sense to handle them as completely independent things.
 
-[React] to ensure consistency between the design of the component and the design of the CSS, either way, is the priority. In that case, it is desirable to bring local variables to CSS and make it the default behavior.
+In order to ensure consistency between the design of the [React] component and the design of the CSS, there is no other way to prior to the manner of either of them. In that case, it is desirable to bring local variables to CSS and make it the default behavior.
 
 The concepts and efforts devised to realize this are [CSS Modules].
 
-[CSS Modules] is a concept derived from the community of [React], but similar functions are also found in [Vue.js](https://vue-loader.vuejs.org/en/features/css-modules.html),
-[There is a similar function in Angular 2](http://joaogarin.github.io/css-modules-angular2/) Looks like.
+[CSS Modules] is a concept derived from the community of [React], and similar functions are also found in [Vue.js](https://vue-loader.vuejs.org/en/features/css-modules.html),
+It seems [there is a similar function in Angular 2](http://joaogarin.github.io/css-modules-angular2/).
 
-Detailed information on the CSS problem resolved by [CSS Modules] is [There is a blog entry by members of the CSS Modules team](http://glenmaddern.com/articles/css-modules), so please refer to that.
+The detailed information on the CSS problem resolved by [CSS Modules] is [written in the blog entry by members of the CSS Modules team](http://glenmaddern.com/articles/css-modules), so please refer to it.
 
 To summarize, [CSS Modules] is not just a kind of CSS design methodology based on new naming conventions. Also, using [CSS Modules] does not mean you do not have to use the CSS meta language.
-Even web designers were accustomed to existing naming conventions should learn [CSS Modules] if you are doing UI design with projects that share work with to add.
+Even web designers were accustomed to existing naming conventions should learn [CSS Modules] if you are doing UI design in projects where you share work with a number of members.
 
-Even if you use [CSS Modules], CSS designed to make UI consistent for the entire application will be defined in the global space as before, so existing CSS It does not mean that you do not need design knowledge on the design.
+Even if you use [CSS Modules], CSS designed to make UI consistent for the entire application will be defined in the global space as before, so it does not mean that you do not need CSS design knowledge.
 
 ### [React] in [CSS Modules]
-To introduce [CSS Modules] to [React], use [css-loader] of [webpack] to process CSS and then write a dedicated description to the [React] component side. [Webpack] will be explained later.
+To adopt [CSS Modules] to [React], use [css-loader] of [webpack] to process CSS and then write a dedicated description to the [React] component side. [Webpack] will be explained later.
 
-#### Introduction of [CSS Modules]
-The easiest way to use [CSS Modules] is this code.
+#### Adoption of [CSS Modules]
+The easiest way to use [CSS Modules] is the following:
 
 ```
 import React from 'react';
@@ -795,7 +795,7 @@ export default class Table extends React.Component {
 }
 ```
 
-When this is rendered, it will be roughly like this HTML. Because CSS class name which does not automatically duplicate by [css-loader] is named, the weird name is set in the class attribute.
+It will be rendered roughly like this HTML. The weird class name is set to the class attribute that[css-loader] automatically generates not to duplicate.
 
 ```
 <div class="table__table___32osj">
@@ -806,18 +806,18 @@ When this is rendered, it will be roughly like this HTML. Because CSS class name
 </div>
 ```
 
-The problem is that importing CSS as if it is a JavaScript object is handled this way.
+The problem here is that importing CSS as if it is a JavaScript object.
 
 In this case, the CSS must also be applied to the component during unit tests that do not need to evaluate the state of the style at all.
-If an import is processed in a naive manner as it is, it becomes an error because it can not parse import destination CSS as JavaScript.
+If an import is processed in a naive manner as it is, it becomes an error because it can not parse imported CSS as JavaScript.
 
-It is hard to write code with many curly braces as a code, so I want to avoid it if possible.
-Braces are difficult to type because they require Shift.
+It is hard to write code with many curly braces as a code, so I want to avoid it if possible as well.
+Braces are difficult to type because they require pressing Shift key.
 
 #### Improvement with [react-css-modules](https://github.com/gajus/react-css-modules)
-There is [react-css-modules] as a module to remedy the problem that occurs when using [CSS Modules] in the simplest way.
+There is [react-css-modules] as a module to remedy the problem that occurs when using [CSS Modules] in the simplest way mentioned above.
 
-Using this makes it such a code.
+Using this makes it such a code:
 
 ```
 import React from 'react';
@@ -844,14 +844,14 @@ A special property called `styleName` has been introduced which is added to the 
 
 Although code easiness was improved, the difficulty of the code has not improved much.
 
-Especially, as you can see from the last line, the problem of handling imported CSS as a JavaScript object has not been solved.
+Especially, as you can see from the last line, the problem of handling imported CSS as a JavaScript object is solved.
 
 #### Improvement with [babel-plugin-react-css-modules]
 There is [babel-plugin-react-css-modules] as a plugin of [Babel] to solve the problem of [react-css-modules].
 
 By the way, the developers of [react-css-modules] and [babel-plugin-react-css-modules] are the same.
 
-Using this makes it such a code.
+Using this makes it such a code:
 
 ```
 import React from 'react';
@@ -871,28 +871,28 @@ export default class Table extends React.Component {
 
 You can now avoid handling CSS as a JavaScript object. We use import statements only to show the relationship between CSS and components.
 
-[babel-plugin-react-css-modules] performs processing necessary as [CSS Modules] at compile time.
+[babel-plugin-react-css-modules] performs necessary processes as [CSS Modules] at compile time.
 Thanks to that, the component code does not increase only for [CSS Modules].
 
 It is nice to have the code refreshed in this way.
 
 Since import of CSS does not affect components on code, removing such a part with a module like [ignore-styles](https://github.com/bkonkle/ignore-styles) has no adverse effect.
 
-So in my project I decided to use a combination of [css-loader] and [babel-plugin-react-css-modules] to implement [CSS Modules].
+So in my project I decided to use the combination of [css-loader] and [babel-plugin-react-css-modules] to implement [CSS Modules].
 
 ### About [Flux] implementation
 It is good to adopt [Flux] as the architecture that defines the structure of the application.
-There are many libraries implementing [Flux], but since it is popular and easy to use, [Redux] is used.
+There are many libraries implementing [Flux], but since it is popular and easy to use, I choose [Redux].
 
-Regarding using [Redux], how much roles and responsibilities are given to Actions, and ActionCreators depends on the size of the application, the optimal solution changes.
+Regarding using [Redux], how much roles and responsibilities are given to Actions and ActionCreators depends on the size of the application and the optimal solution changes.
 
 Using [redux-thunk](https://github.com/gaearon/redux-thunk) or [redux-promise](https://github.com/acdlite/redux-promise) makes it very Although easy to understand, the ActionCreator code tends to become large.
 As the code related to asynchronous processing appears in Action, measures must be taken to set some criteria and separate codes from Action in the process of increasing the code base.
 
 In a very simplistic way, `redux-thunk` implements Action in the callback model. `redux-promise` implements Action in the `promise` model.
 
-The problem with this simple approach is that you can not cancel the task.
-It is common in GUI applications that there is some inconsistency between the server and the client, and users who are irritated by the response delay want to interrupt processing.
+The problem with this simple approach is that you can not cancel tasks.
+It is common in GUI applications that there is some inconsistency between the server and the client and users who are irritated by the response delay want to interrupt processes.
 In such a case, it is not desirable that there is no way to cancel the task being processed with the user operation as the starting point.
 
 [redux-saga] and [redux-observable] are modules that are quite difficult to understand the behavior model.
@@ -902,15 +902,15 @@ Instead, the ActionCreator code will be simpler, and Action will be a fairly sim
 
 Again, for simplicity, [redux-saga] implements additional layers using GeneratorFunction and [redux-observable] uses [RxJS] to implement additional layers.
 
-Both [redux-saga] and [redux-observable] have a way to cancel the task.
+Both [redux-saga] and [redux-observable] have a way to cancel tasks.
 
-When writing code to handle errors, the difference between [redux-saga] and [redux-observable] becomes apparent.
-For details, see the individual documents, but the point is whether to use `try/catch` or use the event definition handler of library definition.
+On writing code to handle errors, the difference between [redux-saga] and [redux-observable] becomes apparent.
+For details, see the individual documents, but the point is whether to use `try/catch` or use the event handlers defined by the library.
 
 * Redux-saga's [Error handling](https://redux-saga.github.io/redux-saga/docs/basics/ErrorHandling.html)
 * RxJS [Error Handling](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/gettingstarted/errors.md)
 
-How I tried to say, I dislike the `try/catch` syntax which is only a legal `goto`. Although I write it without any help, I do not want to write positively.
+Whatever I tried to excuse, I dislike the `try/catch` syntax which is only a legal `goto`. Although I write it in the case it is inevitable, I do not want to write proactively.
 
 Here is a summary of the discussion so far.
 
@@ -918,7 +918,7 @@ Here is a summary of the discussion so far.
 <tr>
 <th align = "left"> Name </th>
 <th align = "left"> Implementation Technique </th>
-<th align = "center"> difficulty </th>
+<th align = "center"> Difficulty </th>
 <th align = "center"> Action </th>
 <th align = "center"> Additional layer </th>
 <th align = "center"> Cancel </th>
@@ -928,18 +928,18 @@ Here is a summary of the discussion so far.
 <tr>
 <td align = "left"> redux-thunk </td>
 <td align = "left"> callback </td>
-<td align = "center"> low </td>
+<td align = "center"> Low </td>
 <td align = "center"> Large </td>
-<td align = "center"> unnecessary </td>
+<td align = "center"> Unnecessary </td>
 <td align = "center"> x </td>
 <td align = "left"> try / catch </td>
 </tr>
 <tr>
 <td align = "left"> redux-promise </td>
 <td align = "left"> Promise </td>
-<td align = "center"> low </td>
+<td align = "center"> Low </td>
 <td align = "center"> Large </td>
-<td align = "center"> unnecessary </td>
+<td align = "center"> Unnecessary </td>
 <td align = "center"> x </td>
 <td align = "left"> event handler </td>
 </tr>
@@ -948,16 +948,16 @@ Here is a summary of the discussion so far.
 <td align = "left"> Generator </td>
 <td align = "center"> Medium </td>
 <td align = "center"> Small </td>
-<td align = "center"> required </td>
+<td align = "center"> Required </td>
 <td align = "center"> ○ </td>
 <td align = "left"> try / catch </td>
 </tr>
 <tr>
 <td align = "left"> redux-observable </td>
 <td align = "left"> Rx </td>
-<td align = "center"> high </td>
+<td align = "center"> High </td>
 <td align = "center"> Small </td>
-<td align = "center"> required </td>
+<td align = "center"> Required </td>
 <td align = "center"> Yes </td>
 <td align = "left"> event handler </td>
 </tr>
@@ -966,78 +966,78 @@ Here is a summary of the discussion so far.
 That's why I chose [redux-observable] in my project.
 
 ## Unresolved issues in UI
-I should learn, but please write a little, hoping that someone will supplement the tasks that have not been done yet.
+The followings are what I should learn, but I hope someone will supplement the tasks that I haven't researched well yet.
 
-* Talk about usability in JavaScript GUI application
-  * Talk of methodology to respond to keyboard-centered operations, operations using pointing devices other than mouse, operation by touch display, etc.
-  * Talk of evaluation criteria of operability in web application
+* Topics about usability in JavaScript GUI application
+  * Topics of methodology to respond to keyboard-centered operations, operations using pointing devices other than mouse, operation by touch display, etc.
+  * Topics of evaluation criteria of operability in web application
 * [PostCSS]
   * In my project, I use it as [babel-plugin-react-css-modules] asks for it
-  * In something like [Babel] in the CSS area, you can plug in and uninstall features by plugin ... only understand to the extent
+  * It is something like [Babel] in the CSS area, you can install and uninstall features by plugin ... that is what I only understood.
 * [CSS Flexible Box Layout Module Level 1](https://www.w3.org/TR/css-flexbox-1/)
-  * As far as we can see, the Flexible Box is the layout engine of the GUI application itself
+  * As far as I took a glance, the Flexible Box is the layout engine itself of the GUI application.
   * The material of [CSS Flexible Box Layout](https://developer.mozilla.org/en/docs/Web/CSS/CSS_Flexible_Box_Layout) in MDN is straightforward
-  * Since it is under development of specifications, it works only with the latest browser
+  * Since it is under development of specifications, it works only on the latest browser
 * [CSS Grid Layout Module Level 1](https://www.w3.org/TR/css-grid-1/)
-  * As far as we can see, Grid Layout closely resembles Java's GridBagLayout.
-  * Since the specification is under development [It does not work on browsers released as stable version](http://caniuse.com/#feat=css-grid)
+  * As far as I took a look, Grid Layout closely resembles Java's GridBagLayout.
+  * Since the specification is under development, [it does not work on browsers released as stable version](http://caniuse.com/#feat=css-grid)
 
 # Topics on Build
-I talked about basic language talking, testing method, how to make UI, next is build.
+I talked about basic language related topics, testing method, how to make UI, so the next is the topics about build.
 
 Continuous integration (CI) is essential in a contemporary development process.
-In other words, you have to automate the build process with CLI. It will not change even if you develop it in the Windows environment.
+That is, you have to automate the build process with CLI. It will not change even if you develop it in the Windows environment.
 
 SaaS of CI that I use is [CircleCI] and [AppVeyor].
 
 [CircleCI] is used to build in Linux environment. Especially when the build fails, you can debug and collect logs by [SSH login](https://circleci.com/docs/ssh-build/).
 
-It often happens that the build results on the CI server where the environment gets beautiful every time the environment does not match the build results of the local environment where various things are stacked.
+It often happens that the build results does not match on the CI server where the environment gets clean every time and on the local environment where various things are stacked.
 
-Especially, in my case I am developing in Windows environment, so it is easy for the environment to differ from CircleCI in Linux environment. That is, SSH login is a highly important feature.
+Especially, in my case I am developing in Windows environment, so it is easy for the environment to differ the Linux environment on CircleCI. Thus, SSH login is a highly important feature.
 
-[AppVeyor] is used to build in a clean Windows environment. Just a little crafted the configuration file; you can debug and collect logs by [can connect to RDP](https://www.appveyor.com/docs/how-to/rdp-to-build-worker/).
+[AppVeyor] is used to build in a clean Windows environment. Just with a little crafted the configuration file, you can debug and collect logs by [connecting to RDP](https://www.appveyor.com/docs/how-to/rdp-to-build-worker/).
 
-The OS is Windows Server 2012 R2 (x64), but it does not use it so that the difference between the server OS and the client OS becomes a problem.
+Though The OS version is Windows Server 2012 R2 (x64), I do not use it so that the difference between the server OS and the client OS becomes a problem.
 
-About managing dependency modules
-Based on package.json which stores meta-information about the project in Node, it comes with a tool called npm that can execute various tasks.
+## About managing dependent modules
+In Node, based on package.json which stores meta-information about the project, it comes with a tool called npm that can execute various tasks.
 
-Especially important among tasks to be executed from npm is automatic downloading of dependent libraries.
+Especially the most important task executed from npm is automatic downloading of dependent libraries.
 
-Although npm is done very well, `npm-shrinkwrap` for fixing the dependency library version is very hard to use.
+Although npm is well developed, `npm-shrinkwrap` for fixing the dependency library version is very hard to use.
 If you do not explicitly execute the `npm shrinkwrap` command in the first place, the file that preserves the state of the dependency library is not created.
-Furthermore, there is no indication that the `production` mode [bug that effectively does not work](https://github.com/npm/npm/issues/11189) will be fixed.
+Furthermore, there is no indication that [the bug that the `production` mode effectively does not work](https://github.com/npm/npm/issues/11189) will be fixed.
 
-So I decided to use [Yarn] as an alternative to npm in my project.
+So I decided to use [Yarn] as the alternative to npm in my project.
 [Yarn] creates a file that saves the state of dependent libraries unless explicitly specified with command line options.
 Of course, the `production` mode works properly.
 
-After fixing the dependency library version with [Yarn], please use my [ci-yarn-upgrade](https://github.com/taichi/ci-yarn-upgrade).
-It periodically monitors the state of dependent libraries and automatically generates a pull request to update package.json and yarn.lock if necessary.
+After fixing the dependent library version with [Yarn], please use my [ci-yarn-upgrade](https://github.com/taichi/ci-yarn-upgrade).
+It periodically monitors the state of dependent libraries and automatically generates a pull request to update `package.json` and `yarn.lock` if necessary.
 
-About the task runner
+## About the task runner
 Writing a build script that runs on multiple platforms imposes a limitation that shell scripts can not be used.
 
-If I have a Linux binary [PowerShell](https://github.com/PowerShell/PowerShell) you can do it, right? It is because it is a Windows user.
+Since I am a Windows user, I wonder if I can manage all platforms with [PowerShell](https://github.com/PowerShell/PowerShell). Well, no one usually doesn't.
 
 Since the language used in the project is JavaScript and Node works properly on multiple platforms, it is preferable to write the build script in JavaScript.
 
-There are many modules for writing build scripts with JavaScript, but my way of thinking is simple.
+There are many modules for writing build scripts in JavaScript, but my plan is simple.
 
-Do you use [gulp] or not?
+To use [gulp] or not?
 
 Indeed, there are task runners like [Grunt](http://gruntjs.com/) and [broccoli](https://github.com/broccolijs/broccoli).
 
-The reason why these can not be taken into consideration is simple because it does not provide a convenience that greatly exceeds npm script.
-Since there are many objects to be learned at all, I do not want to pay learning costs to the task runner as much as possible.
+The reason why these can not be taken into consideration is simple because it does not provide convenience that greatly exceeds npm script.
+Since there are a lot to learn for task runners, I do not want to pay learning costs as much as possible.
 
-Still, the reason why [gulp] can be considered is performance. [gulp] is a task runner that places Node 's Stream API at the center of task construction and operates at high speed.
+Still, the reason why [gulp] can be considered is its performance. [gulp] is a task runner that places Node's Stream API at the center of task construction and operates at high speed.
 
-In the code base of hundreds of thousands of rows level, it is expected that the execution time of the build can be shortened as much as possible, as well as the test execution time should be shorter.
+In the code base of hundreds of thousands of rows, it is expected that the build execution time can be shortened as much as possible as well as the test execution time should be shorter.
 
-By the way, there is a thing called "do not predict" to what I like in the maxim of performance.
-In other words, if the reason for adopting [gulp] is only performance, its adoption is that the code base grows big enough that even if the build time is long enough it, will not be late.
+By the way, my favorite proverbs related to the performance is "Don't guess, measure!".
+In this case, if the reason for adopting [gulp] is only for the performance, the adoption will not be late until the code base grows big enough and the build time get long enough.
 
 So, in my project, I decided to try as hard as possible with npm script.
 
@@ -1048,14 +1048,14 @@ There are several useful modules for writing build scripts that run on multiple 
 This is a module for easily setting environment variables.
 
 How to define environment variables is subtly different between Linux and Windows. This is used to absorb the difference.
-However, there is nothing to set except for `NODE_ENV` and` NODE_PATH`.
+There is nothing to set except for `NODE_ENV` and `NODE_PATH` though.
 
 #### [npm-run-all](https://github.com/mysticatea/npm-run-all)
-This is a module that can call other npm scripts collectively in npm script and move multiple npm scripts in parallel as separate processes.
+This is a module that can call other npm scripts collectively in the npm script and can run multiple npm scripts in parallel as separate processes.
 
-Since there is this module, it is no exaggeration to say that you can do your best with the npm script.
+I can say, tanks to this module, you can do your best with the npm script.
 
-For example, you can use like this.
+For example, you can use it like this:
 
 ```
 {
@@ -1068,110 +1068,108 @@ For example, you can use like this.
 }
 ```
 
-When this is run with `yarn compile`, the` compile` task has `run-p compile: *`, so `compile: main` and` compile: renderer` are executed at the same time.
+When this is run with `yarn compile`, since the `compile` task has `run-p compile:*`, so `compile: main` and `compile: renderer` are executed at the same time.
 
 #### [rimraf](https://github.com/isaacs/rimraf)
 This is a module that can delete all files and directories in the specified directory.
 
 This is also used to absorb the difference between Linux and Windows.
 
-## About the module bundle
-I do not use the task runner, but use the module bundle. The module bundle in JavaScript is a linker to the C compiler.
+## About the module bundler
+I do not use the task runner but use the module bundler. The module bundler in JavaScript is a linker to the C compiler.
 
-Javascript divided into pieces according to roles, and responsibility ranges are compiled into [Babel] and converted to work on ES 5.
+Javascript divided into pieces according to roles and responsibility ranges are compiled into [Babel] and converted to work on ES5.
 At this point, each file size increases slightly, but there is no change in the number of files.
-You may think that moving simply by joining the resulting files; it is not.
+You may think that simply by joining the resulting files it runs, but the truth is not.
 
-There are other CSS meta-languages ​​that do not work unless compiled. We also compile meta-languages ​​such as Sass and Less to CSS as well.
-In the meta-language of CSS, files are often combined into one at compile time.
+CSS meta-languages do not work unless it gets compiled. We also compile meta-languages ​​such as Sass and Less to CSS as well.
+The meta-language files of CSS are often combined into one at compile time.
 
 If you use [CSS Modules], you also need to compile CSS and JavaScript with consistency.
 
 By integrating these compiled resources into the bootstrap entry HTML, the JavaScript application will be a working module bundle.
 
-### How to choose a module bundle
-The candidate module bundle is [Browserify](http://browserify.org/), [webpack], [Rollup](http://rollupjs.org/), [Backpack](https://github.com/Palmerhq/backpack)
-There are several. However, there are no options other than [webpack].
+### How to choose a module bundler
+There are serveral candidate module bundlers, such as [Browserify](http://browserify.org/), [webpack], [Rollup](http://rollupjs.org/), [Backpack](https://github.com/Palmerhq/backpack). But, [webpack] is the only choise.
 
 Because I use [CSS Modules] in my project.
 
-In addition, it is strongly dependent on [webpack-dev-server](https://github.com/webpack/webpack-dev-server) [React Hot Loader](https://github.com/gaearon/react-hot-loader).
+In addition, because I use [React Hot Loader](https://github.com/gaearon/react-hot-loader) which is strongly dependent on [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
 
-[Webpack 2.2 has been officially released](https://medium.com/webpack/webpack-2-2-the-final-release-76c3d43bf144#.suepi 2729)
-I have not used β yet because I can not get β of [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin/releases).
+Though [Webpack 2.2 has been officially released](https://medium.com/webpack/webpack-2-2-the-final-release-76c3d43bf144#.suepi 2729), I have not used it yet because [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin/releases) is still in beta.
 
-There is a pretty polite [migration document](https://webpack.js.org/guides/migrating/), so you can move on if you like that.
+Since a pretty polite [migration document](https://webpack.js.org/guides/migrating/) is provided, you can migrate it if you need.
 
 ### [webpack] related modules
-In the first place, [webpack] needs to learn carefully with a fairly large application. So, I do not think to add too much.
+[webpack] a fairly large application and you needs to learn it carefly. So, I think not to add too much.
 
 #### [webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html)
-This is a server for running the build products of [webpack] in a simplified manner.
+This is a server to run the build products of [webpack] in a simplified manner.
 
-Since it operates based on the configuration file for [webpack], you can move applications more easily than simple server like [Express](http://expressjs.com/).
+Since it operates based on the configuration file for [webpack], you can run applications more easily than simple server like [Express](http://expressjs.com/).
 
-Since it has abundant functions such as being able to move as a proxy, it is convenient to read all the documents one by one.
+Since it has abundant functions such as being able to run as a proxy, it is good to read all the documents one by one.
 
-By the way, since the web browser handles `file://` and `localhost` specially, when writing an application that uses a lot of new functions of the browser, assign a proper host name and move it.
+By the way, since the web browser handles `file://` and `localhost` specially, when writing an application that uses a lot of new functions of the browser, assign a proper host name on running it.
 
 #### [webpack-merge](https://github.com/survivejs/webpack-merge)
 The [webpack] configuration file will create objects every `NODE_ENV`.
-If you describe the same parts in different environments and parts different for each environment, you need to synthesize the configuration objects.
+If you distinguish the description that are common in multiple environments and are different for each environment, you need to synthesize the configuration objects.
 
-It is this module that can be used at that time. I do not have to use it since it is not particularly advanced.
+This module can be used at that time. You do not have to use it since it is not particularly advanced.
 
 #### [webpack-validator](https://github.com/js-dxtools/webpack-validator)
-It is a module that can check whether the configuration file of [webpack] is written correctly.
+This module can check whether the configuration file of [webpack] is written correctly.
 
-In webpack 2, similar features are implemented, so these modules are not needed.
+In webpack 2, similar features are implemented, so these modules are not necessary.
 
 # Topics on [Electron]
-[Electron] is a framework for creating GUI applications that run on multiple operating systems. Internally [Node.js] and [Chromium] move.
+[Electron] is a framework to create GUI applications that run on multiple operating systems. Internally [Node.js] and [Chromium] are running.
 
-[Electron] operates on a rich model derived from Chrome. To talk about it, if you do not have threads and want to do that, start the process of [Node.js]. Processes are started as tabs or windows.
+[Electron] operates on a rich model derived from Chrome. That is, if you do not have threads, start the process of [Node.js]. Processes are started per each windows.
 
-In models that start more and more processes, there is only interprocess communication to share the state. In other words, complicated bugs like thread contention do not occur. Instead, it consumes a lot of memory.
+In models that run more and more processes, there is only interprocess communication to share the state. In other words, complicated bugs like thread contention do not occur. Instead, it consumes a lot of memory.
 
-There are various toolkits of this kind from the past. [JavaFX](http://www.oracle.com/technetwork/jp/java/javafx/overview/index.html), [Qt](https://www.qt.io/) something like that.
+There are various toolkits of this kind from the past. [JavaFX](http://www.oracle.com/technetwork/jp/java/javafx/overview/index.html), [Qt](https://www.qt.io/) are something like that.
 
 On the other hand, the advantage of [Electron] is that you can create GUI applications with a knowledge set to write web applications.
 
 ## Why to use Electron
-For me it's great that [VS Code] is implemented with [Electron].
+For me it's great reason that [VS Code] is implemented with [Electron].
 
-My latest work by [Erich Gamma](https://github.com/egamma) who designed the Eclipse plug-in framework that dedicated my 20's is [VS Code].
-For over a decade, I thought he was a god almighty, but reading a bad code of [vscode-tslint](https://github.com/Microsoft/vscode-tslint) a little closer I got it.
+The latest work by [Erich Gamma](https://github.com/egamma) is [VS Code] who designed the Eclipse plug-in framework to which I dedicated my 20's.
+For over a decade, I have thought he was a god almighty, but by reading a bad code of [vscode-tslint](https://github.com/Microsoft/vscode-tslint), I felt a little closer to him.
 
-[Erich Gamma](https://github.com/egamma) The teacher has a great achievement as an architect, but as a programmer, he is an ordinary man or less.
-The code is copying the poor quality from that side, and there is no decent unit test. It's small in size, and I am working almost entirely, so it's a bit nicely done, is not it? Well, that's right.
+[Erich Gamma](https://github.com/egamma) has established great achievements as an architect, but as a programmer, he is an ordinary man or less.
+The code is copying the poor quality from somewhere around, and there is no decent unit test. It's small in size, and he is working almost alone entirely, I can understand it's going to be a bit rough. 
 
-I think it was wonderful of the GitHub era that such things came to be casual.
+I think it is wonderful in the GitHub era that we can observe such a thing casually.
 
-Returning the story, other applications that are being used everyday [Electron] include [GitKraken](https://www.gitkraken.com/) and [Curse](https://www.curse.com/), [Insomnia](https://insomnia.rest/), [Marp](https://yhatt.github.io/marp/).
-Slack's Windows client is also [Electron], but I do not use it because it is not particularly user-friendly. Although it is a serpent, Kindle's Windows client is Qt.
+Returning the story, other everyday use applications where [Electron] is included are [GitKraken](https://www.gitkraken.com/) and [Curse](https://www.curse.com/), [Insomnia](https://insomnia.rest/), [Marp](https://yhatt.github.io/marp/).
+Slack's Windows client is also [Electron] based, but I do not use it because it is not particularly user-friendly. Just FYI but Kindle's Windows client is Qt.
 
-Applications that UIs are far from the OS native ones used to be hated.
-Recently OS native UI and web application UI are gradually approaching, so [Electron] based application releases less discomfort.
+Once applications that UIs are far from the OS native ones used to be hated.
+Recently OS native UI and web application UI are gradually approaching, so discomfort of [Electron] based application are getting less.
 
-The last reason to tackle [Electron] is that the build process for creating execution binaries that run on each OS is easy.
+The last reason to tackle [Electron] is that the build process is easy to create execution binaries that run on each OS.
 
-[electron-builder](https://github.com/electron-userland/electron-builder) If you write a little bit in the package.json and build it with a little bit on the CI server, the executable binary with installer will pop up Come out.
+With [electron-builder](https://github.com/electron-userland/electron-builder), you write a little bit in the package.json and build it on the CI server, then the executable binary with installer will pop up immediately.
 
 # Summary
-At last, I'm going to develop the application I wanted to make.
+Finally, I'm going to develop the application I wanted to make.
 
-Originally it was supposed to be the first prototype in the New Year holidays, but failed to estimate whether the arm is dull, now the development environment is in place.
+I supposed to complete the first prototype in the new year holidays, but I may have failed to estimate my skill, now just the development environment is in place.
 
-I learned so many things, some sorted out with reasons attached.
+I learned so many things, some of them are sorted out with reasons.
 
-When making an application, there is something like pains of birth, and consciousness turns to the option not taken to escape from it.
-You forget about what you truncated and why, you want to waste your time.
+When making an application, there is something like pains of birth, and consciousness turns to the option not taken for the first place to escape from the pains.
+I forget about what I truncated and why, and I get to want to waste my time.
 
-When I become myself in such a state of mind, I will be able to reconsider just by a little going, if my entry comes out. For that purpose, I wrote this entry.
+When I become myself in such a state of mind, I will be able to reconsider by just a little googling and reading this my entry. For that purpose, I wrote this entry.
 
-When I discuss with experts on application development with JavaScript, this entry would be a criterion for matching situation recognition.
+On discussing with experts on application development with JavaScript, this entry would be a draft to match our recognition.
 
-If you read such a long entry to the end, you have only words of gratitude. Thank you very much, and cheers for good work.
+If you read through such a long entry till the end, I have only words of gratitude. Thank you very much, and hope you'll find something this entry.
 
 [VS Code]: https://code.visualstudio.com/
 [Babel]: https://babeljs.io/
