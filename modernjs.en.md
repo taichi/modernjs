@@ -1101,27 +1101,27 @@ Though [Webpack 2.2 has been officially released](https://medium.com/webpack/web
 Since a pretty polite [migration document](https://webpack.js.org/guides/migrating/) is provided, you can migrate it if you need.
 
 ### [webpack] related modules
-In the first place, [webpack] needs to learn carefully with a fairly large application. So, I do not think to add too much.
+[webpack] a fairly large application and you needs to learn it carefly. So, I think not to add too much.
 
 #### [webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html)
-This is a server for running the build products of [webpack] in a simplified manner.
+This is a server to run the build products of [webpack] in a simplified manner.
 
-Since it operates based on the configuration file for [webpack], you can move applications more easily than simple server like [Express](http://expressjs.com/).
+Since it operates based on the configuration file for [webpack], you can run applications more easily than simple server like [Express](http://expressjs.com/).
 
-Since it has abundant functions such as being able to move as a proxy, it is convenient to read all the documents one by one.
+Since it has abundant functions such as being able to run as a proxy, it is good to read all the documents one by one.
 
-By the way, since the web browser handles `file://` and `localhost` specially, when writing an application that uses a lot of new functions of the browser, assign a proper host name and move it.
+By the way, since the web browser handles `file://` and `localhost` specially, when writing an application that uses a lot of new functions of the browser, assign a proper host name on running it.
 
 #### [webpack-merge](https://github.com/survivejs/webpack-merge)
 The [webpack] configuration file will create objects every `NODE_ENV`.
-If you describe the same parts in different environments and parts different for each environment, you need to synthesize the configuration objects.
+If you distinguish the description that are common in multiple environments and are different for each environment, you need to synthesize the configuration objects.
 
-It is this module that can be used at that time. I do not have to use it since it is not particularly advanced.
+This module can be used at that time. You do not have to use it since it is not particularly advanced.
 
 #### [webpack-validator](https://github.com/js-dxtools/webpack-validator)
-It is a module that can check whether the configuration file of [webpack] is written correctly.
+This module can check whether the configuration file of [webpack] is written correctly.
 
-In webpack 2, similar features are implemented, so these modules are not needed.
+In webpack 2, similar features are implemented, so these modules are not necessary.
 
 # Topics on [Electron]
 [Electron] is a framework for creating GUI applications that run on multiple operating systems. Internally [Node.js] and [Chromium] move.
