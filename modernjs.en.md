@@ -1156,20 +1156,20 @@ The last reason to tackle [Electron] is that the build process is easy to create
 With [electron-builder](https://github.com/electron-userland/electron-builder), you write a little bit in the package.json and build it on the CI server, then the executable binary with installer will pop up immediately.
 
 # Summary
-At last, I'm going to develop the application I wanted to make.
+Finally, I'm going to develop the application I wanted to make.
 
-Originally it was supposed to be the first prototype in the New Year holidays, but failed to estimate whether the arm is dull, now the development environment is in place.
+I supposed to complete the first prototype in the new year holidays, but I may have failed to estimate my skill, now just the development environment is in place.
 
-I learned so many things, some sorted out with reasons attached.
+I learned so many things, some of them are sorted out with reasons.
 
-When making an application, there is something like pains of birth, and consciousness turns to the option not taken to escape from it.
-You forget about what you truncated and why, you want to waste your time.
+When making an application, there is something like pains of birth, and consciousness turns to the option not taken for the first place to escape from the pains.
+I forget about what I truncated and why, and I get to want to waste my time.
 
-When I become myself in such a state of mind, I will be able to reconsider just by a little going, if my entry comes out. For that purpose, I wrote this entry.
+When I become myself in such a state of mind, I will be able to reconsider by just a little googling and reading this my entry. For that purpose, I wrote this entry.
 
-When I discuss with experts on application development with JavaScript, this entry would be a criterion for matching situation recognition.
+On discussing with experts on application development with JavaScript, this entry would be a draft to match our recognition.
 
-If you read such a long entry to the end, you have only words of gratitude. Thank you very much, and cheers for good work.
+If you read through such a long entry till the end, I have only words of gratitude. Thank you very much, and hope you'll find something this entry.
 
 [VS Code]: https://code.visualstudio.com/
 [Babel]: https://babeljs.io/
