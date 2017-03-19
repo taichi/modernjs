@@ -1075,32 +1075,30 @@ This is a module that can delete all files and directories in the specified dire
 
 This is also used to absorb the difference between Linux and Windows.
 
-## About the module bundle
-I do not use the task runner, but use the module bundle. The module bundle in JavaScript is a linker to the C compiler.
+## About the module bundler
+I do not use the task runner but use the module bundler. The module bundler in JavaScript is a linker to the C compiler.
 
-Javascript divided into pieces according to roles, and responsibility ranges are compiled into [Babel] and converted to work on ES 5.
+Javascript divided into pieces according to roles and responsibility ranges are compiled into [Babel] and converted to work on ES5.
 At this point, each file size increases slightly, but there is no change in the number of files.
-You may think that moving simply by joining the resulting files; it is not.
+You may think that simply by joining the resulting files it runs, but the truth is not.
 
-There are other CSS meta-languages ​​that do not work unless compiled. We also compile meta-languages ​​such as Sass and Less to CSS as well.
-In the meta-language of CSS, files are often combined into one at compile time.
+CSS meta-languages do not work unless it gets compiled. We also compile meta-languages ​​such as Sass and Less to CSS as well.
+The meta-language files of CSS are often combined into one at compile time.
 
 If you use [CSS Modules], you also need to compile CSS and JavaScript with consistency.
 
 By integrating these compiled resources into the bootstrap entry HTML, the JavaScript application will be a working module bundle.
 
-### How to choose a module bundle
-The candidate module bundle is [Browserify](http://browserify.org/), [webpack], [Rollup](http://rollupjs.org/), [Backpack](https://github.com/Palmerhq/backpack)
-There are several. However, there are no options other than [webpack].
+### How to choose a module bundler
+There are serveral candidate module bundlers, such as [Browserify](http://browserify.org/), [webpack], [Rollup](http://rollupjs.org/), [Backpack](https://github.com/Palmerhq/backpack). But, [webpack] is the only choise.
 
 Because I use [CSS Modules] in my project.
 
-In addition, it is strongly dependent on [webpack-dev-server](https://github.com/webpack/webpack-dev-server) [React Hot Loader](https://github.com/gaearon/react-hot-loader).
+In addition, because I use [React Hot Loader](https://github.com/gaearon/react-hot-loader) which is strongly dependent on [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
 
-[Webpack 2.2 has been officially released](https://medium.com/webpack/webpack-2-2-the-final-release-76c3d43bf144#.suepi 2729)
-I have not used β yet because I can not get β of [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin/releases).
+Though [Webpack 2.2 has been officially released](https://medium.com/webpack/webpack-2-2-the-final-release-76c3d43bf144#.suepi 2729), I have not used it yet because [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin/releases) is still in beta.
 
-There is a pretty polite [migration document](https://webpack.js.org/guides/migrating/), so you can move on if you like that.
+Since a pretty polite [migration document](https://webpack.js.org/guides/migrating/) is provided, you can migrate it if you need.
 
 ### [webpack] related modules
 In the first place, [webpack] needs to learn carefully with a fairly large application. So, I do not think to add too much.
