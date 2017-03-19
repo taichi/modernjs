@@ -882,35 +882,35 @@ So in my project I decided to use the combination of [css-loader] and [babel-plu
 
 ### About [Flux] implementation
 It is good to adopt [Flux] as the architecture that defines the structure of the application.
-There are many libraries implementing [Flux], but since it is popular and easy to use, [Redux] is used.
+There are many libraries implementing [Flux], but since it is popular and easy to use, I choose [Redux].
 
-Regarding using [Redux], how much roles and responsibilities are given to Actions, and ActionCreators depends on the size of the application, the optimal solution changes.
+Regarding using [Redux], how much roles and responsibilities are given to Actions and ActionCreators depends on the size of the application and the optimal solution changes.
 
-Using [reducex-thunk](https://github.com/gaearon/redux-thunk) or [redux-promise](https://github.com/acdlite/redux-promise) makes it very Although easy to understand, the ActionCreator code tends to become large.
-As the code related to asynchronous processing appears in Action, measures must be taken to set some criteria and separate codes from Action in the process of increasing the code base.
+Using [reducex-thunk](https://github.com/gaearon/redux-thunk) or [redux-promise](https://github.com/acdlite/redux-promise) makes it very easy to understand, however, the ActionCreator code tends to become large.
+As the code related to asynchronous processing appears in Action, some criteria must be set and it need to separate codes from Action in the process of increasing the code base.
 
-In a very simplistic way, `redux-thunk` implements Action in the callback model. `Redux-promise` implements Action in the` Promise` model.
+In a very simplistic way, `redux-thunk` implements Action in the callback model. `Redux-promise` implements Action in the `Promise` model.
 
-The problem with this simple approach is that you can not cancel the task.
-It is common in GUI applications that there is some inconsistency between the server and the client, and users who are irritated by the response delay want to interrupt processing.
+The problem with this simple approach is that you can not cancel tasks.
+It is common in GUI applications that there is some inconsistency between the server and the client and users who are irritated by the response delay want to interrupt processes.
 In such a case, it is not desirable that there is no way to cancel the task being processed with the user operation as the starting point.
 
 [redux-saga] and [redux-observable] are modules that are quite difficult to understand the behavior model.
 Instead, the ActionCreator code will be simpler, and Action will be a fairly simple object to store the contents of the event that occurred.
 
-[reducex-saga] and [reducex - observable] add a new layer whose name is different but has the same role to [Redux].
+[reducex-saga] and [reducex-observable] add a new layer to [Redux] whose names are different but which are the same role.
 
 Again, for simplicity, [redux-saga] implements additional layers using GeneratorFunction and [redux-observable] uses [RxJS] to implement additional layers.
 
-Both [redux-saga] and [redux-observable] have a way to cancel the task.
+Both [redux-saga] and [redux-observable] have a way to cancel tasks.
 
-When writing code to handle errors, the difference between [redux-saga] and [redux-observable] becomes apparent.
-For details, see the individual documents, but the point is whether to use `try/catch` or use the event definition handler of library definition.
+On writing code to handle errors, the difference between [redux-saga] and [redux-observable] becomes apparent.
+For details, see the individual documents, but the point is whether to use `try/catch` or use the event handlers defined by the library.
 
 * Redux-saga's [Error handling](https://redux-saga.github.io/redux-saga/docs/basics/ErrorHandling.html)
 * RxJS [Error Handling](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/gettingstarted/errors.md)
 
-How I tried to say, I dislike the `try/catch` syntax which is only a legal `goto`. Although I write it without any help, I do not want to write positively.
+Whatever I tried to excuse, I dislike the `try/catch` syntax which is only a legal `goto`. Although I write it in the case it is inevitable, I do not want to write proactively.
 
 Here is a summary of the discussion so far.
 
@@ -918,7 +918,7 @@ Here is a summary of the discussion so far.
 <tr>
 <th align = "left"> Name </th>
 <th align = "left"> Implementation Technique </th>
-<th align = "center"> difficulty </th>
+<th align = "center"> Difficulty </th>
 <th align = "center"> Action </th>
 <th align = "center"> Additional layer </th>
 <th align = "center"> Cancel </th>
@@ -928,18 +928,18 @@ Here is a summary of the discussion so far.
 <tr>
 <td align = "left"> redux - thunk </td>
 <td align = "left"> callback </td>
-<td align = "center"> low </td>
+<td align = "center"> Low </td>
 <td align = "center"> Large </td>
-<td align = "center"> unnecessary </td>
+<td align = "center"> Unnecessary </td>
 <td align = "center"> x </td>
 <td align = "left"> try / catch </td>
 </tr>
 <tr>
 <td align = "left"> reducex-promise </td>
 <td align = "left"> Promise </td>
-<td align = "center"> low </td>
+<td align = "center"> Low </td>
 <td align = "center"> Large </td>
-<td align = "center"> unnecessary </td>
+<td align = "center"> Unnecessary </td>
 <td align = "center"> x </td>
 <td align = "left"> event handler </td>
 </tr>
@@ -948,16 +948,16 @@ Here is a summary of the discussion so far.
 <td align = "left"> Generator </td>
 <td align = "center"> Medium </td>
 <td align = "center"> Small </td>
-<td align = "center"> required </td>
+<td align = "center"> Required </td>
 <td align = "center"> ○ </td>
 <td align = "left"> try / catch </td>
 </tr>
 <tr>
 <td align = "left"> redux - observable </td>
 <td align = "left"> Rx </td>
-<td align = "center"> high </td>
+<td align = "center"> High </td>
 <td align = "center"> Small </td>
-<td align = "center"> required </td>
+<td align = "center"> Required </td>
 <td align = "center"> Yes </td>
 <td align = "left"> event handler </td>
 </tr>
@@ -966,41 +966,41 @@ Here is a summary of the discussion so far.
 That's why I chose [reducex-observable] in my project.
 
 ## Unresolved issues in UI
-I should learn, but please write a little, hoping that someone will supplement the tasks that have not been done yet.
+The followings are what I should learn, but I hope someone will supplement the tasks that I haven't researched well yet.
 
-* Talk about usability in JavaScript GUI application
-  * Talk of methodology to respond to keyboard-centered operations, operations using pointing devices other than mouse, operation by touch display, etc.
-  * Talk of evaluation criteria of operability in web application
+* Topics about usability in JavaScript GUI application
+  * Topics of methodology to respond to keyboard-centered operations, operations using pointing devices other than mouse, operation by touch display, etc.
+  * Topics of evaluation criteria of operability in web application
 * [PostCSS]
   * In my project, I use it as [babel-plugin-react-css-modules] asks for it
-  * In something like [Babel] in the CSS area, you can plug in and uninstall features by plugin ... only understand to the extent
+  * It is something like [Babel] in the CSS area, you can install and uninstall features by plugin ... that is what I only understood.
 * [CSS Flexible Box Layout Module Level 1](https://www.w3.org/TR/css-flexbox-1/)
-  * As far as we can see, the Flexible Box is the layout engine of the GUI application itself
+  * As far as I took a glance, the Flexible Box is the layout engine itself of the GUI application.
   * The material of [CSS Flexible Box Layout](https://developer.mozilla.org/en/docs/Web/CSS/CSS_Flexible_Box_Layout) in MDN is straightforward
-  * Since it is under development of specifications, it works only with the latest browser
+  * Since it is under development of specifications, it works only on the latest browser
 * [CSS Grid Layout Module Level 1](https://www.w3.org/TR/css-grid-1/)
-  * As far as we can see, Grid Layout closely resembles Java's GridBagLayout.
-  * Since the specification is under development [It does not work on browsers released as stable version](http://caniuse.com/#feat=css-grid)
+  * As far as I took a look, Grid Layout closely resembles Java's GridBagLayout.
+  * Since the specification is under development, [it does not work on browsers released as stable version](http://caniuse.com/#feat=css-grid)
 
 # Topics on Build
-I talked about basic language talking, testing method, how to make UI, next is build.
+I talked about basic language related topics, testing method, how to make UI, so the next is the topics about build.
 
 Continuous integration (CI) is essential in a contemporary development process.
-In other words, you have to automate the build process with CLI. It will not change even if you develop it in the Windows environment.
+That is, you have to automate the build process with CLI. It will not change even if you develop it in the Windows environment.
 
 SaaS of CI that I use is [CircleCI] and [AppVeyor].
 
 [CircleCI] is used to build in Linux environment. Especially when the build fails, you can debug and collect logs by [SSH login](https://circleci.com/docs/ssh-build/).
 
-It often happens that the build results on the CI server where the environment gets beautiful every time the environment does not match the build results of the local environment where various things are stacked.
+It often happens that the build results does not match on the CI server where the environment gets clean every time and on the local environment where various things are stacked.
 
-Especially, in my case I am developing in Windows environment, so it is easy for the environment to differ from CircleCI in Linux environment. That is, SSH login is a highly important feature.
+Especially, in my case I am developing in Windows environment, so it is easy for the environment to differ the Linux environment on CircleCI. Thus, SSH login is a highly important feature.
 
-[AppVeyor] is used to build in a clean Windows environment. Just a little crafted the configuration file; you can debug and collect logs by [can connect to RDP](https://www.appveyor.com/docs/how-to/rdp-to-build-worker/).
+[AppVeyor] is used to build in a clean Windows environment. Just with a little crafted the configuration file, you can debug and collect logs by [connecting to RDP](https://www.appveyor.com/docs/how-to/rdp-to-build-worker/).
 
-The OS is Windows Server 2012 R2 (x64), but it does not use it so that the difference between the server OS and the client OS becomes a problem.
+Though The OS version is Windows Server 2012 R2 (x64), I do not use it so that the difference between the server OS and the client OS becomes a problem.
 
-About managing dependency modules
+## About managing dependency modules
 Based on package.json which stores meta-information about the project in Node, it comes with a tool called npm that can execute various tasks.
 
 Especially important among tasks to be executed from npm is automatic downloading of dependent libraries.
